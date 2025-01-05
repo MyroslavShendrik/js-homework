@@ -30,13 +30,16 @@ console.log("я студент?:", isStudent);
 //! Код виконаного завдання
 const myString = "Переможця ніхто не спитає, правду він говорив чи ні."
 console.log(myString);
+
 //? Створити змінну з іменем myNumber і присвоїти їй довільне числове значення.
 //? Потім присвоїти цій змінній результат додавання до неї числа 10. Вивести значення myNumber в консоль.
 
 //! Код виконаного завдання
-const myNumber = 42;
-const newNumber = myNumber + 10;
-console.log(newNumber);
+let myNumber = 42;
+myNumber = myNumber + 10;
+console.log(myNumber);
+console.log('myNumber:', myNumber);
+
 //? Створити змінну з іменем myNull і присвоїти їй значення null. Вивести значення цієї змінної в консоль.
 
 //! Код виконаного завдання

@@ -30,7 +30,10 @@ const typeMyAge = typeof myAge;
 console.log("typeMyAge:", typeMyAge);
 const typeMyName = typeof myName;
 console.log("тип зміної myName:", typeMyName);
-const isStudent = true;
-console.log("стать чоловіча?:", isStudent);
-const typeIsMan = typeof IsStudent;
-console.log("чи я чоловік?:", typeIsStudent);
+const isMan = true;
+console.log("стать чоловіча?:", isMan);
+const typeIsMan = typeof isMan;
+console.log("тип змінної isMan :", typeIsMan);
+
+// lesson2
+console.log("lesson-2")
