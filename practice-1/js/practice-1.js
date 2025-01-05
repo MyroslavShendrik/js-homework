@@ -36,4 +36,13 @@ const typeIsMan = typeof isMan;
 console.log("тип змінної isMan :", typeIsMan);
 
 // lesson2
-console.log("lesson-2")
+console.log("lesson-2");
+const myNumber = 10;
+console.log('myNumber:', myNumber);
+console.log("тип змінної myNumber:", typeof myNumber);
+const promptNumber = prompt("ведіть число");
+console.log('promtNumber:', promptNumber);
+console.log("тип змінної promptNumber:", typeof promptNumber);
+const newPromptNumber = Number(promptNumber);
+console.log('newPromptNumber:', newPromptNumber);
+console.log("тип змінної newPromptNumber:", typeof newPromptNumber);
