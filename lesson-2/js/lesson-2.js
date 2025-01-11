@@ -6,14 +6,20 @@ console.log('Lesson-2 JS');
 //? за допомогою формули та вивести результат в консоль.
 //! Код виконаного завдання
 let celsius = 12;
-let farhrenheit
+let farhrenheit = (celsius * 9/5) + 32;
+console.log(`farhrenheit: ${farhrenheit}`);
 
 //todo [2]
 //? Створити змінну для зберігання кількості днів у місяці.
 //? Обчислити кількість годин та хвилин у цьому місяці за
 //? допомогою оператора множення та вивести результат в консоль.
 //! Код виконаного завдання
-
+const daysInMonth = 30;
+const hoursInMonth = daysInMonth * 24;
+const minutesInMonth = hoursInMonth * 60;
+console.log(`daysInMonth ${daysInMonth} `);
+console.log(`hoursInMonth ${hoursInMonth}`);
+console.log(`minutesInMonth ${minutesInMonth}`);
 
 //todo [3]
 //? Створити змінні для зберігання рівня здоров'я та енергії гравця в грі.
