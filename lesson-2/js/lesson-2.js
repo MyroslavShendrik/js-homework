@@ -26,14 +26,23 @@ console.log(`minutesInMonth ${minutesInMonth}`);
 //? Зменшити рівень здоров'я та енергії гравця за допомогою
 //? операторів віднімання та вивести результат в консоль.
 //! Код виконаного завдання
-
-
+let health = 100;
+let energy = 100;
+health -= 20;
+energy -= 15;
+console.log("health:", health);
+console.log("energy:", energy);
 //todo [4]
 //? Створити змінну для зберігання суми покупки в магазині.
 //? Застосувати знижку в розмірі 10 % до цієї суми за допомогою
 //? оператора множення та вивести результат в консоль.
 //! Код виконаного завдання
-
+let money = 500;
+let discount = money * 0.10;
+let moneyDiscount = money - discount;
+console.log("money", money, "грн");
+console.log("discount:", discount, "грн");
+console.log("moneyDiscount:", moneyDiscount, "грн");
 
 //-todo [5]
 //? Створити змінну для зберігання числа з плаваючою комою.
