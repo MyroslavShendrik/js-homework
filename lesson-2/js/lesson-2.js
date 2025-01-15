@@ -49,14 +49,18 @@ console.log("moneyDiscount:", moneyDiscount, "грн");
 //? Використати метод Math.floor() для округлення числа до
 //? меншого та вивести результат в консоль.
 //! Код виконаного завдання
-
+let incompleteNumber = 9.76;
+let roundedDown = Math.floor(incompleteNumber);
+console.log(roundedDown);
 
 //todo [6]
 //? Створити змінну для зберігання рядка, який містить числа
 //? з плаваючою комою.Використати метод parseFloat() для
 //? перетворення рядка у десяткове число та вивести результат в консоль.
 //! Код виконаного завдання
-
+let numberString = "44.44";
+let floatlNumber = parseFloat(numberString);
+console.log(floatlNumber);
 
 
 //todo [7]
