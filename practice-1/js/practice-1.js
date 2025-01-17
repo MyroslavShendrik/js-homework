@@ -164,3 +164,88 @@ console.log("(5).toFixed(2) =", (5).toFixed(2));  //! 5.00
 console.log("(8.762195).toFixed(4) =", (8.762195).toFixed(4));  //! 8.7622
 console.log("8.762195.toFixed(4) =", 8.762195.toFixed(4));  //! 8.7622
 console.log("----------------------------------------------");
+// lesson5
+console.log("lesson5");
+const course1 = "JavaScript"; 
+console.log("course1:", course1); //! JavaScript
+
+const course2 = 'JavaScript';
+console.log("course2:", course2); //! JavaScript
+
+const course3 = `JavaScript`;
+console.log("course3:", course3); //! JavaScript
+//! Конкатенація рядків
+const myMessage = "Mango " + "is " + "happy";
+console.log('("Mango " + "is " + "happy"):', myMessage); //! "Mango is happy"
+
+const myAge2 = 24;
+const newMessage = "Poly is " + myAge2 + " years old!";
+console.log('("Poly is " + age + " years old!"):', newMessage); //! "Poly is 24 years old!"
+
+console.log("'Mango' + 55:", 'Mango' + 55); //! "Mango55"
+console.log("'Mango' + true:", 'Mango' + true); //! "Mangotrue"
+console.log("---------------------------------------------------------");
+console.log("50 + 55:", 50 + 55); //! "Mango55"
+console.log("'50' + 55:", '50' + 55); //! "Mango55"
+console.log("'Mango' + true:", 'Mango' + true); //! "Mangotrue"
+console.log("false + true:", false + true); //! "Mangotrue"
+console.log("---------------------------------------------------------");
+console.log("1 + '2':", 1 + '2'); //! "12"
+console.log("1 + '2' + 4:", 1 + '2' + 4); //! "124"
+console.log("1 + 2 + '4':", 1 + 2 + '4'); //! "34"
+
+//! ЯВНЕ - вбудована функція (або функція-конструктор) -> String(value)
+//? Використовується для будь-яких перетворень.
+//? Працює на будь-якому типі значень.
+console.log(
+    "%c ЯВНЕ приведення до рядка - String(value) ",
+    "color: yellow; background-color: #2274A5",
+);
+console.log("String(5):", String(5)); //! "5"
+console.log("String('5'):", String('5')); //! "5"
+console.log("String(true):", String(true)); //! "true"
+console.log("String(undefined):", String(undefined)); //! "undefined"
+console.log("String(null):", String(null)); //! "null"
+console.log("String(NaN):", String(NaN)); //! "NaN"
+
+//! ЯВНЕ - метод .toString()
+//? Використовується для об'єктів або примітивів.
+//? Якщо застосовується до null або undefined, 
+//? викличе помилку(TypeError).
+//? Надає більше контролю над перетворенням 
+//? деяких об'єктів (наприклад, Array, Object).
+console.log(
+    "%c ЯВНЕ приведення до рядка - .toString() ",
+    "color: yellow; background-color: #2274A5",
+);
+console.log("(5).toString():", (5).toString()); //! "5"
+console.log("('5').toString():", ('5').toString()); //! "5"
+console.log("(true).toString:", (true).toString()); //! "true"
+// console.log("(undefined).toString:", (undefined).toString()); //! Cannot read properties of undefined (reading 'toString')
+console.error(`(undefined).toString: Cannot read properties of undefined (reading 'toString')`);
+// console.log("(null).toString:", (null).toString()); //! Cannot read properties of null (reading 'toString')
+console.error(`(null).toString: Cannot read properties of null (reading 'toString')`)
+console.log("(NaN).toString:", (NaN).toString()); //! "NaN"
+
+//? НЕЯВНЕ - автоматично під час виконання операцій або обчислень
+console.log(
+    "%c НЕЯВНЕ приведення до рядка - Конкатенація(+) ",
+    "color: yellow; background-color: #2274A5",
+);
+console.log("'5' + 3:", '5' + 3); //! "53"
+console.log("3 + '5':", 3 + '5'); //! "35"
+console.log("'5' + true:", '5' + true); //! "5true"
+console.log("'5' + undefined:", '5' + undefined); //! "5undefined"
+console.log("5 + undefined:", 5 + undefined); //! NaN
+console.log("'5' + null:", '5' + null); //! "5null"
+console.log("5 + null:", 5 + null); //! 5
+console.log("null + undefined:", null + undefined); //! NaN
+console.log("undefined + undefined:", undefined + undefined); //! NaN
+console.log("null + null:", null + null); //! 0
+console.log("null + true:", null + true); //! 1
+console.log("null + false:", null + false); //! 0
+console.log("-----------------------------------");
+
+
+
+
