@@ -60,7 +60,7 @@ console.log(roundedDown);
 //! Код виконаного завдання
 let numberString = "44.44";
 let floatlNumber = parseFloat(numberString);
-console.log(floatlNumber);
+console.log(floatlNumber);  
 
 
 //todo [7]
@@ -68,14 +68,18 @@ console.log(floatlNumber);
 //? Використати метод parseInt() для перетворення рядка у ціле число
 //? та вивести результат в консоль.
 //! Код виконаного завдання
-
+let coolNumber = "321";
+let parseNumber = parseInt(coolNumber);
+console.log(parseNumber);
 
 //todo [8]
 //? Створити змінну для зберігання числа.
 //? Використати метод Math.sqrt() для обчислення
 //? квадратного кореня числа та вивести результат в консоль.
 //! Код виконаного завдання
-
+let squareNumber = 64;
+let mathSquare = Math.sqrt(squareNumber);
+console.log(mathSquare);
 
 
 //todo [9]
