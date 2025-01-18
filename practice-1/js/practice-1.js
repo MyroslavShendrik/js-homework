@@ -246,6 +246,134 @@ console.log("null + true:", null + true); //! 1
 console.log("null + false:", null + false); //! 0
 console.log("-----------------------------------");
 
+console.log(
+    '%c 4.Шаблонні рядки та інтерполяція ${…} ',
+    'color: white; background-color: #D33F49',
+);
+//! Шаблонні рядки та інтерполяція ${…}
+
+const userName = "Clinton Eastwood";
+const message = `Hello, ${userName}!`;
+console.log("message:", message);
+console.log("---------------------------------------------------");
+
+const guestName = "Mango";
+const roomNumber = 207;
+console.log(` Welcome ${guestName}, your room number is ${roomNumber}`);
+const greeting1 = "Welcome " + guestName + ", your room number is " + roomNumber + "!";
+console.log("greeting1:", greeting1);
+// Welcome Mango, your room number is 207!
+
+console.log(
+    "%c 5.Спецсимволи ",
+    "color: white; background-color: #D33F49",
+);
+//! Перенос рядка \n
+console.log(
+    "%c Перенос рядка \\n ",
+    "color: yellow; background-color: #2274A5",
+);
+const textOne = `Hello!
+my dear!
+`;
+console.log(textOne);
+console.log("----------");
+
+const textTwo = "Hello! \nmy dear!";
+console.log(textTwo);
 
 
+    //! Табуляція(відступ) \t
+console.log(
+    "%c Табуляція(відступ) \\t ",
+    "color: yellow; background-color: #2274A5",
+);
+const text1 = "Hello! \n\tmy dear \n\t\tfriend!";
+console.log(text1);
+
+//! Зворотній слеш \\
+console.log(
+    "%c Зворотній слеш \\\\ ",
+    "color: yellow; background-color: #2274A5",
+);
+const text2 = "Привіт, дорогий користувач\\відвідувач";
+console.log(text2);
+
+//! Лапки \' \"
+console.log(
+    `%c Лапки \\' та \\" `,
+    "color: yellow; background-color: #2274A5",
+);
+const text3 = 'Привіт, моя сім\'я';
+console.log(text3);
+
+const text4 = "Привіт, моя \"сім'я\"";
+console.log(text4);
+
+
+//! Символи UTF-16: \uКОД, UTF-32: \u{КОД}
+console.log(
+    "%c Символи UTF-16: \\uКОД, UTF-32: \\u{КОД} ",
+    "color: yellow; background-color: #2274A5",
+);
+const text5 = "This is my friend: \u{1F60D} \u1F60D";
+console.log(text5);
+
+const text6 = "Символ \"копірайт\":  ©";
+console.log(text6);
+
+const text7= "[UTF-16] Символ \"копірайт\": \u00A9";
+console.log(text7);
+
+const text8 = "[UTF-32] Символ \"копірайт\": \u{00A9}";
+console.log(text8);
+
+
+console.log(
+    '%c 3.Властивості та методи рядків ',
+    'color: white; background-color: #D33F49',
+);
+
+//! Властивості та методи рядків
+//todo Властивості - це описові характеристики сутності.
+
+//! [1] .length
+//? Властивість .length дозволяє отримати довжину рядка,
+//? тобто кількість його символів
+console.log(
+    "%c Властивість .length ",
+    "color: yellow; background-color: #2274A5",
+);
+const lifeMotto = "Live! Laugh! Love!";
+console.log("lifeMotto.length:", lifeMotto.length); //! 18
+
+console.log('"Repair droid".length:', "Repair droid".length); //! 12
+console.log('"JavaScript is awesome".length:', "JavaScript is awesome".length); //! 21
+
+
+//! [2.1] string[index]
+//? Індексація рядків.
+//? Отримуємо символи рядка згідно индекса - string[index]
+console.log(
+    "%c Індексація рядків: string[index] ",
+    "color: yellow; background-color: #2274A5",
+);
+const myString = "JavaScript";
+console.log("myString:", myString); //! "JavaScript"
+console.log("myString.length:", myString.length); //! 10
+console.log("------------------------------");
+
+let firstSymbol = myString[0];
+console.log("firstSymbol = myString[0]:", firstSymbol); //! "J"
+let secondSymbol = myString[1];
+console.log("secondSymbol = myString[1]:", secondSymbol); //! "a"
+console.log("------------------------------");
+
+console.warn("Останній символ:");
+const lastElementIndex = myString.length - 1;
+console.log("lastElementIndex = myString.length - 1:", lastElementIndex); //! 9
+
+// const lastSymbol = myString[lastElementIndex]; //todo var.1
+const lastSymbol = myString[myString.length - 1]; //todo var.2
+console.log("lastSymbol = myString[lastElementIndex]:", lastSymbol); //! "t"
 
