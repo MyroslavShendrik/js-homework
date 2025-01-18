@@ -51,7 +51,7 @@ console.log("moneyDiscount:", moneyDiscount, "грн");
 //! Код виконаного завдання
 let incompleteNumber = 9.76;
 let roundedDown = Math.floor(incompleteNumber);
-console.log(roundedDown);
+console.log( "roundedDown:", roundedDown);
 
 //todo [6]
 //? Створити змінну для зберігання рядка, який містить числа
@@ -59,7 +59,7 @@ console.log(roundedDown);
 //? перетворення рядка у десяткове число та вивести результат в консоль.
 //! Код виконаного завдання
 let numberString = "44.44";
-let floatlNumber = parseFloat(numberString);
+let floatlNumber = Number.parseFloat(numberString);
 console.log(floatlNumber);  
 
 
@@ -69,7 +69,7 @@ console.log(floatlNumber);
 //? та вивести результат в консоль.
 //! Код виконаного завдання
 let coolNumber = "321";
-let parseNumber = parseInt(coolNumber);
+let parseNumber = Number.parseInt(coolNumber);
 console.log(parseNumber);
 
 //todo [8]
@@ -90,3 +90,9 @@ console.log(mathSquare);
 //? Потім використати метод toString() для перетворення
 //? цілочисельного значення у рядок та вивести результат в консоль.
 //! Код виконаного завдання
+let integerNumber = 65;
+let stringNumber = "454";
+let parsedNumber = parseInt(stringNumber);
+console.log("parsedNumber:", parsedNumber);
+let stringFromNumber = integerNumber.toString();
+console.log("stringFromNumber:", stringFromNumber);
