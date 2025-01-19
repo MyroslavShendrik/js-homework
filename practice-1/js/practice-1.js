@@ -367,6 +367,9 @@ let firstSymbol = myString[0];
 console.log("firstSymbol = myString[0]:", firstSymbol); //! "J"
 let secondSymbol = myString[1];
 console.log("secondSymbol = myString[1]:", secondSymbol); //! "a"
+let fiveSymbol = myString[5];
+console.log("fiveSymbol = myString[5]:", fiveSymbol); //! "c"
+// myString[5] = d;
 console.log("------------------------------");
 
 console.warn("Останній символ:");
@@ -376,4 +379,248 @@ console.log("lastElementIndex = myString.length - 1:", lastElementIndex); //! 9
 // const lastSymbol = myString[lastElementIndex]; //todo var.1
 const lastSymbol = myString[myString.length - 1]; //todo var.2
 console.log("lastSymbol = myString[lastElementIndex]:", lastSymbol); //! "t"
+//lesson6
+console.log("'4' + 2 + 1:",  '4' + (2 + 1)); //! "43"
+const sevenSymbol = myString.charAt(6);
+console.log("sevenSymbol = myString[6]:", sevenSymbol); //! "r"
 
+//! [4] toLowerCase() і toUpperCase()
+//? Зміна регістру.
+//? Ці методи не змінюють вихідний рядок.
+console.log(
+    "%c Зміна регістру:               \n toLowerCase() і toUpperCase() ",
+    "color: yellow; background-color: #2274A5",
+);
+const myLifeMotto = "Live! Laugh! Love!";
+console.log("myLifeMotto до:", myLifeMotto); //! "Live! Laugh! Love!"
+console.log("myLifeMotto.toLowerCase():", myLifeMotto.toLowerCase()); //! "live! laugh! love!"
+console.log("myLifeMotto.toUpperCase():", myLifeMotto.toUpperCase()); //! "LIVE! LAUGH! LOVE!"
+console.log("myLifeMotto після:", myLifeMotto); //! "Live! Laugh! Love!"
+console.log("---------------------------------------------");
+
+//todo Для чого потрібні методи toLowerCase() і toUpperCase()?
+console.warn("Використання toLowerCase() і toUpperCase():");
+//? Бувають ситуації, коли всі символи в рядку
+//? необхідно перетворити в один регістр, ВЕРХНІЙ або нижній.
+//? Наприклад, для пошуку за ключовим словом,
+//? коли користувач вводить рядок 'saMsUng',
+//? а порівняти його потрібно з рядком 'samsung' або 'SAMSUNG'.
+console.log('"saMsUng" === "samsung":', "saMsUng" === "samsung"); //! false
+console.log('"saMsUng" === "SAMSUNG":', "saMsUng" === "SAMSUNG"); //! false
+console.log("---------------------------------------------");
+//? Щоб не вимагати абсолютно точне введення, 
+//? можна зробити «нормалізацію» введеного користувачем рядка,
+//? тобто перетворити всі його символи у верхній 
+//? або нижній регістр.
+//? Методи рядка toLowerCase() і toUpperCase() 
+//? повернуть новий рядок у відповідному регістрі,
+//? не змінюючи оригінальний.
+const BRAND_NAME = "SAMSUNG";
+console.log("BRAND_NAME:", BRAND_NAME);  //! "SAMSUNG"
+const userInput = "saMsUng";
+console.log("userInput:", userInput);  //! "saMsUng"
+console.log('userInput === BRAND_NAME:', userInput === BRAND_NAME); //! false
+console.log("---------------------------------------------");
+const normalizedToUpperCaseInput = userInput.toUpperCase();
+console.log("userInput.toUpperCase():", normalizedToUpperCaseInput);  //! "SAMSUNG"
+console.log('userInput.toUpperCase() === BRAND_NAME:', normalizedToUpperCaseInput === BRAND_NAME); //! true
+
+//! [5] indexOf()
+//? Метод string.indexOf(substr, pos) - substr в  str, починаючи з pos
+//? Повертає позицію(індекс), на якій знаходиться ПЕРШИЙ збіг підрядка
+//? або - 1, якщо нічого не знайдено.
+console.log(
+    "%c Метод: indexOf() ",
+    "color: yellow; background-color: #2274A5",
+);
+const message3 = "Welcome to Bahamas!";
+console.log("message3:", message3);  //! "Welcome to Bahamas!" 
+const index = message3.indexOf("to");
+console.log('index = message3.indexOf("to"):', index);  //! 8 
+console.log('message3.indexOf("hello"):', message3.indexOf("hello"));  //! -1
+console.log("---------------------------------------------");
+
+//! [6] includes()
+//? Перевіряє, чи міститься підрядок в рядку,
+//? повертає буль - true, якщо міститься,
+//? і false - якщо НЕ міститься.
+//? Регістр символів в рядку і підрядку має значення.
+console.log(
+    "%c Метод: includes() ",
+    "color: yellow; background-color: #2274A5",
+);
+const username = "Jacob Mercer";
+console.log("username:", username);  //! "Jacob Mercer"
+console.log('username.includes("Jacob"):', username.includes("Jacob"));  //! true
+console.log('username.includes("Jakob"):', username.includes("Jakob"));  //! false
+console.log('username.includes("Mercer"):', username.includes("Mercer"));  //! true
+console.log('username.includes("Jаcob"):', username.includes("Jаcob"));  //! false (літера "а" - ураїньска)!!!
+console.log("---------------------------------------------");
+
+//! [7] startsWith() і endsWith()
+//? Методи startsWith() і endsWith() призначені
+//? для перевірки початку й закінчення рядка відповідно.
+//? Вони повертають булеве значення true або false, 
+console.log(
+    "%c Методи: startsWith() і endsWith() ",
+    "color: yellow; background-color: #2274A5",
+);
+const myString2 = "Hello, world!";
+console.log("myString2:", myString2);  //! "Hello, world!"
+console.log('myString2.startsWith("Hello"):', myString2.startsWith("Hello"));  //! true
+console.log('myString2.endsWith("world!"):', myString2.endsWith("world!"));  //! true
+
+//? Метод чутливий до регістру
+console.log('myString2.startsWith("hello"):', myString2.startsWith("hello"));  //! false
+console.log('myString2.endsWith("World!):', myString2.endsWith("World!"));  //! false
+console.log("---------------------------------------------");
+
+
+//! [8] trim()
+//? Метод trim() використовується для видалення(“обрізання”)
+//? початкових і кінцевих пробілів із рядка.
+console.log(
+    "%c Метод: trim() ",
+    "color: yellow; background-color: #2274A5",
+);
+const emptyString = "";  
+console.log("emptyString:", emptyString);
+console.log("emptyString.length:", emptyString.length); 
+
+const emptyString2 = "   ";
+console.log("emptyString2:", emptyString2);
+console.log("emptyString2.length:", emptyString2.length); 
+console.log("emptyString === emptyString2 :", emptyString === emptyString2 )
+
+// const promt = prompt("введи число");
+// console.log("promt:", promt);
+// console.log("promt.length:", promt.length);
+
+
+const input = " JavaScript    ";
+console.log(input); //! " JavaScript    "
+console.log(
+    `%c${input}`,
+    "color: darkred; background-color: yellow",
+); //! " JavaScript    "
+console.log("input.length:", input.length); //! 15
+console.log(". . . . . . . . .");
+
+const trimmedInput = input.trim();
+console.log(trimmedInput); //! "JavaScript"
+console.log(
+    `%c${trimmedInput}`,
+    "color: yellow; background-color: green",
+); //! "JavaScript!"
+console.log("trimmedInput.length:", trimmedInput.length); //! 10
+
+//! [9] padStart() і padEnd()
+//?  padStart() і padEnd) доповнюють поточний рядок
+//? іншим рядком(кілька разів, якщо потрібно),
+//? доки отриманий рядок не досягне заданої довжини.
+//? Відступ застосовується з кінця / початку поточного рядка.
+console.log(
+    "%c Методи: padStart() і padEnd() ",
+    "color: yellow; background-color: #2274A5",
+);
+const input2 = "JavaScript";
+console.log("input2:", input2);  //! "JavaScript"
+
+console.log('input2.padEnd(20, "!"):', input2.padEnd(20, "!"));  //! JavaScript!!!!!!!!!!
+console.log('input2.padEnd(input2.length + 1,"!"):', input2.padEnd(input2.length + 1, "!"));  //! JavaScript!
+console.log("--------------------------------------------------");
+
+
+//! [10] replace() і replaceAll()
+//? Повертають новий рядок, в якому перше(replace)
+//? або усі збіги(replaceAll) підрядка
+//? замінені на вказане значення.
+console.log(
+    "%c Методи: replace() і replaceAll() ",
+    "color: yellow; background-color: #2274A5",
+);
+const jsFileName = "script.js";
+console.log("jsFileName:", jsFileName);  //! "script.js"
+const minifiedJsFileName = jsFileName.replace(".js", ".min.js");
+console.log('jsFileName.replace(".js", ".min.js"):', minifiedJsFileName);  //! "script.min.js"
+console.log("----------------------------------------------------");
+
+const cssFileNames = "styles.css, about.css, portfolio.css";
+console.log("cssFileNames:", cssFileNames);  //! "styles.css, about.css, portfolio.css"
+const minifiedCssFileNames = cssFileNames.replaceAll(".css", ".min.css");
+console.log('cssFileNames.replaceAll(".css", ".min.css"):', minifiedCssFileNames);  //! "styles.min.css, about.min.css, portfolio.min.css"
+
+
+
+//! [11] slice()
+//? Метод рядків slice(startIndex, endIndex) використовується
+//? для створення копії частини або всього рядка.
+//? Він робить копію елементів рядка від startIndex і до,
+//? але не включно endIndex і повертає новий рядок,
+//? не змінюючи оригінал.
+console.log(
+    "%c Метод: slice() ",
+    "color: yellow; background-color: #2274A5",
+);
+const productName = "Repair droid";
+console.log("productName:", productName);  //! "Repair droid"
+console.log("productName.slice(0, 4):", productName.slice(0, 4)); //! "Repa"
+console.log("productName.slice(3, 9):", productName.slice(3, 9)); //! "air dr"
+console.log("productName.slice(0, productName.length):", productName.slice(0, productName.length)); //! "Repair droid"
+console.log("productName.slice(0, productName.length - 1):", productName.slice(0, productName.length - 1)); //! "Repair droi"
+console.log("productName.slice(7, productName.length):", productName.slice(7, productName.length)); //! "droid"
+
+console.warn("Останній символ:");
+console.log("productName.slice(-1):", productName.slice-(1)); //! "d"
+
+console.warn("Від'ємні значення:");
+console.log("productName.slice(-5):", productName.slice(-5)); //! "droid"
+console.log("productName.length:", productName.length); //! 12
+console.log("productName.length - 5 = 12 - 5 =", productName.length - 5); //! 7
+console.log("productName.slice(7):", productName.slice(7)); //! "droid"
+console.log("-------------------------------------------------------");
+
+//! практика 
+//todo [3]
+console.log(
+    "%c [3] ",
+    "color: yellow; background-color: #2274A5",
+  );
+  //? Спочатку зробити дві змінні: 
+  //? ПЕРШУ - <myFavoriteActor> або <myFavoriteActress> 
+  //? зі значенням = "Ім'я вашого улюбленного актора або актриси"
+  //? (імена можна взяти зі "Списка акторів та актрис", він є нижче)
+  //? наприклад, "Russell Ira Crowe" або "Juliette Binoche"
+  //? та ДРУГУ - <male> або <female> зі значенням = "my favorite actor's name" 
+  //? або "my favorite actress's name".
+  //? За доромогою властивості або метода рядка 
+  //? отримати ОСТАННІЙ символ(в обох прикладах це - "e") 
+  //? змінної <myFavoriteActor> або <myFavoriteActress>
+  //? та записати це значення у ТРЕТЮ змінну <lastCharacter>.
+  //? Зробити перетворення значення змінної <lastCharacter> 
+  //? на ВЕЛИКУ(заглавну літеру) - "E" (буде в обох прикладах).
+  //? Вивести в консоль повідомлення, використовуючи 
+  //? значення ВСІХ ТРОЬХ змінних у такому форматі:
+  //? "The last letter in my favorite actor's name Russell Ira Crowe is "E"!" 
+  //? або:
+  //? "The last letter in my favorite actress's name Juliette Binoche is "E"!".
+  //* Список акторів та актрис:
+  // William Bradley Pitt 
+  // Philip Anthony Hopkins
+  // Juliette Binoche
+  // Angelina Jolie
+  // Russell Ira Crowe
+  // Marilyn Monroe
+  // Sean Justin Penn
+  // Robin Gayle Wright
+  // Thomas Sean Connery
+  // Kristin Ann Scott Thomas
+  // Hedy Lamarr
+  // Uma Karuna Thurman
+  //! Код виконаного завдання
+  const myFavoriteActor ="William Bradley Pitt"; 
+  const male = "my favorite actor's name"
+  const lastCharacter = myFavoriteActor.slice(-1).toUpperCase();
+  console.log(`The last letter in ${male} ${myFavoriteActor} is "${lastCharacter}" `)
+
+  
