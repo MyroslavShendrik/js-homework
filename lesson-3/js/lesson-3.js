@@ -33,8 +33,12 @@ console.log(
 //? До змінної fullName додати ‘Viktor’.
 //? fullName вивести в консоль.
 //! Код виконаного завдання
-
-
+let My = "My";
+let name1 = "name";
+let is = "is";
+let fullName = `${My} ${name1} ${is}`;
+fullName += " Viktor";
+console.log(fullName);
 //todo [4]
 console.log(
     "%c [4] ",
