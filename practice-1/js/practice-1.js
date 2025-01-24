@@ -622,5 +622,20 @@ console.log(
   const male = "my favorite actor's name"
   const lastCharacter = myFavoriteActor.slice(-1).toUpperCase();
   console.log(`The last letter in ${male} ${myFavoriteActor} is "${lastCharacter}" `)
-
-  
+// lesson6 
+//todo ❗️❗️❗️ 6 хибних (falsy) значень, які приводять
+//todo     до false в логічному перетворенні:
+//!  0, null, NaN, порожній рядок: "" (або ''), false, undefined
+console.log("Boolean(0):", Boolean(0)); //! false
+console.log("Boolean(null):", Boolean(null)); //! false
+console.log("Boolean(NaN):", Boolean(NaN)); //! false 
+console.log('Boolean(""):', Boolean("")); //! false
+console.log("Boolean(false):", Boolean(false)); //! false
+console.log("Boolean(undefined):", Boolean(undefined));  false//! false
+console.log("---------------------------");
+console.log('Boolean("   "):', Boolean("   ")); //! true
+console.log('Boolean("123"):', Boolean("123")); //! true
+console.log('Boolean(123):', Boolean(123)); //! true
+console.log('Boolean(-123):', Boolean(-123)); //! true
+console.log("Boolean(true):", Boolean(true)); //! true
+console.log("Boolean('false'):", Boolean("false")); //! true 

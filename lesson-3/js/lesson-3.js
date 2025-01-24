@@ -21,7 +21,8 @@ console.log(
 //? символ @ і рахує загальну кількість символів.
 //? Результат виведіть в консоль.
 //! Код виконаного завдання
-
+const email = "miroslavsendrik276@gmail.com"
+console.log("чи є @?:", email.includes("@"));
 
 //todo [3]
 console.log(
@@ -50,6 +51,6 @@ console.log(
 //? через alert повідомлення на прикладі цього:
 //? «Дякуємо, Олександро! До сплати 300 гривень»
 //! Код виконаного завдання
-const userName = "Олександра";
+const userName = "Олександро";
 const payment = 300;
-alert(`Дякуємо, ${userName}! До сплати ${payment} гривень.`);
+alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);

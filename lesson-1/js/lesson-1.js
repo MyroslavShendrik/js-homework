@@ -74,7 +74,8 @@ console.log('Дію відмінено!:', isComing);
 //! Код виконаного завдання
 alert("Увага! Ця дія може бути небезпечною.");
 let userConfirmation = confirm("Ви дійсно хочете продовжити?");
-if (userConfirmation) {
+console.log('userConfirmation:', userConfirmation);
+if (Boolean(userConfirmation)) {
     alert("Дякую за підтвердження!");
 } else {
     alert("Дію відмінено!");
