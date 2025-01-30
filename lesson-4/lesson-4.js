@@ -16,19 +16,18 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
-const field1 = prompt("Введіть значення ").trim();
-const field2 = prompt("Введіть значення ").trim();
-if (field1 && field2) {
-    console.log("✅ Обидва поля заповнені, дякуємо.");
-    alert("✅ Обидва поля заповнені, дякуємо.");
-} else if (field1 === "" || field2 === "" ) {
-    console.log("❌ Не всі поля заповнені!☹️");
-    alert("❌ Не всі поля заповнені!☹️");
-} else if (field1 === null || field2 === null){
-    console.log("❌ Не всі поля заповнені!☹️");
-    alert("❌ Не всі поля заповнені!☹️");
-} 
-
+// const field1 = prompt("Введіть значення 1");
+// const field2 = prompt("Введіть значення 2");
+// if (field1 && field2) {
+//     console.log("✅ Обидва поля заповнені, дякуємо.");
+//     alert("✅ Обидва поля заповнені, дякуємо.");
+// } else if (field1 === "" || field2 === "" ) {
+//     console.log("❌ Не всі поля заповнені!☹️");
+//     alert("❌ Не всі поля заповнені!☹️");
+// } else if (field1 === null || field2 === null){
+//     console.log("❌ Не всі поля заповнені!☹️");
+//     alert("❌ Не всі поля заповнені!☹️");
+// } 
 
 //todo [2]
 console.log(
@@ -51,6 +50,14 @@ console.log(
 //! Код виконаного завдання
 const field3 = prompt("Введіть перше число")?.trim();
 const field4 = prompt("Введіть друге число")?.trim();
+if (field3 === null || field4 === null || isNaN(field3) || isNaN(field4)) {
+    console.log("❌ Введення скасовано!");
+    alert("❌ Введення скасовано!");
+} else if (field3 === "" || field4 === "") {
+    console.log("❌ Потрібно вводити числа!");
+    alert("❌ Потрібно вводити числа!");
+} 
+
 console.log("---------------------------------------------");
 
 
