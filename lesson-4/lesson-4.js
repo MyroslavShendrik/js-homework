@@ -16,20 +16,20 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
-const field1 = prompt("Введіть значення 1");
-const field2 = prompt("Введіть значення 2");
-console.log("field1:", field1);
-console.log("field2:", field2);
-if(field1 === null || field2 === null){
-    console.log("❌ Ви скасували введення");
-     alert("❌ Ви скасували введення");
-} else if(field1.trim() === "" || field2.trim() === ""){
-     console.log("❌ Ви ввели порожні значення☹️");
-      alert("❌ Ви ввели порожні значення☹️");
-} else if (field1 && field2) {
-    console.log("✅ Обидва поля заповнені, дякуємо.");
-    alert("✅ Обидва поля заповнені, дякуємо.");
-}
+// const field1 = prompt("Введіть значення 1");
+// const field2 = prompt("Введіть значення 2");
+// console.log("field1:", field1);
+// console.log("field2:", field2);
+// if(field1 === null || field2 === null){
+//     console.log("❌ Ви скасували введення");
+//      alert("❌ Ви скасували введення");
+// } else if(field1.trim() === "" || field2.trim() === ""){
+//      console.log("❌ Ви ввели порожні значення☹️");
+//       alert("❌ Ви ввели порожні значення☹️");
+// } else if (field1 && field2) {
+//     console.log("✅ Обидва поля заповнені, дякуємо.");
+//     alert("✅ Обидва поля заповнені, дякуємо.");
+// }
 console.log("кінець завдання 1")
 
 //todo [2]
@@ -51,6 +51,27 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
+//todo var.1
+const field3 = prompt("Введіть перше число");
+const field4 = prompt("Введіть друге число");
+console.log("field3:", field3);
+ console.log("field4:", field4);
+ console.log("isNan(field3):", isNaN(field4));
+ console.log("isNan(field4):", isNaN(field4));
+if(field3 === null || field4 === null){
+    console.log("❌ Ви скасували введення");
+     alert("❌ Ви скасували введення");
+} else if(field3.trim() === "" || field4.trim() === ""){
+     console.log("❌ Ви ввели порожні значення☹️");
+      alert("❌ Ви ввели порожні значення☹️");
+}  else if (isNaN(field3) || isNaN(field4)){
+    console.log("❌ Потрібно вводити числа!");
+    alert("❌ Потрібно вводити числа!");
+} else if (field3 && field4) {
+    console.log("✅ Ви ввели числа, дякуємо.");
+    alert("✅ Ви ввели числа, дякуємо.");
+}
+console.log("кінець завдання 2")
 // const field3 = prompt("Введіть перше число")?.trim();
 // const field4 = prompt("Введіть друге число")?.trim();
 // if (field3 === null || field4 === null || isNaN(field3) || isNaN(field4)) {
@@ -60,7 +81,6 @@ console.log(
 //     console.log("❌ Потрібно вводити числа!");
 //     alert("❌ Потрібно вводити числа!");
 // } 
-
 console.log("---------------------------------------------");
 
 
