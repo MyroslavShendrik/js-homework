@@ -79,13 +79,31 @@ console.log("field3:", field3);
  console.log("field4:", field4);
  console.log("isNan(field3):", isNaN(field4));
  console.log("isNan(field4):", isNaN(field4));
-if (field3 === undefined || field4 === undefined || isNaN(field3) || isNaN(field4)) {
+if (field3 === undefined || field4 === undefined) {
     console.log("❌ Введення скасовано!");
     alert("❌ Введення скасовано!");
-} else if (field3 === "" || field4 === "") {
+} else if (field3 === "" || field4 === "" || isNaN(field3) || isNaN(field4)) {
     console.log("❌ Потрібно вводити числа!");
     alert("❌ Потрібно вводити числа!");
-} 
+}  else {
+         console.log("✅ Ви ввели числа, дякуємо.");
+         alert("✅ Ви ввели числа, дякуємо.");
+         console.log("Number(field3):", Number(field3));
+         console.log("Number(field4):", Number(field4));
+         const num1 = Number(field3);
+         const num2 = Number(field4);
+         const sum = num1 + num2;
+         if( sum > 10){
+            console.log("✅ Сума більша за 10.");
+            alert("✅ Сума більша за 10.");
+         } else{
+            console.log("❌ Сума менша або дорівнює 10.");
+            alert("❌ Сума менша або дорівнює 10.");
+         }
+    
+     } 
+
+     
 console.log("кінець завдання 2")
 console.log("---------------------------------------------");
 
