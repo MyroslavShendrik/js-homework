@@ -16,18 +16,21 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
-const field1 = prompt("Введіть значення 1")?.trim();
-const field2 = prompt("Введіть значення 2")?.trim();
-if (field1 && field2) {
+const field1 = prompt("Введіть значення 1");
+const field2 = prompt("Введіть значення 2");
+console.log("field1:", field1);
+console.log("field2:", field2);
+if(field1 === null || field2 === null){
+    console.log("❌ Ви скасували введення");
+     alert("❌ Ви скасували введення");
+} else if(field1.trim() === "" || field2.trim() === ""){
+     console.log("❌ Ви ввели порожні значення☹️");
+      alert("❌ Ви ввели порожні значення☹️");
+} else if (field1 && field2) {
     console.log("✅ Обидва поля заповнені, дякуємо.");
     alert("✅ Обидва поля заповнені, дякуємо.");
-} else if (field1 === "" || field2 === "" ) {
-    console.log("❌ Не всі поля заповнені!☹️");
-    alert("❌ Не всі поля заповнені!☹️");
-} else if (field1 === null || field2 === null){
-    console.log("❌ Не всі поля заповнені!☹️");
-    alert("❌ Не всі поля заповнені!☹️");
-} 
+}
+console.log("кінець завдання 1")
 
 //todo [2]
 console.log(
