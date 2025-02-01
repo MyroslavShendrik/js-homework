@@ -73,35 +73,35 @@ console.log(
 // }
 
 //todo var.2
-const field3 = prompt("Введіть перше число")?.trim();
-const field4 = prompt("Введіть друге число")?.trim();
-console.log("field3:", field3);
- console.log("field4:", field4);
- console.log("isNan(field3):", isNaN(field4));
- console.log("isNan(field4):", isNaN(field4));
-if (field3 === undefined || field4 === undefined) {
-    console.log("❌ Введення скасовано!");
-    alert("❌ Введення скасовано!");
-} else if (field3 === "" || field4 === "" || isNaN(field3) || isNaN(field4)) {
-    console.log("❌ Потрібно вводити числа!");
-    alert("❌ Потрібно вводити числа!");
-}  else {
-         console.log("✅ Ви ввели числа, дякуємо.");
-         alert("✅ Ви ввели числа, дякуємо.");
-         console.log("Number(field3):", Number(field3));
-         console.log("Number(field4):", Number(field4));
-         const num1 = Number(field3);
-         const num2 = Number(field4);
-         const sum = num1 + num2;
-         if( sum > 10){
-            console.log("✅ Сума більша за 10.");
-            alert("✅ Сума більша за 10.");
-         } else{
-            console.log("❌ Сума менша або дорівнює 10.");
-            alert("❌ Сума менша або дорівнює 10.");
-         }
+// const field3 = prompt("Введіть перше число")?.trim();
+// const field4 = prompt("Введіть друге число")?.trim();
+// console.log("field3:", field3);
+//  console.log("field4:", field4);
+//  console.log("isNan(field3):", isNaN(field4));
+//  console.log("isNan(field4):", isNaN(field4));
+// if (field3 === undefined || field4 === undefined) {
+//     console.log("❌ Введення скасовано!");
+//     alert("❌ Введення скасовано!");
+// } else if (field3 === "" || field4 === "" || isNaN(field3) || isNaN(field4)) {
+//     console.log("❌ Потрібно вводити числа!");
+//     alert("❌ Потрібно вводити числа!");
+// }  else {
+//          console.log("✅ Ви ввели числа, дякуємо.");
+//          alert("✅ Ви ввели числа, дякуємо.");
+//          console.log("Number(field3):", Number(field3));
+//          console.log("Number(field4):", Number(field4));
+//          const num1 = Number(field3);
+//          const num2 = Number(field4);
+//          const sum = num1 + num2;
+//          if( sum > 10){
+//             console.log("✅ Сума більша за 10.");
+//             alert("✅ Сума більша за 10.");
+//          } else{
+//             console.log("❌ Сума менша або дорівнює 10.");
+//             alert("❌ Сума менша або дорівнює 10.");
+//          }
     
-     } 
+//      } 
 
      
 console.log("кінець завдання 2")
@@ -127,8 +127,24 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
+const userText = prompt("Введіть текст:")?.trim();
+console.log("userText:", userText)
+if (userText === undefined){
+    console.log("❌ Ви скасували введення.");
+    alert("❌ Ви скасували введення.");
+} else if (userText === ""){
+    console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+    alert("❌ Ви ввели порожній рядок або лише пробіли.")
+} else if (userText.includes("JavaScript")){
+    console.log(`✅ Текст "${userText}" містить слово JavaScript`);
+    alert(`✅ Текст "${userText}" містить слово JavaScript`);
+} else {
+    console.log(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
+    alert(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
+}
 
 console.log("---------------------------------------------");
+
 
 
 
