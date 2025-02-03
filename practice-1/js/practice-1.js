@@ -1015,5 +1015,120 @@ console.log(
   } else {
     console.log(`Число <number> НІКУДИ не входить!`);
   }
-  
+//!lesson 10 
+//! 1.Інструкція switch
+// const valueOriginal = 50;
+// const valueOriginal = 100;
+// const valueOriginal = 200;
+const valueOriginal = 400;
 
+const valueToCompare1 = 50;
+const valueToCompare2 = 100;
+const valueToCompare3 = 200;
+
+console.log("valueOriginal:", valueOriginal);
+console.log(". . . . . . . . . . .");
+console.log("valueToCompare1:", valueToCompare1);
+console.log("valueToCompare2:", valueToCompare2);
+console.log("valueToCompare3:", valueToCompare3);
+
+switch (valueOriginal) {
+    case valueToCompare1:
+        console.log("Спрацював код ПЕРШОГО блока"); //! інструкції ПЕРШОГО блока;
+        break;
+
+    case valueToCompare2:
+        console.log("Спрацював код ДРУГОГО блока"); //! інструкції ДРУГОГО блока;
+        break;
+    
+    case valueToCompare3:
+        console.log("Спрацював код ТРЕТЬОГО блока"); //! інструкції ТРЕТЬОГО блока;
+        break;
+
+    default:
+        console.warn("НЕ спрацював ЖОДЕН блок!"); //! інструкції default блока;
+};
+console.log("----------------------------");
+
+//? Приклад:
+let cost;
+// const subscription = "free";
+// const subscription = "pro";
+// const subscription = "premium";
+const subscription = "personal";
+
+switch (subscription) {
+    case "free":
+        cost = 0;
+        break;
+
+    case "pro":
+        cost = 100;
+        break;
+
+    case "premium":
+        cost = 500;
+        break;
+
+    default:
+        console.log("Invalid subscription type");
+}
+console.log("cost:", cost); //! 100
+
+console.warn("https://ruslan379.github.io/course-fe-html-css/lesson-FE3_05/images/variable-scope.jpg");
+
+
+
+const global = "global";
+
+if (true) {
+    const blockA = "block-A";
+    // const global = "global-A";
+    //todo: Бачимо глобальну + локальну A
+    console.log("Block scope A:", global); //! global 
+    console.log("Block scope A:", blockA); //! block-A
+    
+    //todo: Змінні blockB і blockC не знайдені в доступних областях видимості.
+    //todo: Буде помилка звернення до змінної.
+    // console.log(blockB); //! ? error
+    // console.log(blockC); //! ? error
+    console.log("-----------------------");
+
+    if (true) {
+        const blockB = "block-B";
+
+        //todo: Бачимо глобальну + зовнішню A + локальну B
+        console.log("Block scope B:", global); //! global 
+        console.log("Block scope B:", blockA); //! ? block-A
+        console.log("Block scope B:", blockB); //! ?block-B
+        
+        //todo: Змінна blockC не знайдена в доступних областях видимості.
+        //todo: Буде помилка звернення до змінної.
+        // console.log(blockC); //! error
+        console.log("-----------------------");
+    }
+}
+
+if (true) {
+    const blockC = "block-C";
+
+    //todo: Бачимо глобальну + локальну C
+    console.log("Block scope C:", global); //! global 
+    console.log("Block scope C:", blockC); //! block-C
+
+    //todo: Змінні blockA і blockB не знайдені в доступних областях видимості.
+    //todo: Буде помилка звернення до змінної.
+    // console.log(blockA); error
+    // console.log(blockB); error
+    console.log("-----------------------");
+}
+
+//todo: Бачимо лише глобальну
+console.log("Block scope GLOBAL:", global); //! global
+
+//todo: Змінні blockA, blockB і blockC не знайдені в доступних областях видимості.
+//todo: Буде помилка звернення до змінної.
+// console.log("Block scope GLOBAL:", blockA); //! error
+// console.log("Block scope GLOBAL:", blockB); //! error
+// console.log("Block scope GLOBAL:", blockC); //! error
+console.log("-----------------------");
