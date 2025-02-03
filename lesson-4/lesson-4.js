@@ -127,21 +127,21 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
-const userText = prompt("Введіть текст:")?.trim();
-console.log("userText:", userText)
-if (userText === undefined){
-    console.log("❌ Ви скасували введення.");
-    alert("❌ Ви скасували введення.");
-} else if (userText === ""){
-    console.log("❌ Ви ввели порожній рядок або лише пробіли.");
-    alert("❌ Ви ввели порожній рядок або лише пробіли.")
-} else if (userText.includes("JavaScript")){
-    console.log(`✅ Текст "${userText}" містить слово JavaScript`);
-    alert(`✅ Текст "${userText}" містить слово JavaScript`);
-} else {
-    console.log(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
-    alert(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
-}
+// const userText = prompt("Введіть текст:")?.trim();
+// console.log("userText:", userText)
+// if (userText === undefined){
+//     console.log("❌ Ви скасували введення.");
+//     alert("❌ Ви скасували введення.");
+// } else if (userText === ""){
+//     console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+//     alert("❌ Ви ввели порожній рядок або лише пробіли.")
+// } else if (userText.includes("JavaScript")){
+//     console.log(`✅ Текст "${userText}" містить слово JavaScript`);
+//     alert(`✅ Текст "${userText}" містить слово JavaScript`);
+// } else {
+//     console.log(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
+//     alert(`❌ Текст "${userText}" НЕ містить слово JavaScript`);
+// }
 
 console.log("---------------------------------------------");
 
@@ -167,7 +167,25 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
+const field5 = prompt("Введіть  число")?.trim();
+if (field5 === undefined){
+    console.log("❌ Ви скасували введення.");
+     alert("❌ Ви скасували введення.");
+} else if (field5 === ""){
+         console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+     alert("❌ Ви ввели порожній рядок або лише пробіли.")
+}else if (isNaN(field5)) {
+    console.log("❌ Потрібно вводити числа!");
+         alert("❌ Потрібно вводити числа!")
+} else{
+    let field5Number = Number(field5)
 
+      if (field5Number > 10 && field5Number < 20){
+        console.log(`✅ Число ${field5Number} входить в діапазон від 10 до 20`);
+    }else {
+        console.log(`❌ Число ${field5Number} НЕ входить в діапазон від 10 до 20`);
+    }
+}
 console.log("---------------------------------------------");
 
 
