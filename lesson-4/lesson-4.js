@@ -167,25 +167,25 @@ console.log(
 //? та вивести відповідне повідомлення з помилкою, 
 //? якщо введені дані не пройшли перевірку.
 //! Код виконаного завдання
-const field5 = prompt("Введіть  число")?.trim();
-if (field5 === undefined){
-    console.log("❌ Ви скасували введення.");
-     alert("❌ Ви скасували введення.");
-} else if (field5 === ""){
-         console.log("❌ Ви ввели порожній рядок або лише пробіли.");
-     alert("❌ Ви ввели порожній рядок або лише пробіли.")
-}else if (isNaN(field5)) {
-    console.log("❌ Потрібно вводити числа!");
-         alert("❌ Потрібно вводити числа!")
-} else{
-    let field5Number = Number(field5)
+// const field5 = prompt("Введіть  число")?.trim();
+// if (field5 === undefined){
+//     console.log("❌ Ви скасували введення.");
+//      alert("❌ Ви скасували введення.");
+// } else if (field5 === ""){
+//          console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+//      alert("❌ Ви ввели порожній рядок або лише пробіли.")
+// }else if (isNaN(field5)) {
+//     console.log("❌ Потрібно вводити числа!");
+//          alert("❌ Потрібно вводити числа!")
+// } else{
+//     let field5Number = Number(field5)
 
-      if (field5Number > 10 && field5Number < 20){
-        console.log(`✅ Число ${field5Number} входить в діапазон від 10 до 20`);
-    }else {
-        console.log(`❌ Число ${field5Number} НЕ входить в діапазон від 10 до 20`);
-    }
-}
+//       if (field5Number > 10 && field5Number < 20){
+//         console.log(`✅ Число ${field5Number} входить в діапазон від 10 до 20`);
+//     }else {
+//         console.log(`❌ Число ${field5Number} НЕ входить в діапазон від 10 до 20`);
+//     }
+// }
 console.log("---------------------------------------------");
 
 
@@ -215,9 +215,23 @@ console.log(
 //? якщо введені дані не пройшли ці перевірки.
 //? ✅ Якщо введені дані пройшли ВСІ перевірки,
 //? треба послідовно вивести в косоль значення цих даних.
-let name;
-let email;
-let password;
+const userName = prompt("Введіть ваше ім'я");
+console.log("name:", userName);
+if (userName === undefined){
+    console.log("❌ Введення скасовано!");
+    alert("❌ Введення скасовано!");
+} else if (userName.length < 3 ){
+    console.log("❌ Ім'я має містити не менше 3 символів.");
+    alert("❌ Ім'я має містити не менше 3 символів.");
+}else if (!isNaN(userName)) {
+    console.log("❌ Ім'я не може бути числом!");
+    alert("❌ Ім'я не може бути числом!");
+} else if (userName.trim() === ""){
+    console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+    alert("❌ Ви ввели порожній рядок або лише пробіли.")
+}
+// let email;
+// let password;
 //! Код виконаного завдання
 
 console.log("---------------------------------------------");
