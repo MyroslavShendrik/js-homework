@@ -1132,3 +1132,90 @@ console.log("Block scope GLOBAL:", global); //! global
 // console.log("Block scope GLOBAL:", blockB); //! error
 // console.log("Block scope GLOBAL:", blockC); //! error
 console.log("-----------------------");
+//!lesson11
+//! Що таке ЦИКЛ?
+//? ЦИКЛ - керуюча конструкція, призначена для організації
+//? багаторазового виконання набору інструкцій.
+
+//? ТІЛО ЦИКЛУ - послідовність інструкцій,
+//? призначена для багаторазового виконання.
+
+//? ІТЕРАЦІЯ - одноразове виконання тіла циклу.
+
+//? УМОВА ВИХОДУ - вираз, що визначає, чи буде
+//? в черговий раз виконуватися ітерація,
+//? або цикл завершиться.
+
+//? ЛІЧИЛЬНИК - змінна, що зберігає поточний номер ітерації.
+//? Цикл не обов'язково містить ЛІЧИЛЬНИК,
+//? і він не повинен бути один, умова виходу з циклу може
+//? залежати від декількох змінних, що змінюються в циклі.
+
+
+
+
+
+
+//! 1.Цикл while - цикл з передумовою
+console.warn("https://ruslan379.github.io/course-fe-html-css/lesson-FE3_06/images/while.png");
+//? — цикл, який виконується, доки правдива якась умова,
+//? зазначена ДО його початку.
+//? Ця умова перевіряється ДО виконання тіла циклу,
+//? тому тіло може не виконатися жодного разу, 
+//? якщо умова від самого початку - хибна.
+// let counter = 3;
+let counter = 4; //? після перевірки умови(хибна) - цикл НЕ виконається
+
+while (counter < 4) {
+    console.log("ТІЛО ЦИКЛУ --> counter(ДО):", counter);
+    // counter += 1;
+    counter = counter + 1;
+    console.log("ТІЛО ЦИКЛУ --> counter(ПІСЛЯ):", counter);
+};
+
+console.log("____ ПОЗА ЦИКЛУ --> counter:", counter);
+console.log("-----------------------------------------");
+
+
+
+//? ПРИКЛАД:
+let clientCounter = 26;
+// clientCounter = 30; //? після перевірки умови(хибна) - цикл НЕ виконається
+const maxClients = 26;
+
+while (clientCounter < maxClients) {
+    console.log("ТІЛО ЦИКЛУ --> clientCounter(ДО):", clientCounter);
+    clientCounter += 1;
+    console.log("ТІЛО ЦИКЛУ --> clientCounter(ПІСЛЯ):", clientCounter);
+};
+console.log("____ ПОЗА ЦИКЛУ --> clientCounter:", clientCounter);
+console.log("-----------------------------------------");
+
+
+
+
+//! 2.Цикл do...while - цикл з постумовою
+console.warn("https://ruslan379.github.io/course-fe-html-css/lesson-FE3_06/images/do-while.png");
+//? - цикл, в якому умова перевіряється ПІСЛЯ виконання тіла циклу.
+//? З цього випливає, що тіло завжди виконується хоча б один раз.
+let counter2 = 4;
+// counter = 4; //? після перевірки умови(хибна) - цикл виконається ОДИН раз
+
+do {
+    console.log("ТІЛО ЦИКЛУ --> counter(ДО):", counter2);
+    counter2 += 1;
+    console.log("ТІЛО ЦИКЛУ --> counter(ПІСЛЯ):", counter2);
+} while (counter2 < 4);
+
+console.log("____ ПОЗА ЦИКЛУ --> counter:", counter2);
+console.log("-----------------------------------------");
+
+
+//? ПРИКЛАД:
+let password = "";
+
+do {
+    password = prompt("Введіть пароль довший 4-х символів");
+} while (password.length < 5);
+
+console.log("Ви ввели пароль: ", password);
