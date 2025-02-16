@@ -100,10 +100,10 @@ console.log(
 //             console.log("❌ Сума менша або дорівнює 10.");
 //             alert("❌ Сума менша або дорівнює 10.");
 //          }
-    
+
 //      } 
 
-     
+
 console.log("кінець завдання 2")
 console.log("---------------------------------------------");
 
@@ -220,21 +220,43 @@ console.log(
 let userName;
 let email;
 let password;
-userName = prompt("Введіть ваше ім'я");
-console.log("name:", userName);
-if (userName === null){
-    console.log("❌ Введення скасовано!");
-    alert("❌ Введення скасовано!");
-}else if (userName.trim() === ""){
+// userName = prompt("Введіть ваше ім'я");
+// console.log("name:", userName);
+// if (userName === null) {
+//     console.log("❌ Введення скасовано!");
+//     alert("❌ Введення скасовано!");
+// } else if (userName.trim() === "") {
+//     console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+//     alert("❌ Ви ввели порожній рядок або лише пробіли.");
+// } else if (userName.length < 3) {
+//     console.log("❌ Ім'я має містити не менше 3 символів.");
+//     alert("❌ Ім'я має містити не менше 3 символів.");
+// } else if (!isNaN(userName)) {
+//     console.log("❌ Ім'я не може бути числом!");
+//     alert("❌ Ім'я не може бути числом!");
+// };
+email = prompt("Введіть  email")?.trim();
+if (email === undefined) {
+    console.log("❌ Ви скасували введення.");
+    alert("❌ Ви скасували введення.");
+} else if (email === "") {
     console.log("❌ Ви ввели порожній рядок або лише пробіли.");
-    alert("❌ Ви ввели порожній рядок або лише пробіли.");
-} else if (userName.length < 3 ){
-    console.log("❌ Ім'я має містити не менше 3 символів.");
-    alert("❌ Ім'я має містити не менше 3 символів.");
-}else if (!isNaN(userName)) {
-    console.log("❌ Ім'я не може бути числом!");
-    alert("❌ Ім'я не може бути числом!");
-} ;
+    alert("❌ Ви ввели порожній рядок або лише пробіли.")
+} else if (!(email.includes("@") &&  email.includes(".") && email.length >= 5)){
+ console.log("❌ email повинен мати символ '@',крапку та 5 символів.");
+ alert("❌ email повинен мати символ '@',крапку та 5 символів.");
+};
+//  if (!(email.length >= 5 && email.includes("@") && email.includes(".", (email.indexOf("@") + 2)))) {
+//     alert(
+//         `
+//         E-mail повинен мати не менше 5-и символів,
+//         а також має містити символ @
+//         та крапку за символом(символами) після нього
+//         `
+//     );
+//     return;
+// };
 
-console.log("---------------------------------------------");
+// password = prompt("Введіть  email")?.trim();
+ console.log("---------------------------------------------");
 

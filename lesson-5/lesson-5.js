@@ -183,5 +183,15 @@ console.log(
 //? Виконайте відповідну операцію та виведіть результат.
 //?  У випадку ділення на нуль — виведіть попередження.
 //! Код виконаного завдання
+const firstNumber = 8;
+    const secondNumber = 4;
+    // const secondNumber = 0;
+
+    // const operator = "+";
+    // const operator = "-";
+    // const operator = "*";
+    const operator = "/";
+
+    let resultOfOperation;
 
 console.log("---------------------------------------------");
