@@ -184,14 +184,39 @@ console.log(
 //?  У випадку ділення на нуль — виведіть попередження.
 //! Код виконаного завдання
 const firstNumber = 8;
-    const secondNumber = 4;
-    // const secondNumber = 0;
+const secondNumber = 4;
+// const secondNumber = 0;
 
-    // const operator = "+";
-    // const operator = "-";
-    // const operator = "*";
-    const operator = "/";
+// const operator = "+";
+// const operator = "-";
+// const operator = "*";
+const operator = "/";
 
-    let resultOfOperation;
+let resultOfOperation;
+
+switch (operator) {
+    case "+":
+        resultOfOperation = firstNumber + secondNumber;
+        console.log(`Результат додавання: ${resultOfOperation}`);
+        break;
+    case "-":
+        resultOfOperation = firstNumber - secondNumber;
+        console.log(`Результат віднімання: ${resultOfOperation}`);
+        break;
+    case "*":
+        resultOfOperation = firstNumber * secondNumber;
+        console.log(`Результат множення: ${resultOfOperation}`);
+        break;
+    case "/":
+        if (secondNumber !== 0) {
+            resultOfOperation = firstNumber / secondNumber;
+            console.log(`Результат ділення: ${resultOfOperation}`);
+        } else {
+            console.log("Помилка: Ділення на нуль неможливе.");
+        }
+        break;
+    default:
+        console.log("Будь ласка, використайте +, -, * або /.");
+}
 
 console.log("---------------------------------------------");
