@@ -67,9 +67,9 @@ const b = 7;
 let c;
 c = a + b;
 console.log('a + b =', c);
-console.log('a - b =', a - b ); 
-console.log(' b / a =', b / a );
-console.log(' b * a =', b * a );
+console.log('a - b =', a - b);
+console.log(' b / a =', b / a);
+console.log(' b * a =', b * a);
 
 // lesson4
 console.log("lesson 4")
@@ -85,20 +85,20 @@ console.log('"5" * 2:', d);
 console.log('Number("5" + 2):', Number("5" + 2));
 
 const e = "5" + 2;
-console.log('"5" + 2:', e );
+console.log('"5" + 2:', e);
 
 const e1 = 5 + 2;
-console.log('5 + 2:', e1 );
+console.log('5 + 2:', e1);
 
 const f = "5" - 2;
-console.log('"5" - 2:', f );
+console.log('"5" - 2:', f);
 const g = "5" / 2;
-console.log('"5" / 2:', g );
+console.log('"5" / 2:', g);
 
 const h = "6";
 const j = 5;
 console.log(`h: ${h}, j: ${j}`);
-console.log('h:', h , ",", "j:", j);
+console.log('h:', h, ",", "j:", j);
 console.log('h > j:', h > j);
 console.log('h < j:', h < j);
 console.log('h <= j:', h <= j);
@@ -166,7 +166,7 @@ console.log("8.762195.toFixed(4) =", 8.762195.toFixed(4));  //! 8.7622
 console.log("----------------------------------------------");
 // lesson5
 console.log("lesson5");
-const course1 = "JavaScript"; 
+const course1 = "JavaScript";
 console.log("course1:", course1); //! JavaScript
 
 const course2 = 'JavaScript';
@@ -283,7 +283,7 @@ const textTwo = "Hello! \nmy dear!";
 console.log(textTwo);
 
 
-    //! Табуляція(відступ) \t
+//! Табуляція(відступ) \t
 console.log(
     "%c Табуляція(відступ) \\t ",
     "color: yellow; background-color: #2274A5",
@@ -322,7 +322,7 @@ console.log(text5);
 const text6 = "Символ \"копірайт\":  ©";
 console.log(text6);
 
-const text7= "[UTF-16] Символ \"копірайт\": \u00A9";
+const text7 = "[UTF-16] Символ \"копірайт\": \u00A9";
 console.log(text7);
 
 const text8 = "[UTF-32] Символ \"копірайт\": \u{00A9}";
@@ -380,7 +380,7 @@ console.log("lastElementIndex = myString.length - 1:", lastElementIndex); //! 9
 const lastSymbol = myString[myString.length - 1]; //todo var.2
 console.log("lastSymbol = myString[lastElementIndex]:", lastSymbol); //! "t"
 //lesson6
-console.log("'4' + 2 + 1:",  '4' + (2 + 1)); //! "43"
+console.log("'4' + 2 + 1:", '4' + (2 + 1)); //! "43"
 const sevenSymbol = myString.charAt(6);
 console.log("sevenSymbol = myString[6]:", sevenSymbol); //! "r"
 
@@ -483,14 +483,14 @@ console.log(
     "%c Метод: trim() ",
     "color: yellow; background-color: #2274A5",
 );
-const emptyString = "";  
+const emptyString = "";
 console.log("emptyString:", emptyString);
-console.log("emptyString.length:", emptyString.length); 
+console.log("emptyString.length:", emptyString.length);
 
 const emptyString2 = "   ";
 console.log("emptyString2:", emptyString2);
-console.log("emptyString2.length:", emptyString2.length); 
-console.log("emptyString === emptyString2 :", emptyString === emptyString2 )
+console.log("emptyString2.length:", emptyString2.length);
+console.log("emptyString === emptyString2 :", emptyString === emptyString2)
 
 // const promt = prompt("введи число");
 // console.log("promt:", promt);
@@ -571,7 +571,7 @@ console.log("productName.slice(0, productName.length - 1):", productName.slice(0
 console.log("productName.slice(7, productName.length):", productName.slice(7, productName.length)); //! "droid"
 
 console.warn("Останній символ:");
-console.log("productName.slice(-1):", productName.slice-(1)); //! "d"
+console.log("productName.slice(-1):", productName.slice - (1)); //! "d"
 
 console.warn("Від'ємні значення:");
 console.log("productName.slice(-5):", productName.slice(-5)); //! "droid"
@@ -585,43 +585,43 @@ console.log("-------------------------------------------------------");
 console.log(
     "%c [3] ",
     "color: yellow; background-color: #2274A5",
-  );
-  //? Спочатку зробити дві змінні: 
-  //? ПЕРШУ - <myFavoriteActor> або <myFavoriteActress> 
-  //? зі значенням = "Ім'я вашого улюбленного актора або актриси"
-  //? (імена можна взяти зі "Списка акторів та актрис", він є нижче)
-  //? наприклад, "Russell Ira Crowe" або "Juliette Binoche"
-  //? та ДРУГУ - <male> або <female> зі значенням = "my favorite actor's name" 
-  //? або "my favorite actress's name".
-  //? За доромогою властивості або метода рядка 
-  //? отримати ОСТАННІЙ символ(в обох прикладах це - "e") 
-  //? змінної <myFavoriteActor> або <myFavoriteActress>
-  //? та записати це значення у ТРЕТЮ змінну <lastCharacter>.
-  //? Зробити перетворення значення змінної <lastCharacter> 
-  //? на ВЕЛИКУ(заглавну літеру) - "E" (буде в обох прикладах).
-  //? Вивести в консоль повідомлення, використовуючи 
-  //? значення ВСІХ ТРОЬХ змінних у такому форматі:
-  //? "The last letter in my favorite actor's name Russell Ira Crowe is "E"!" 
-  //? або:
-  //? "The last letter in my favorite actress's name Juliette Binoche is "E"!".
-  //* Список акторів та актрис:
-  // William Bradley Pitt 
-  // Philip Anthony Hopkins
-  // Juliette Binoche
-  // Angelina Jolie
-  // Russell Ira Crowe
-  // Marilyn Monroe
-  // Sean Justin Penn
-  // Robin Gayle Wright
-  // Thomas Sean Connery
-  // Kristin Ann Scott Thomas
-  // Hedy Lamarr
-  // Uma Karuna Thurman
-  //! Код виконаного завдання
-  const myFavoriteActor ="William Bradley Pitt"; 
-  const male = "my favorite actor's name"
-  const lastCharacter = myFavoriteActor.slice(-1).toUpperCase();
-  console.log(`The last letter in ${male} ${myFavoriteActor} is "${lastCharacter}" `)
+);
+//? Спочатку зробити дві змінні: 
+//? ПЕРШУ - <myFavoriteActor> або <myFavoriteActress> 
+//? зі значенням = "Ім'я вашого улюбленного актора або актриси"
+//? (імена можна взяти зі "Списка акторів та актрис", він є нижче)
+//? наприклад, "Russell Ira Crowe" або "Juliette Binoche"
+//? та ДРУГУ - <male> або <female> зі значенням = "my favorite actor's name" 
+//? або "my favorite actress's name".
+//? За доромогою властивості або метода рядка 
+//? отримати ОСТАННІЙ символ(в обох прикладах це - "e") 
+//? змінної <myFavoriteActor> або <myFavoriteActress>
+//? та записати це значення у ТРЕТЮ змінну <lastCharacter>.
+//? Зробити перетворення значення змінної <lastCharacter> 
+//? на ВЕЛИКУ(заглавну літеру) - "E" (буде в обох прикладах).
+//? Вивести в консоль повідомлення, використовуючи 
+//? значення ВСІХ ТРОЬХ змінних у такому форматі:
+//? "The last letter in my favorite actor's name Russell Ira Crowe is "E"!" 
+//? або:
+//? "The last letter in my favorite actress's name Juliette Binoche is "E"!".
+//* Список акторів та актрис:
+// William Bradley Pitt 
+// Philip Anthony Hopkins
+// Juliette Binoche
+// Angelina Jolie
+// Russell Ira Crowe
+// Marilyn Monroe
+// Sean Justin Penn
+// Robin Gayle Wright
+// Thomas Sean Connery
+// Kristin Ann Scott Thomas
+// Hedy Lamarr
+// Uma Karuna Thurman
+//! Код виконаного завдання
+const myFavoriteActor = "William Bradley Pitt";
+const male = "my favorite actor's name"
+const lastCharacter = myFavoriteActor.slice(-1).toUpperCase();
+console.log(`The last letter in ${male} ${myFavoriteActor} is "${lastCharacter}" `)
 // lesson6 
 //todo ❗️❗️❗️ 6 хибних (falsy) значень, які приводять
 //todo     до false в логічному перетворенні:
@@ -631,7 +631,7 @@ console.log("Boolean(null):", Boolean(null)); //! false
 console.log("Boolean(NaN):", Boolean(NaN)); //! false 
 console.log('Boolean(""):', Boolean("")); //! false
 console.log("Boolean(false):", Boolean(false)); //! false
-console.log("Boolean(undefined):", Boolean(undefined));  false//! false
+console.log("Boolean(undefined):", Boolean(undefined)); false//! false
 console.log("---------------------------");
 console.log('Boolean("   "):', Boolean("   ")); //! true
 console.log('Boolean("123"):', Boolean("123")); //! true
@@ -668,7 +668,7 @@ console.log("----------------------------");
 
 let num = 20;
 const result1 = num > 10 && num < 30;
-true && true ;
+true && true;
 console.log("num > 10 && num < 30:", result1);  //!true
 const result2 = num > 10 && num < 10
 true && false;
@@ -985,36 +985,36 @@ console.log("---------------------------------");
 console.log(
     "%c [1] ",
     "color: yellow; background-color: #2274A5",
-  );
-  //? Hапиши скрипт входження числа <number>
-  //?  у відрізок зазначений ВІД <х1> і ДО <х2>
-  //? та виведи в консоль ЧОТИРИ варіанти
-  //? знаходження числа <number>:
-  //? - ДО <х1>
-  //? - ПІСЛЯ <х2>
-  //? - ВІД <х1> ДО <х2>
-  //? - ДО <х1> або ПІСЛЯ <х2>
-  const x1 = 10;
-  const x2 = 30;
-  const number = 15;
-  
-  //todo: var.1
-  console.log(`Число ${number} входить у відрізок ДО ${x1} `, x1 > number);
-  console.log(`Число  ${number} входить у відрізок ПІСЛЯ ${x2}? `, x2 < number);
-  console.log(`Число  ${number} входить у відрізок ВІД ${x1} ДО  ${x2}? `, number >= x1 && number <= x2);
-  console.log(`Число  ${number} входить у відрізок ДО ${x1} або ПІСЛЯ  ${x2}? `, number < x1 || number > x2 );
-  console.log("------------------------------------------------------");
-  
-  //todo: var.2
-  if ("умова") {
+);
+//? Hапиши скрипт входження числа <number>
+//?  у відрізок зазначений ВІД <х1> і ДО <х2>
+//? та виведи в консоль ЧОТИРИ варіанти
+//? знаходження числа <number>:
+//? - ДО <х1>
+//? - ПІСЛЯ <х2>
+//? - ВІД <х1> ДО <х2>
+//? - ДО <х1> або ПІСЛЯ <х2>
+const x1 = 10;
+const x2 = 30;
+const number = 15;
+
+//todo: var.1
+console.log(`Число ${number} входить у відрізок ДО ${x1} `, x1 > number);
+console.log(`Число  ${number} входить у відрізок ПІСЛЯ ${x2}? `, x2 < number);
+console.log(`Число  ${number} входить у відрізок ВІД ${x1} ДО  ${x2}? `, number >= x1 && number <= x2);
+console.log(`Число  ${number} входить у відрізок ДО ${x1} або ПІСЛЯ  ${x2}? `, number < x1 || number > x2);
+console.log("------------------------------------------------------");
+
+//todo: var.2
+if ("умова") {
     console.log(`Число <number> ...`);
-  } else if ("умова") {
+} else if ("умова") {
     console.log(`Число <number> ...`);
-  } else if ("умова") {
+} else if ("умова") {
     console.log(`Число <number> ...`);
-  } else {
+} else {
     console.log(`Число <number> НІКУДИ не входить!`);
-  }
+}
 //!lesson 10 
 //! 1.Інструкція switch
 // const valueOriginal = 50;
@@ -1040,7 +1040,7 @@ switch (valueOriginal) {
     case valueToCompare2:
         console.log("Спрацював код ДРУГОГО блока"); //! інструкції ДРУГОГО блока;
         break;
-    
+
     case valueToCompare3:
         console.log("Спрацював код ТРЕТЬОГО блока"); //! інструкції ТРЕТЬОГО блока;
         break;
@@ -1087,7 +1087,7 @@ if (true) {
     //todo: Бачимо глобальну + локальну A
     console.log("Block scope A:", global); //! global 
     console.log("Block scope A:", blockA); //! block-A
-    
+
     //todo: Змінні blockB і blockC не знайдені в доступних областях видимості.
     //todo: Буде помилка звернення до змінної.
     // console.log(blockB); //! ? error
@@ -1101,7 +1101,7 @@ if (true) {
         console.log("Block scope B:", global); //! global 
         console.log("Block scope B:", blockA); //! ? block-A
         console.log("Block scope B:", blockB); //! ?block-B
-        
+
         //todo: Змінна blockC не знайдена в доступних областях видимості.
         //todo: Буде помилка звернення до змінної.
         // console.log(blockC); //! error
@@ -1212,10 +1212,218 @@ console.log("-----------------------------------------");
 
 
 //? ПРИКЛАД:
-let password = "";
+// let password = "";
 
-do {
-    password = prompt("Введіть пароль довший 4-х символів");
-} while (password.length < 5);
+// do {
+//     password = prompt("Введіть пароль довший 4-х символів");
+// } while (password.length < 5);
 
-console.log("Ви ввели пароль: ", password);
+// console.log("Ви ввели пароль: ", password);
+
+
+//! 3.Цикл for - цикл з лічильником
+//? - цикл, в якому певна змінна змінює своє значення
+//? із заданого початкового до кінцевого значення
+//? з деяким кроком, і для кожного значення цієї змінної
+//? тіло циклу виконується один раз.
+let initialization;
+let condition;
+let postExpression;
+
+for (initialization; condition; postExpression) {
+    // statements
+}
+
+//? Алгоритм виконання циклу for:
+
+//? Ініціалізація(initialization) - виконується один раз до початку циклу.
+//? Використовується для створення змінної - лічильника
+//? і зазначення її початкового значення.
+
+//? Умова(condition) - вираз, що оцінюється
+//? перед кожною ітерацією(повторенням) циклу.
+//? Тіло циклу виконується тільки тоді,
+//? коли вираз приводиться до true.
+//? Цикл завершується, якщо значення буде false.
+
+//? Тіло(statements) - набір інструкцій для виконання на кожному повторенні.
+//? Виконується, якщо вираз умови приводиться до true.
+
+//? Пост - вираз(post - expression) - виконується в кінці
+//? кожного повторення циклу, до перевірки умови.
+//? Використовується для оновлення змінної - лічильника.
+
+//? ПРИКЛАД-1:
+for (let i = 0; i <= 20; i += 5) {
+    console.log("Лічильник, i:", i);
+};
+console.log("-----------------");
+
+//? ПРИКЛАД-2:
+const target = 3;
+let sum = 0;
+
+for (let i = 0; i <= target; i = i + 1) {
+    sum += i;
+    console.log("Тіло for, i =", i);
+    console.log("Тіло for, sum =", sum);
+    console.log(". . . . . . . . .");
+};
+
+console.log("sum:", sum);
+console.log("------------------");
+
+//? ПРИКЛАД-3:
+const max = 10;
+for (let i = 0; i < max; i += 1) {
+    console.log("i =", i);
+    console.log(`${max} % ${i} = `, max % i);
+};
+console.log("-----------------");
+
+
+//! 4.Інструкції break і continue
+
+//! Оператор break
+//? Перервати виконання циклу можна в будь-який момент. 
+//? Для цього існує оператор break, 
+//? який повністю припиняє виконання циклу 
+//? і передає управління на рядок після його тіла.
+for (let i = 0; i <= 5; i += 1) {
+    console.log("i:", i);
+
+    if (i === 3) {
+        console.log("Знайшли число 3, перериваємо виконання циклу");
+        break;
+    }
+};
+
+console.log("Лог після циклу");
+console.log("------------------");
+
+
+
+//! Оператор continue
+//? Перериває не увесь цикл, а тільки
+//? виконання поточної ітерації.
+//? Його використовують, якщо зрозуміло,
+//? що на поточній ітерації циклу більше
+//? немає що робити або взагалі не потрібно нічого робити,
+//? і час переходити до наступної ітерації.
+const number10 = 10;
+
+for (let i = 0; i < number10; i += 1) {
+    console.log("for --> i:", i);
+    if (i % 2 === 0) {
+        // console.log("if --> i:", i);
+        continue;
+    };
+
+    console.log("парне i: ", i); // 1, 3, 5, 7, 9
+    console.log(". . . . . . .");
+};
+//todo [1]
+console.log(
+    "%c [1] ",
+    "color: yellow; background-color: #2274A5",
+);
+
+//? Вивести на екран всі числа від 1 до 10 за допомогою циклу while.
+let start = 1;
+const finish = 10;
+while (start <= finish) {
+    console.log("Результат:", start)
+    start += 1;
+}
+
+//todo [2]
+console.log(
+    "%c [2] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Вивести на екран всі парні числа від 2 до 20
+//? за допомогою циклу for.
+//? Якщо число не парне, пропустити його за допомогою continue.
+const min2 = 2;
+const max20 = 20;
+for (let i = min2; i <= max20; i += 1) {
+    if (i % 2 !== 0) {
+        continue;
+    }
+    console.log("парне число:", i);
+};
+//todo [3]
+console.log(
+    "%c [3] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Вивести на екран таблицю множення числа 7 за допомогою циклу for.
+const number7 = 7;
+for(let i = 1; i <= 10; i +=1 ){
+    console.log(`${number7} * ${i} = ${number7 * i}`)
+}
+//todo [4]
+console.log(
+    "%c [4] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Створити масив з числами від 1 до 5.
+//? Вивести на екран кожен елемент масиву
+//? за допомогою циклу while.
+
+//todo [5]
+console.log(
+    "%c [5] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Створити масив із числами від 1 до 10. 
+//? За допомогою циклу for пройтися по масиву 
+//? та вивести на екран всі числа, крім числа 7. 
+//? Якщо зустрінете число 7, 
+//? закінчити виконання циклу за допомогою оператора break.
+
+console.log("---------------------------------------------");
+
+
+//todo [6]
+console.log(
+    "%c [6] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Створити скрипт, який виводить на екран всі числа, які менші за n.
+//? Якщо зустрічається число, що більше або дорівнює n,
+//? цикл повинен бути закінчений за допомогою break.
+const n = 10;
+for (let i = 0; i <= 20; i +=1){
+    if(i >= n){
+        break;
+    };
+    console.log(i)
+}
+// let t = 0;
+// while (true) {
+//     if(t >= n){
+//         break;
+//     };
+//     console.log(t);
+//     t += 1;
+// }
+//todo [7]
+//todo [7]
+console.log(
+    "%c [7] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? За допомогою циклу while вивести на екран
+//? всі числа від 1 до 20, крім чисел, кратних 3.
+//? Якщо зустрінете число, кратне 3, цикл повинен
+//? продовжити виконання за допомогою оператора continue.
+let first = 1;
+const last = 20; 
+while (first <= last){
+    if(first % 3 === 0){
+        continue;
+    };
+    console.log(first);
+    first += 1; 
+}
