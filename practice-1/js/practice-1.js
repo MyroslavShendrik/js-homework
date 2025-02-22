@@ -1422,6 +1422,7 @@ let first = 1;
 const last = 20; 
 while (first <= last){
     if(first % 3 === 0){
+        first += 1; 
         continue;
     };
     console.log(first);
