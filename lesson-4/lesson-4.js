@@ -220,43 +220,105 @@ console.log(
 let userName;
 let email;
 let password;
-// userName = prompt("Введіть ваше ім'я");
-// console.log("name:", userName);
-// if (userName === null) {
-//     console.log("❌ Введення скасовано!");
-//     alert("❌ Введення скасовано!");
-// } else if (userName.trim() === "") {
+//! var1 
+// email = prompt("Введіть  email")?.trim();
+// if (email === undefined) {
+//     console.log("❌ Ви скасували введення.");
+//     alert("❌ Ви скасували введення.");
+// } else if (email === "") {
 //     console.log("❌ Ви ввели порожній рядок або лише пробіли.");
-//     alert("❌ Ви ввели порожній рядок або лише пробіли.");
-// } else if (userName.length < 3) {
-//     console.log("❌ Ім'я має містити не менше 3 символів.");
-//     alert("❌ Ім'я має містити не менше 3 символів.");
-// } else if (!isNaN(userName)) {
-//     console.log("❌ Ім'я не може бути числом!");
-//     alert("❌ Ім'я не може бути числом!");
-// };
-email = prompt("Введіть  email")?.trim();
-if (email === undefined) {
-    console.log("❌ Ви скасували введення.");
-    alert("❌ Ви скасували введення.");
-} else if (email === "") {
-    console.log("❌ Ви ввели порожній рядок або лише пробіли.");
-    alert("❌ Ви ввели порожній рядок або лише пробіли.")
-} else if (!(email.includes("@") &&  email.includes(".") && email.length >= 5)){
- console.log("❌ email повинен мати символ '@',крапку та 5 символів.");
- alert("❌ email повинен мати символ '@',крапку та 5 символів.");
-};
-//  if (!(email.length >= 5 && email.includes("@") && email.includes(".", (email.indexOf("@") + 2)))) {
-//     alert(
-//         `
-//         E-mail повинен мати не менше 5-и символів,
-//         а також має містити символ @
-//         та крапку за символом(символами) після нього
-//         `
-//     );
-//     return;
-// };
+//     alert("❌ Ви ввели порожній рядок або лише пробіли.")
+// } else if (!(email.includes("@") && email.includes(".") && email.length >= 5)) {
+//     console.log("❌ email повинен мати символ '@',крапку та 5 символів.");
+//     alert("❌ email повинен мати символ '@',крапку та 5 символів.");
+// } else {
+//     password = prompt("Введіть  пароль")?.trim();
+//     if (password === undefined) {
+//         console.log("❌ Ви скасували введення.");
+//         alert("❌ Ви скасували введення.");
+//     } else if (password === "") {
+//         console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+//         alert("❌ Ви ввели порожній рядок або лише пробіли.")
+//     } else if (password.length <= 6) {
+//         console.log("❌ Пароль повинен містити не менше 6 символів.");
+//         alert("❌ Пароль повинен містити не менше 6 символів.");
+//     } else {
+//         let userName = prompt("Введіть ім'я")?.trim();
+//         if (userName === undefined) {
+//             console.log("❌ Ви скасували введення.");
+//             alert("❌ Ви скасували введення.");
+//         } else if (userName === "") {
+//             console.log("❌ Ви ввели порожній рядок або лише пробіли.");
+//             alert("❌ Ви ввели порожній рядок або лише пробіли.");
+//         } else if (userName.length <= 3) {
+//             console.log("❌ Ім'я повинно містити не менше 3 символів.");
+//             alert("❌ Ім'я повинно містити не менше 3 символів.");
+//         } else {
+//             console.log("Ім'я:", userName);
+//             console.log("Email:", email);
+//             console.log("Пароль:", password);
+//         }
+//     }
+// }
+//! var2 
+while (true) {
+    email = prompt("Введіть email")?.trim();
+    if (email === undefined) {
+        console.log("❌ Ви скасували введення.");
+        alert("❌ Ви скасували введення.");
+        continue;
+    } else if (email === "") {
+        console.log("❌ Ви ввели порожній рядок.");
+        alert("❌ Ви ввели порожній рядок.");
+        continue;
+    } else if (!(email.includes("@") && email.includes(".") && email.length >= 5)) {
+        console.log("❌ Email повинен містити символ '@', крапку та мінімум 5 символів.");
+        alert("❌ Email повинен містити символ '@', крапку та мінімум 5 символів.");
+        continue;
+    }
+    break;
+}
 
-// password = prompt("Введіть  email")?.trim();
- console.log("---------------------------------------------");
+while (true) {
+    password = prompt("Введіть пароль")?.trim();
+    if (password === undefined) {
+        console.log("❌ Ви скасували введення.");
+        alert("❌ Ви скасували введення.");
+        continue;
+    } else if (password === "") {
+        console.log("❌ Ви ввели порожній рядок.");
+        alert("❌ Ви ввели порожній рядок.");
+        continue;
+    } else if (password.length < 6) {
+        console.log("❌ Пароль повинен містити не менше 6 символів.");
+        alert("❌ Пароль повинен містити не менше 6 символів.");
+        continue;
+    }
+    break;
+}
+
+while (true) {
+    userName = prompt("Введіть ім'я")?.trim();
+    if (userName === undefined) {
+        console.log("❌ Ви скасували введення.");
+        alert("❌ Ви скасували введення.");
+        continue;
+    } else if (userName === "") {
+        console.log("❌ Ви ввели порожній рядок.");
+        alert("❌ Ви ввели порожній рядок.");
+        continue;
+    } else if (userName.length < 3) {
+        console.log("❌ Ім'я повинно містити не менше 3 символів.");
+        alert("❌ Ім'я повинно містити не менше 3 символів.");
+        continue;
+    }
+    break;
+}
+
+console.log("Ім'я:", userName);
+console.log("Email:", email);
+console.log("Пароль:", password);
+
+
+console.log("---------------------------------------------");
 
