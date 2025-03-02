@@ -237,8 +237,9 @@ console.log(
 );
 //! Код виконаного завдання
 for (let i = 0; i < array.length ; i += 1){
-    console.log(`array: ${array[i]}`);
+    console.log(`index: ${i} array: ${array[i]}`);
 };
+console.log("array:", array);
 console.log("-------------------------------------------");
 
 //? 2-2.Додати до 2-го(другого) та 3-го(третього)
@@ -250,6 +251,13 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+for ( let i = 0; i < array.length; i++){
+    if(i === 1 || i === 2){
+       array[i] += 1;
+       console.log(`array[1] ${array[i]}`) 
+    };
+};
+console.log("array:", array);
 console.log("-------------------------------------------");
 
 //? 2-3.Вивести в консоль значення кожного
@@ -259,6 +267,11 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+let index = 0;
+for (let item of array){
+    console.log(`index: ${index} item ${item}`);
+    index += 1; 
+}
 console.log("-------------------------------------------");
 
 //? 2-4.Знайти ПЕРШЕ ЧИСЛОВЕ значення
@@ -270,6 +283,12 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+for (let item of array){
+    if ( typeof item === "number"){
+        console.log(`item: ${item}`)
+        break;
+    };
+};
 console.log("-------------------------------------------");
 
 //? 2-5.Знайти ПЕРШЕ РЯДКОВЕ значення
@@ -281,6 +300,13 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+for (let item of array){
+    if ( typeof item === "string"){
+        console.log(`item: ${item}`)
+        break;
+    };
+};
+console
 console.log("-------------------------------------------");
 
 //? 2-6.Знайти ВСІ ЧИСЛОВІ значення
@@ -292,6 +318,12 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+for (let item of array){
+    if (typeof item !== "number") {
+        continue;
+    }
+    console.log(`item: ${item}`)
+}
 console.log("-------------------------------------------");
 
 //? 2-7.Знайти ВСІ РЯДКОВІ значення
@@ -303,11 +335,17 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+for (let item of array){
+    if (typeof item !== "string") {
+        continue;
+    }
+    console.log(`item: ${item}`)
+}
 console.log("-------------------------------------------");
 
 //? 2-8.Знайти ВСІ тільки ЧИСЛОВІ значення
 //? елемента масиву [array] за допомогою цикла for...of,
-//? змінити їх ти на рядковий та додати 1.
+//? змінити їх тип на рядковий та додати 1.
 //? Вивести ВСІ значення масиву [array] в консоль,
 //? використовуючи оператор continue.
 //? Вивести в консоль значення масиву [array].
@@ -316,9 +354,30 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
+console.log("arrayBefore:", array);
+for (let item of array){
+    if( typeof item === "number"){
+        String(item) + 1 ;
+        console.log(`item: ${item}`)
+        continue;
+    }
+};
+console.log("arrayAfter:", array);
 console.log("-------------------------------------------");
 
-
+//? 2-9.Знайти ВСІ тільки ЧИСЛОВІ значення
+//? елемента масиву [array] за допомогою цикла for,
+//? змінити їх тип на рядковий та додати 1.
+//? Вивести ВСІ значення масиву [array] в консоль,
+//? використовуючи оператор continue.
+//? Вивести в консоль значення масиву [array].
+console.log(
+    "%c [2-9] ",
+    "color: #2274A5; background-color: yellow",
+  );
+  //! Код виконаного завдання
+  console.log("-----------------------------------------------------");
+  
 
 
 
