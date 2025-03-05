@@ -7,10 +7,10 @@ console.log(
 //? Створити масив з трьох чисел.
 //? Змінити значення другого елемента масиву на 10.
 //! Код виконаного завдання
-const arr1 = [3, 6, 9];
-console.log("arr1:", arr1);
-arr1[1] = 10;
-console.log("arr1:", arr1);
+const array1 = [3, 6, 9];
+console.log("array1:", array1);
+array1[1] = 10;
+console.log("array1:", array1);
 console.log("---------------------------------------------");
 
 
@@ -23,12 +23,10 @@ console.log(
 //? Створити масив із трьох рядків.
 //? Додати до масиву ще одну рядків.
 //! Код виконаного завдання
-const arr2 = ["Рядок-1", "Рядок-2", "Рядок-3"];
-console.log("arr2:", arr2);
-// arr2[3] = "Рядок-4"; //todo: var.1
-// arr2[arr2.length] = "Рядок-4"; //todo: var.2
-arr2.push("Рядок-4"); //todo: var.3
-console.log("arr2:", arr2);
+const array2 = ["Рядок1", "Рядок2", "Рядок3"];
+console.log("array1:", array2);
+array2[3] = "Рядок-4"; 
+console.log("array1:", array2);
 console.log("---------------------------------------------");
 
 
@@ -40,16 +38,12 @@ console.log(
 );
 //? Створити скрипт який поверне суму всіх чисел в масиві.
 //! Код виконаного завдання
-const arr3 = [1, 2, 3, 4, 5];
-console.log("arr3:", arr3);
+const array3 = [1, 2, 3, 4, 5];
+console.log("array3:", array3);
 let total = 0;
-//todo: var.1 (for)
-// for (let item of arr3) {
-//     total += item;
-// };
-
-//todo: var.2 (reduce)
-total = arr3.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+ for (let item of array3) {
+     total += item;
+};
 
 console.log("total:", total);
 console.log("---------------------------------------------");
@@ -65,10 +59,10 @@ console.log(
 //? Вивести на екран всі елементи масиву 
 //? за допомогою циклу for.
 //! Код виконаного завдання
-const arr4 = [8, 13, 21, 34, 55];
-console.log("arr4:", arr4);
-for (let i = 0; i < arr4.length; i += 1) {
-    console.log(`arr4[${i}] :`, arr4[i]);
+const array4 = [3, 23, 11, 45, 56];
+console.log("array4:", array4);
+for (let i = 0; i < array4.length; i += 1) {
+    console.log(`array4[${i}] :`, array4[i]);
 };
 console.log("---------------------------------------------");
 
@@ -83,24 +77,15 @@ console.log(
 //? Вивести на екран кожен рядок з масиву,
 //? який містить більше 5-ти символів.
 //! Код виконаного завдання
-const arr5 = ["first", "second", "third", "fourth", "fifth"];
-console.log("arr5:", arr5);
-//todo: var.1
-for (let i = 0; i < arr5.length; i += 1) {
-    if (arr5[i].length <= 5) {
+const array5 = ["first", "second", "third", "fourth", "fifth"];
+console.log("array5:", array5);
+for (let i = 0; i < array5.length; i += 1) {
+    if (array5[i].length <= 5) {
         continue;
     };
-    console.log(`var.1 -> arr5[${i}] має більше 5-ти символів:`, arr5[i]);
+    console.log(` array5[${i}] 5-ти символів:`, array5[i]);
 };
 console.log(". . . . . . . . . . . . . . . . . . . . . . . . .");
-
-//todo: var.2
-for (let i = 0; i < arr5.length; i += 1) {
-    if (arr5[i].length > 5) {
-        console.log(`var.2 -> arr5[${i}] має більше 5-ти символів:`, arr5[i]);
-    };
-    
-};
 console.log("---------------------------------------------");
 
 
@@ -114,21 +99,19 @@ console.log(
 //? Знайти та вивести на екран 
 //? максимальне значення з масиву.
 //! Код виконаного завдання
-const arr6 = [5, 89, 55, 2, 3, 144, 34, 8, 21, 13];
-console.log("arr6:", arr6);
+const array6 = [3, 59, 35, 4, 2, 124, 44, 9, 23, 33];
+console.log("arr6:", array6);
 let biggestNum;
-//todo: var.1 (for)
-// biggestNum = arr6[0];
-// for (let i = 0; i < arr6.length; i += 1) {
-//     if (arr6[i] > biggestNum) {
-//         biggestNum = arr6[i];
-//     };
-// };
 
-//todo: var.2 (Math.max)
-biggestNum = Math.max(...arr6); 
+biggestNum = array6[0];
+for (let i = 0; i < array6.length; i += 1) {
+     if (array6[i] > biggestNum) {
+         biggestNum = array6[i];
+     };
+ };
 
-console.log("Найбільше число, <biggestNum>:", biggestNum);
+
+console.log("Найбільше число:", biggestNum);
 console.log("---------------------------------------------");
 
 
@@ -141,10 +124,10 @@ console.log("---------------------------------------------");
     //? Знайти всі парні числа в масиві 
     //? та вивести їх на екран.
     //! Код виконаного завдання
-    const arr7 = [2, 21, 34, 89, 144, 377, 610, 1597, 2584, 6765];
-    console.log("arr7:", arr7);
+    const array7 = [4, 11, 44, 189, 44, 277, 420, 1597, 1584, 376];
+    console.log("array7:", array7);
     let totalNum = 0;
-    for (const item of arr7) {
+    for (const item of array7) {
         if (item % 2 === 0) {
             console.log(`Число ${item} парне`);
             totalNum += item;
