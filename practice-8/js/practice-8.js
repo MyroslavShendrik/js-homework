@@ -355,13 +355,20 @@ console.log(
 );
 //! Код виконаного завдання
 console.log("arrayBefore:", array);
-for (let item of array){
-    if( typeof item === "number"){
-        String(item) + 1 ;
-        console.log(`item: ${item}`)
-        continue;
+
+for (let item of array) {
+    if (typeof item === "number") {
+        array[index] = String(item + 1);
     }
-};
+    index++;
+}
+
+for (let item of array) {
+    console.log(`item: ${item}`);
+    continue;
+}
+
+
 console.log("arrayAfter:", array);
 console.log("-------------------------------------------");
 
@@ -376,6 +383,15 @@ console.log(
     "color: #2274A5; background-color: yellow",
   );
   //! Код виконаного завдання
+for (let i = 0; i < array.length; i+= 1) {
+    if (typeof array[i] === "number") {
+        array[i] = String(array[i] + 1);
+    }
+    console.log(array[i]);
+    continue;
+}
+
+console.log("Оновлений масив:", array);
   console.log("-----------------------------------------------------");
   
 
