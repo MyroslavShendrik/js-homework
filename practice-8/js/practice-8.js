@@ -202,8 +202,8 @@ console.log(
 //! Код виконаного завдання
 array[1] += 1;
 array[2] += 1;
-console.log("array[1]:",array[1] )
-console.log("array[2]:",array[2])
+console.log("array[1]:", array[1])
+console.log("array[2]:", array[2])
 console.log("array:", array);
 console.log("-------------------------------------------");
 
@@ -225,8 +225,8 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-console.log("array.length - 1 :", array.length- 1);
-console.log("array[[array.length- 1]:", array[array.length- 1])
+console.log("array.length - 1 :", array.length - 1);
+console.log("array[[array.length- 1]:", array[array.length - 1])
 console.log("-------------------------------------------");
 
 //? 2-1.Вивести в консоль значення кожного
@@ -236,7 +236,7 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for (let i = 0; i < array.length ; i += 1){
+for (let i = 0; i < array.length; i += 1) {
     console.log(`index: ${i} array: ${array[i]}`);
 };
 console.log("array:", array);
@@ -251,10 +251,10 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for ( let i = 0; i < array.length; i++){
-    if(i === 1 || i === 2){
-       array[i] += 1;
-       console.log(`array[1] ${array[i]}`) 
+for (let i = 0; i < array.length; i++) {
+    if (i === 1 || i === 2) {
+        array[i] += 1;
+        console.log(`array[1] ${array[i]}`)
     };
 };
 console.log("array:", array);
@@ -268,9 +268,9 @@ console.log(
 );
 //! Код виконаного завдання
 let index = 0;
-for (let item of array){
+for (let item of array) {
     console.log(`index: ${index} item ${item}`);
-    index += 1; 
+    index += 1;
 }
 console.log("-------------------------------------------");
 
@@ -283,8 +283,8 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for (let item of array){
-    if ( typeof item === "number"){
+for (let item of array) {
+    if (typeof item === "number") {
         console.log(`item: ${item}`)
         break;
     };
@@ -300,8 +300,8 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for (let item of array){
-    if ( typeof item === "string"){
+for (let item of array) {
+    if (typeof item === "string") {
         console.log(`item: ${item}`)
         break;
     };
@@ -318,7 +318,7 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for (let item of array){
+for (let item of array) {
     if (typeof item !== "number") {
         continue;
     }
@@ -335,7 +335,7 @@ console.log(
     "color: #2274A5; background-color: yellow",
 );
 //! Код виконаного завдання
-for (let item of array){
+for (let item of array) {
     if (typeof item !== "string") {
         continue;
     }
@@ -358,16 +358,12 @@ console.log("arrayBefore:", array);
 
 for (let item of array) {
     if (typeof item === "number") {
-        array[index] = String(item + 1);
-    }
-    index++;
-}
-
-for (let item of array) {
-    console.log(`item: ${item}`);
-    continue;
-}
-
+        item = String(item) + 1;
+        console.log("item:", item);
+        continue;
+    };
+    console.log("item:", item);
+};
 
 console.log("arrayAfter:", array);
 console.log("-------------------------------------------");
@@ -380,20 +376,21 @@ console.log("-------------------------------------------");
 //? Вивести в консоль значення масиву [array].
 console.log(
     "%c [2-9] ",
-    "color: #2274A5; background-color: yellow",
-  );
-  //! Код виконаного завдання
-for (let i = 0; i < array.length; i+= 1) {
+    "color:rgb(18, 107, 158); background-color: yellow",
+);
+//! Код виконаного завдання
+console.log("старий масив:", array);
+for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] === "number") {
-        array[i] = String(array[i] + 1);
-    }
-    console.log(array[i]);
-    continue;
-}
-
+        array[i] = String(array[i]) + 1;
+        console.log(`array[${i}]:`, array[i]);
+        continue;
+    };
+    console.log(`array[${i}]:`, array[i]);
+};
 console.log("Оновлений масив:", array);
-  console.log("-----------------------------------------------------");
-  
+console.log("-----------------------------------------------------");
+
 
 
 
