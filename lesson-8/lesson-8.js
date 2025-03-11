@@ -19,11 +19,14 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . . .");
 //todo: var.1 - через for
 console.warn("var.1 - через for");
 //! Код виконаного завдання
-
+for(let i = 0; i < friends.length; i += 1){
+    string += friends[i] + ',';
+}
+console.log("Результат через for():", string);
 //todo: var.2 - через join()
 console.warn("var.2 - через join()");
 //! Код виконаного завдання
-string = friends.join(", ");
+string = friends.join(",");
 console.log("Результат через join():", string);
 console.log("--------------------------------------------------");
 
@@ -41,7 +44,14 @@ console.log(
 //? Можна використовувати будь-які з вивчених методів,
 //? наприклад, рush(), splice(), concat() або інші методи
 //! Код виконаного завдання
-
+let cards = [];
+// cards.push('Картка-1', 'Картка-2', 'Картка-3', 'Картка-4', 'Картка-5')
+const n = 20;
+for(let i = 1;i <= n; i += 1){
+//    cards.push(`Картка-${i}`);
+ cards = cards.concat([`Картка-${i}`]);
+};
+console.log("масив карток:", cards);
 console.log("---------------------------------------------");
 
 
