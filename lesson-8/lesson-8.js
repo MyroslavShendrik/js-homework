@@ -19,7 +19,7 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . . .");
 //todo: var.1 - через for
 console.warn("var.1 - через for");
 //! Код виконаного завдання
-for(let i = 0; i < friends.length; i += 1){
+for (let i = 0; i < friends.length; i += 1) {
     string += friends[i] + ',';
 }
 console.log("Результат через for():", string);
@@ -47,9 +47,9 @@ console.log(
 let cards = [];
 // cards.push('Картка-1', 'Картка-2', 'Картка-3', 'Картка-4', 'Картка-5')
 const n = 20;
-for(let i = 1;i <= n; i += 1){
-//    cards.push(`Картка-${i}`);
- cards = cards.concat([`Картка-${i}`]);
+for (let i = 1; i <= n; i += 1) {
+    //    cards.push(`Картка-${i}`);
+    cards = cards.concat([`Картка-${i}`]);
 };
 console.log("масив карток:", cards);
 console.log("---------------------------------------------");
@@ -66,7 +66,12 @@ console.log(
 const cardToRemove = 'Картка-3';
 //? та видали її з існуючого вже масив [cards] за допомогою метода масиву.
 //! Код виконаного завдання
-
+const cards1 = ['Картка-1', 'Картка-2', 'Картка-3', 'Картка-4'];
+const index = cards.indexOf(cardToRemove);
+if (index !== -1) {
+    cards1.splice(index, 1);
+}
+console.log("cards1:", cards1);
 console.log("---------------------------------------------");
 
 
@@ -82,7 +87,9 @@ const cardToInsert = 'Картка-6';
 //? в кінець існуючого вже масиву [cards]
 //?  за допомогою будь-якого метода масиву.
 //! Код виконаного завдання
-
+const cards2 = ['Картка-1', 'Картка-2', 'Картка-3', 'Картка-4', 'Картка-5'];
+cards2.push(cardToInsert);
+console.log("cards2:", cards2);
 console.log("---------------------------------------------");
 
 
@@ -98,5 +105,13 @@ const cardToUpdate = 'Картка-4';
 //? Потім онови її, змінивши на таку картку:
 const cardUpdate = 'Картка-4_new';
 //! Код виконаного завдання
+const cards3 = ['Картка-1', 'Картка-2', 'Картка-3', 'Картка-4'];
 
+const index1 = cards3.indexOf(cardToUpdate);
+if (index !== -1) {
+
+    cards3[index1] = cardUpdate;
+}
+
+console.log("cards3:", cards3);
 console.log("---------------------------------------------");
