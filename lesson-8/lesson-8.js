@@ -46,7 +46,7 @@ console.log(
 //! Код виконаного завдання
 let cards = [];
 // cards.push('Картка-1', 'Картка-2', 'Картка-3', 'Картка-4', 'Картка-5')
-const n = 20;
+const n = 5;
 for (let i = 1; i <= n; i += 1) {
     //    cards.push(`Картка-${i}`);
     cards = cards.concat([`Картка-${i}`]);
@@ -110,7 +110,8 @@ const cards3 = ['Картка-1', 'Картка-2', 'Картка-3', 'Карт�
 const index1 = cards3.indexOf(cardToUpdate);
 if (index !== -1) {
 
-    cards3[index1] = cardUpdate;
+    // cards3[index1] = cardUpdate;
+    
 }
 
 console.log("cards3:", cards3);
