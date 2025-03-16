@@ -95,3 +95,14 @@ console.log("`  `  `  `  `");
 
 console.log(makingСoffee2("7 грам", " 30 мілілітрів")); //todo: ▶️,✅ Викликає функцію та виводить її результат ("Кава").
 console.log("--------------------------------------------------------------------------");
+
+const makingOmelet = function (eggs, milk, salt) {
+    console.log("Розбиваю яйця:", eggs);
+    console.log("Додаю молоко:", milk);
+    console.log("Додаю сіль:", salt);
+    console.log("Збиваю вск");
+    console.log("Смажу омлет...");
+    const omelet = eggs+milk+salt;
+    return omelet;
+}
+console.log(makingOmelet(3, "50 мл", "дрібка"));
