@@ -105,12 +105,13 @@ const cardToUpdate = 'Картка-4';
 //? Потім онови її, змінивши на таку картку:
 const cardUpdate = 'Картка-4_new';
 //! Код виконаного завдання
-const cards3 = ['Картка-1', 'Картка-2', 'Картка-3', 'Картка-4'];
+const cards3 = ['Картка-1', 'Картка-2', 'Картка-3', 'Картка-4', 'Картка-5',];
 
 const index1 = cards3.indexOf(cardToUpdate);
-if (index !== -1) {
-
+console.log("index1:", index1 )
+if (index1 !== -1) {
     // cards3[index1] = cardUpdate;
+    cards3.splice(index1, 1 , cardUpdate);
     
 }
 
