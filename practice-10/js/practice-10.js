@@ -291,8 +291,14 @@ console.log("return total --> multiply(1, 2, 3, 4):", multiply(1, 2, 3, 4)); //!
 console.log("----------------------------------------------");
 console.log("return total --> multiply(1, 2, 3, 4, 5):", multiply(1, 2, 3, 4, 5)); //!  120
 console.log("----------------------------------------------");
+function func1(a, b, c){
+    console.log(arguments);
+    console.log(typeof arguments);
+    console.log(arguments.length);
+    console.log(arguments[0].toString())
+}
 
-
+func1(1,2,3);
 //! Перетворення псевдомасиву
 //? Зазвичай псевдомасив необхідно перетворити
 //? у повноцінний масив, оскільки у псевдомасиву
@@ -305,10 +311,12 @@ console.warn("Перетворення псевдомасиву методом A
 const fnArray = function () {
     //todo: Змінна argsArray буде містити повноцінний масив
     const argsArray = Array.from(arguments);
-    console.log("argsArray:", argsArray);
+    console.log("argsArray:", argsArray);   
+    console.log(argsArray.push("2"))
+    console.log(argsArray)
+    // console.log(arguments.push("2"))
     return argsArray;
 };
-
 fnArray(10, 20, 30, 40, 50); //! [10, 20, 30, 40, 50]
 console.log("return argsArray --> fnArray(10, 20, 30, 40, 50):", fnArray(10, 20, 30, 40, 50)); //! [10, 20, 30, 40, 50]
 console.log("-------------------------------------------------------------------------------------------------------");
@@ -326,10 +334,10 @@ console.warn("Перетворення псевдомасиву операціє
 //? будь-яку кількість елементів, у нашому випадку аргументів,
 //? в масив, і зберегти його в змінну.
 //? Збираємо всі аргументи, використовуючи операцію rest безпосередньо в підписі функції.
-const fnRest = function (...argsRest) {
+const fnRest = function (...a) {
     //todo: Змінна argsRest буде містити повноцінний масив
-    console.log("argsRest:", argsRest);
-    return argsRest;
+    console.log("argsRest:", a);
+    return a;
 };
 
 fnRest(10, 20, 30, 40, 50); //! [10, 20, 30, 40, 50]
@@ -341,7 +349,7 @@ console.log("-------------------------------------------------------------------
 fnRest(true, false, null, undefined); //! [true, false, null, undefined]
 console.log("return argsRest --> fnRest(true, false, null, undefined):", fnRest(true, false, null, undefined)); //! [true, false, null, undefined]
 console.log("-------------------------------------------------------------------------------------------------------");
-
+//! 4.Патерн «Раннє повернення» (Guard Clause)
 console.warn("Функція, яка обробляє зняття коштів за допомогою if...else:");
 //? Створимо функцію, яка обробляє зняття коштів 
 //? з особистого рахунку в банку. 
@@ -361,8 +369,8 @@ const withdraw1 = function (amount, balance) {
 };
 
 withdraw1(0, 300); //! "Для проведення операції введіть суму більшу за нуль"
-withdraw1(500, 300); //! "Недостатньо коштів на рахунку"
-withdraw1(100, 300); //! "Операція зняття коштів проведена успішно"
+// withdraw1(500, 300); //! "Недостатньо коштів на рахунку"
+// withdraw1(100, 300); //! "Операція зняття коштів проведена успішно"
 console.log("----------------------------------------------------------");
 
 
@@ -382,7 +390,7 @@ const withdraw2 = function (amount, balance) {
         console.log("0️⃣0️⃣ Для проведення операції введіть суму більшу за нуль");
         console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
         return;
-    };
+    }; 
     //todo:  Якщо умова першого if не виконалась, його тіло пропускається
     //todo:  та інтерпретатор доходе до другого if.
     //todo:  Якщо умова виконується, викликається console.log і вихід із функції.
