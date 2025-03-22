@@ -87,7 +87,15 @@ console.log(
 //? з індексом 0 буде виведено '1 - Mango', 
 //? а для індексу 2 виведе '3 - Ajax'.
 //! Код виконаного завдання
+const array2 = ['Mango', 'Poly', 'Ajax'];
 
+function logItems(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(i + 1 + ' - ' + array[i]);
+  }
+}
+logItems(array2);
+  
 console.log("--------------------------------------------------");
 
 
@@ -104,6 +112,13 @@ console.log(
 //? і повертає ціну гравірування всіх слів в рядку.
 //! Код виконаного завдання
 
+function calculateEngravingPrice(message, pricePerWord) {
+    let letters = message.split(" ");
+    return letters.length * pricePerWord;
+  }
+  
+  console.log(calculateEngravingPrice("I love you Mom", 100));
+  
 console.log("--------------------------------------------------");
 
 
