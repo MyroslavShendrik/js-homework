@@ -425,7 +425,7 @@ fnDeclaration(); //todo✅: виклик  функції (function declaration) 
 function fnDeclaration() {
     console.log("Це функція 'fnDeclaration'");
 };
-fnDeclaration(); //todo✅: виклик  функції (function declaration) ПІСЛЯ її створення
+// fnDeclaration(); //todo✅: виклик  функції (function declaration) ПІСЛЯ її створення
 console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . ");
 
 console.warn("Створення ти виклики функції (function expression):");
@@ -439,3 +439,203 @@ const fnExpression = function () {
 };
 fnExpression(); //todo✅: виклик  функції (function expression) ПІСЛЯ її створення
 console.log("-----------------------------------------------------");
+
+
+console.log(
+    '%c 6.Область видимості.                     \n   Область видимості функції.             \n   Пошук за ланцюжком областей видимості. ',
+    'color: white; background-color: #D33F49',
+);
+
+//! Область видимості
+console.warn("Область видимості:");
+//todo: Область видимості (scope)
+//? — це незалежна від мови концепція,
+//? яка описує доступність змінних у виконуваному коді.
+
+//todo: Scope chain (ланцюжок областей видимості)
+//? - області видимості утворюють ієрархію,
+//? так що дочірні області мають доступ до змінних
+//? з батьківських областей, але не навпаки.
+
+//todo: Існує ДВІ області видимості:
+//?    1. Г Л О Б А Л Ь Н А
+//? - область видимості де знаходяться змінні,
+//? оголошені на самому верхньому рівні,
+//? тобто поза будь-яких конструкцій
+//? на зразок if, while, for і функцій.
+
+//?    2. Б Л О К О В А
+//? - область видимості де знаходяться змінні,
+//? оголошені всередині інструкцій
+//? if, for, функцій та інших блоків коду,
+//? взятих у фігурні дужки {},
+//? знаходяться в блоковій області видимості
+//? і доступні тільки всередині цього блоку коду
+//? або у блоках, вкладених в нього.
+const globalValue = 100;
+console.log("Global --> globalValue:", globalValue); //! 100
+console.log(". .  . . . .  . . . . . . .");
+
+const func = function() {
+    console.log("func --> globalValue:", globalValue); //! 100
+    const funcValue = 20;
+    console.log("func --> funcValue:", funcValue); //! 20
+    // console.log("func --> forValue:", forValue); //! Uncaught ReferenceError: funcValue is not defined
+    // console.log("func --> ifValue:", ifValue); //! Uncaught ReferenceError: funcValue is not defined
+};
+func();
+console.log(". .  . . . .  . . . . . . .");
+
+for (let i = 0; i < 3; i++) {
+    console.log("i:", i); 
+    console.log("for --> globalValue:", globalValue); //! 100
+    const forValue = 30;
+    console.log("for --> forValue:", forValue); //! 30
+    // console.log("for --> funcValue:", funcValue); //! Uncaught ReferenceError: funcValue is not defined
+    // console.log("for --> ifValue:", ifValue); //! Uncaught ReferenceError: funcValue is not defined
+    console.log(". .  . . . .  . . . . . . .");
+
+    if (i === 2) {
+        console.log("if --> globalValue:", globalValue); //! 100
+        const ifValue = 40;
+        console.log("if --> ifValue:", ifValue); //! 40
+        console.log("if --> forValue:", forValue); //! 30
+        // console.log("if --> funcValue:", funcValue); //! Uncaught ReferenceError: funcValue is not defined
+        console.log(". .  . . . .  . . . . . . .");
+    };
+};
+console.log("----------------------------------------");
+
+
+//! Область видимості функції
+console.warn("Область видимості функції:");
+//? Функції створюють власну локальну область видимості. 
+//? Змінні, створені всередині функції, включаючи 
+//? параметри, локальні всередині цієї функції 
+//? і не доступні коду із зовні. 
+//? Локальні змінні будуть створюватися кожен раз 
+//? при виконанні функції, і їх окремі інкарнації 
+//? ніяк один з одним не пов'язані.
+const value = 100;
+console.log("Global --> value:", value); //! 100
+console.log(". .  . . . .  . . . . . . . . . .");
+
+const fooNew = function () {
+    // console.log("1.fooNew --> value:", value); //! 100
+    const value = 50;
+    console.log("2.fooNew --> value:", value); //! 50
+    const functionNewValue = 70;
+    console.log("3.fooNew --> functionNewValue:", functionNewValue); //! 70
+};
+fooNew();
+console.log(". .  . . . .  . . . . . . . . . .");
+
+console.log("Global --> value:", value); //! 100
+// console.log("Global --> functionNewValue:", functionNewValue); //! Uncaught ReferenceError: functionNewValue is not defined
+console.log("----------------------------------------");
+
+
+//! Пошук за ланцюжком областей видимості
+console.warn("Пошук за ланцюжком областей видимості: \n https://ruslan379.github.io/course-fe-html-css/lesson-FE3_09/images/scope-chain-search.png");
+//? Інтерпретатор намагається спочатку знайти змінну 
+//? в тій області видимості, в якій до неї звернулися. 
+//? Якщо така змінна у локальній області видимості - відсутня, 
+//? то він виходить назовні, на один рівень за одну спробу, 
+//? доки не знайде значення або не дійде до 
+//? найвищої області видимості (глобальної) і зрозуміє, 
+//? що змінну з таким ідентифікатором неможливо знайти, 
+//? тому що її просто не існує, у такому випадку виникне помилка того, 
+//? що змінна не оголошена.
+const a1 = 10;
+
+const foo1 = function() {
+    const b = 20;
+
+    for (let i = 0; i < 5; i++) {
+        const c = 30;
+
+        if (i === 3) {
+            const d = 40;
+            console.log("if --> a:", a1); //! 10
+            console.log("if --> b:", b); //! 20
+            console.log("if --> c:", c); //! 30
+            console.log("if --> d:", d); //! 40
+        };
+    };
+};
+foo1();
+console.log("----------------------------------------");
+
+console.log(
+    '%c 7.Hoisting (Підняття змінних) ',
+    'color: white; background-color: #D33F49',
+);
+
+//! 7.Hoisting (Підняття змінних)
+//? У мовах програмування, в тому числі в JavaScript, код виконується у дві фази:
+
+//! Фаза компіляції
+console.warn("Фаза компіляції, інтерпретації або оцінки (compile time, evaluation time):");
+//? Фаза компіляції, інтерпретації
+//? або оцінки (compile time, evaluation time)
+//? - підготовка перед виконанням коду,
+//? перевірка валідності синтаксису вихідного коду.
+console.log('Цього повідомлення не буде в консолі.');
+// cons valueOne = 5; //! ❌ ПОМИЛКА компіляції!
+console.log(". . . . . . . . . . . . . . . . . . .");
+
+//! Фаза виконання
+//? Фаза виконання (runtime) - скрипт починає виконуватися,
+//? виконуються інструкції викликів функцій і оцінки виразів,
+//? відбувається пошук необхідних ідентифікаторів
+//? у відповідних областях видимості тощо.
+
+//! Підняття змінних (hoisting)
+console.warn("Підняття змінних (hoisting) з var:");
+//? - це механізм інтерпретатора, який,
+//? ДО фази виконання коду,
+//? підіймає оголошення змінних
+//? в початок області видимості (блочної або функції)
+//? в якій вони були оголошені.
+//todo: Саме тому працює function declaration
+//todo: і так дивно поводяться змінні,
+//todo: оголошені використовуючи var
+//todo: - їх оголошення підіймаються
+//todo: в початок області видимості функції
+//todo: в якій вони були оголошені.
+console.log("Global-1 --> valueVar:", valueVar); //! undefined
+valueVar = 5;
+console.log("Global-2 --> valueVar:", valueVar); //! 5
+
+if (true) {
+    console.log("if-1 --> valueVar:", valueVar); //! 5
+    var valueVar = 10;
+    console.log("if-2 --> valueVar:", valueVar); //! 10
+};
+
+valueVar = 15;
+console.log("Global-3 -->valueVar:", valueVar); //! 15
+console.log(". . . . . . . . . . . . . . . . . . .");
+
+
+//! Ось тому ми використовуємо let або const
+console.warn("Підняття змінних (hoisting) з let або const:");
+//? Змінні оголошені використовуючи let або const
+//? так само підіймаються, але при цьому
+//? підкоряються блочні області видимості,
+//? нічим не ініціалізуются за замовчуванням
+//? і не доступні для звернення
+//? до того місця в коді де були оголошені в коді.
+//todo У кожній області видимості буде створена своя, незалежна змінна value:
+// console.log("Global-1 --> value:", value); //! ❌ ПОМИЛКА інтерпретатора: ReferenceError: value is not defined
+const value1 = 5;
+console.log("Global-2 --> value:", value1); //! 5
+
+if (true) {
+    // console.log("if-1 --> value:", value1); //! ❌ ПОМИЛКА інтерпретатора: ReferenceError: value is not defined
+    const value1 = 10;
+    console.log("if-2 --> value:", value1); //! 10
+};
+
+console.log("Global-3 --> value:", value1); //! 5
+console.log("----------------------------------------------");

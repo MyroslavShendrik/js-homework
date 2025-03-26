@@ -45,16 +45,15 @@ console.log(
 //! Код виконаного завдання
 
 const logins = ["Mipkol", "Mipkolim"];
-
-function isLoginValid(login) {
+ const isLoginValid = function(login) {
     return login.length >= 4 && login.length <= 16;
 }
 
-function isLoginUnique(allLogins, login) {
+const isLoginUnique = function(allLogins, login) {
     return !allLogins.includes(login);
 }
 
-function addLogin(allLogins, login) {
+const addLogin = function(allLogins, login) {
     if (!isLoginValid(login)) {
         return 'Логін повинен бути від 4 до 16 символів';
     }
@@ -69,7 +68,31 @@ function addLogin(allLogins, login) {
 console.log(addLogin(logins, "Maxs"));
 console.log(addLogin(logins, "Mipkol")); 
 console.log(addLogin(logins, "Alg"));  
-console.log(addLogin(logins, "4343434343434343434343434343434343434"));  
+console.log(addLogin(logins, "4343434343434343434343434343434343434")); 
+console.log("-------------------------------------------------");
+const logins2 = ["Mipkol", "Mipkolim"];
+console.log(addLogin2(logins2, "Maxs"));
+function isLoginValid2(login2) {
+    return login2.length >= 4 && login2.length <= 16;
+}
+
+function isLoginUnique2(allLogins2, login2) {
+    return !allLogins2.includes(login2);
+}
+
+function addLogin2(allLogins2, login2) {
+    if (!isLoginValid2(login2)) {
+        return 'Логін повинен бути від 4 до 16 символів';
+    }
+    
+    if (!isLoginUnique2(allLogins2, login2)) {
+        return 'Такий логін вже є';
+    }
+    
+    allLogins2.push(login2);
+    return 'Логін успішно доданий';
+}
+
 
 //todo [1]
 console.log(
@@ -111,14 +134,32 @@ console.log(
 //? і ціну гравірування одного слова, 
 //? і повертає ціну гравірування всіх слів в рядку.
 //! Код виконаного завдання
-
+//!var1
 function calculateEngravingPrice(message, pricePerWord) {
     let letters = message.split(" ");
     return letters.length * pricePerWord;
   }
   
   console.log(calculateEngravingPrice("I love you Mom", 100));
-  
+  console.log("--------------------------------------------------");
+
+//!var2
+
+function messageSplit(message){
+return message.split(" ");
+};
+function multiplyPrice(array, pricePerWord){
+return array.length * pricePerWord;
+};
+function calculateEngravingPrice1(message, pricePerWord) {
+    // const array3 = messageSplit(message);
+    // console.log("array3:", array3);
+    // const totalPrice = multiplyPrice(array3, pricePerWord );
+    const totalPrice = multiplyPrice(messageSplit(message), pricePerWord );
+    return totalPrice;
+};
+console.log(calculateEngravingPrice1("I love you Mom", 200));
+
 console.log("--------------------------------------------------");
 
 
