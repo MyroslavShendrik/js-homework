@@ -173,9 +173,18 @@ console.log(
 //? (в рядку будуть тільки слова і прогалини) 
 //? і повертає ПЕРШЕ найдовше слово в цьому рядку.
 //! Код виконаного завдання
-function findLongestWord(string){
-    
+function findLongestWord(string) {
+    let words = string.split(' ');
+    let longestWord = '';
+    for (const word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    return longestWord;
 }
+console.log(findLongestWord("Це тестовий рядок з найдовшим словом")); 
+
 console.log("--------------------------------------------------");
 
 
@@ -217,7 +226,14 @@ console.log(
 //? якщо заборонених слів немає функція повертає false.
 //? Слова в рядку можуть бути в довільному регістрі.
 //! Код виконаного завдання
-
+function checkForSpam(message) {
+    const lowerCaseMessage = message.toLowerCase();
+    let banWord = false;
+    if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
+        banWord = true;
+    }
+    return banWord;
+}
 console.log("--------------------------------------------------");
 
 
