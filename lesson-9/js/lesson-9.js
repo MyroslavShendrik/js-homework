@@ -72,6 +72,7 @@ console.log(addLogin(logins, "4343434343434343434343434343434343434"));
 console.log("-------------------------------------------------");
 const logins2 = ["Mipkol", "Mipkolim"];
 console.log(addLogin2(logins2, "Maxs"));
+
 function isLoginValid2(login2) {
     return login2.length >= 4 && login2.length <= 16;
 }
@@ -174,7 +175,7 @@ console.log(
 //? і повертає ПЕРШЕ найдовше слово в цьому рядку.
 //! Код виконаного завдання
 function findLongestWord(string) {
-    let words = string.split(' ');
+    const words = string.split(' ');
     let longestWord = '';
     for (const word of words) {
         if (word.length > longestWord.length) {
@@ -203,13 +204,18 @@ console.log(
 //?    після чого повертає укорочену версію.
 //! Код виконаного завдання
 function formatString(string) {
-    let result = string;
-    if (string.length > 40) {
-      result = string.slice(0, 40) + '...';
-    }
-    return result;
+    // let result;
+    // if (string.length > 40) {
+    //   result = string.slice(0, 40) + '...';
+    // } else{
+    //     result = string; 
+    // }
+    // return result;
+    return string.length > 40 ? string.slice(0, 40) + '...' : string; 
   }
-  console.log(formatString("багато символів дуже багато символів я не знаю, що тут писати, 40 символів"))
+  
+  console.log(formatString("багато символів дуже багато символів я не знаю, що тут писати, 40 символів"));
+  console.log(formatString("багато символів дуже багато символів я н"));
 console.log("--------------------------------------------------");
 
 
@@ -234,6 +240,11 @@ function checkForSpam(message) {
     }
     return banWord;
 }
+console.log(checkForSpam("SPAM-атака"));
+console.log(checkForSpam("SPaM-атака"));
+console.log(checkForSpam("SALE"));
+console.log(checkForSpam("SaLe"));
+console.log(checkForSpam("Просто рядок"))
 console.log("--------------------------------------------------");
 
 
