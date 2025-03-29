@@ -276,5 +276,30 @@ console.log(
 //? записувати в масив чисел не потрібно,
 //? після чого знову користувачеві пропонується ввести число в prompt.
 //! Код виконаного завдання
-
+function getTotalSum(){
+    let input;
+    const numbers = [];
+    while(true){
+        input = prompt("Введіть числа або відмініть дію")?.trim
+        if(input === undefined){
+            break;
+        }
+    const number = parseFloat(input);
+    }  
+    if(isNaN(numbers) || input === ""){
+        alert("Помилка! Введіть коректне число.");
+    } else {
+        numbers.push(number)
+    }
+    if(numbers.length > 0){
+        let total = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+        }
+        return `Загальна сума введених чисел: ${total}`;
+    } else{
+        return "Не було введено жодного числа.";
+    } 
+}
+console.log(getTotalSum());
 console.log("--------------------------------------------------");
