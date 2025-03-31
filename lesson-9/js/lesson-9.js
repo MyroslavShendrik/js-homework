@@ -279,14 +279,17 @@ console.log(
 function getTotalSum(){
     let input;
     const numbers = [];
+    console.log(typeof numbers)
     while(true){
         input = prompt("Введіть числа або відмініть дію")?.trim
         if(input === undefined){
             break;
         }
     const number = parseFloat(input);
+    console.log(typeof input)
+    console.log(typeof number)
     }  
-    if(isNaN(numbers) || input === ""){
+    if(isNaN(numbers) || input === ""){ //!
         alert("Помилка! Введіть коректне число.");
     } else {
         numbers.push(number)
@@ -303,3 +306,7 @@ function getTotalSum(){
 }
 console.log(getTotalSum());
 console.log("--------------------------------------------------");
+//! Чому input - function?
+//! number правильно використати 
+//! перевірка на 292 рядку не працює 
+//! isNan(Number()), Number.isNan()
