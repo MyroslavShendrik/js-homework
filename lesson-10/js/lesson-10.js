@@ -12,8 +12,15 @@ console.log(
 
 console.log("--------------------------------------------------");
 console.log()
-
-
+const sayHello = () => {
+    alert("Hello world!")
+}
+const mainfunction = (callback) =>{
+    callback()
+    return callback;
+}
+console.log(mainfunction(() => alert("Hello World!")))
+console.log(mainfunction(sayHello));
 //todo [2]
 console.log(
     "%c [2] ",
@@ -31,6 +38,7 @@ console.log(
 //? Якщо числа не дорівнюють одне одному,
 //? повертається повідомлення: "❌ Ви НЕ вгадали число"
 //! Код виконаного завдання
+const generatesRandomNumber = (callback) => callback();
 
 console.log("--------------------------------------------------");
 

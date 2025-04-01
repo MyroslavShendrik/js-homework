@@ -276,34 +276,32 @@ console.log(
 //? записувати в масив чисел не потрібно,
 //? після чого знову користувачеві пропонується ввести число в prompt.
 //! Код виконаного завдання
-function getTotalSum(){
+function getTotalSum() {
     let input;
     const numbers = [];
-    console.log(typeof numbers)
-    while(true){
-        input = prompt("Введіть числа або відмініть дію")?.trim
-        if(input === undefined){
+
+    while (true) {
+        input = prompt("Введіть число або натисніть 'Відміна' для виходу")?.trim();
+        if (input === undefined) {
             break;
         }
-    const number = parseFloat(input);
-    console.log(typeof input)
-    console.log(typeof number)
-    }  
-    if(isNaN(numbers) || input === ""){ //!
-        alert("Помилка! Введіть коректне число.");
-    } else {
-        numbers.push(number)
-    }
-    if(numbers.length > 0){
-        let total = 0;
-        for (let i = 0; i < numbers.length; i++) {
-            total += numbers[i];
+
+        const number = parseFloat(input);
+        if (isNaN(number) || input === "") {
+            alert("Помилка! Введіть коректне число.");
+        } else {
+            numbers.push(number);
         }
+    }
+
+    if (numbers.length > 0) {
+        let total = numbers.reduce((sum, num) => sum + num, 0);
         return `Загальна сума введених чисел: ${total}`;
-    } else{
+    } else {
         return "Не було введено жодного числа.";
-    } 
+    }
 }
+
 console.log(getTotalSum());
 console.log("--------------------------------------------------");
 //! Чому input - function?
