@@ -10,22 +10,22 @@ console.log(
 //? - з використанням анонімної стрілкової колбек-функції з неявним поверненням.
 //! Код виконаного завдання
 
-console.log("--------------------------------------------------");
-console.log()
-const sayHello = () => {
-    alert("Hello world!")
-}
-const mainfunction = (callback) =>{
-    callback()
-    return callback;
-}
-console.log(mainfunction(() => alert("Hello World!")))
-console.log(mainfunction(sayHello));
-//todo [2]
-console.log(
-    "%c [2] ",
-    "color: yellow; background-color: #2274A5",
-);
+// console.log("--------------------------------------------------");
+// console.log()
+// const sayHello = () => {
+//     alert("Hello world!")
+// }
+// const mainfunction = (callback) =>{
+//     callback()
+//     return callback;
+// }
+// console.log(mainfunction(() => alert("Hello World!")))
+// console.log(mainfunction(sayHello));
+// //todo [2]
+// console.log(
+//     "%c [2] ",
+//     "color: yellow; background-color: #2274A5",
+// );
 //? Створи стрілкову колбек-функцію generatesRandomNumber з неявним поверненням, 
 //? яка генерує та повертає випадкове число від min = 1 до max = 10.
 //? Зроби функцію вищого порядку guessNumber, яка приймає чотири аргумента:
@@ -38,8 +38,22 @@ console.log(
 //? Якщо числа не дорівнюють одне одному,
 //? повертається повідомлення: "❌ Ви НЕ вгадали число"
 //! Код виконаного завдання
-const generatesRandomNumber = (callback) => callback();
+const generatesRandomNumber = () => {
+    const random = Math.floor(Math.random() * 10) + 1;
+    return random;
+};
 
+const guessNumber = (min, max, randomNumber, callback) => {
+    const generatedNumber = callback(min, max);
+    if (randomNumber === generatedNumber) {
+        return `✅ Ви вгадали число! (${generatedNumber})`;
+    } else {
+        return `❌ Ви НЕ вгадали число. Загадане число було ${generatedNumber}`;
+    }
+};
+
+const peopleGuess = 7;
+console.log(guessNumber(1, 10, peopleGuess, generatesRandomNumber));
 console.log("--------------------------------------------------");
 
 
@@ -62,7 +76,14 @@ console.log(
 //? Функція convertRandomNumberSize повертає результат 
 //? перетворення випадкового числа від 1 до 5 від функції convertSize.
 //! Код виконаного завдання
-
+const generatesRandomNumber1to5 = () => Math.floor(Math.random() * 5) + 1;
+const convertSize = (size) => {
+    return size + 'px';
+  };
+  const convertRandomNumberSize = (randomNumberFunction, callbackFunction) => {
+    return callbackFunction(randomNumberFunction())
+  };
+  console.log(convertRandomNumberSize(generatesRandomNumber1to5, convertSize));
 console.log("--------------------------------------------------");
 
 
@@ -76,13 +97,13 @@ console.log(
 //? Функція повинна застосовувати колбек-функцію 
 //? до кожного елементу масиву та повертати новий масив, 
 //? що містить результати застосування колбек-функції до кожного елементу.
-// const applyCallbackToEachElement = (array, callback) => {
-//     //todo: написати тіло функції
-// };
-// const array = [1, 2, 3, 4, 5];
-// // const squareCallback =  //todo: написати код функції
-// // const result = applyCallbackToEachElement(array, squareCallback);
-// console.log("result:", result); //! [1, 4, 9, 16, 25]
+const applyCallbackToEachElement = (array, callback) => {
+    //todo: написати тіло функції
+};
+const array = [1, 2, 3, 4, 5];
+// const squareCallback =  //todo: написати код функції
+// const result = applyCallbackToEachElement(array, squareCallback);
+console.log("result:", result); //! [1, 4, 9, 16, 25]
 // //! Код виконаного завдання
 
 console.log("--------------------------------------------------");
