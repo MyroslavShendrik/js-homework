@@ -97,15 +97,25 @@ console.log(
 //? Функція повинна застосовувати колбек-функцію 
 //? до кожного елементу масиву та повертати новий масив, 
 //? що містить результати застосування колбек-функції до кожного елементу.
+// const applyCallbackToEachElement = (array, callback) => {
+//     //todo: написати тіло функції
+// };
+// const array = [1, 2, 3, 4, 5];
+// // const squareCallback =  //todo: написати код функції
+// // const result = applyCallbackToEachElement(array, squareCallback);
+// console.log("result:", result); //! [1, 4, 9, 16, 25]
+// //! Код виконаного завдання
 const applyCallbackToEachElement = (array, callback) => {
-    //todo: написати тіло функції
+    let resultArray = [];
+    for (let i = 0; i < array.length; i++) {
+        resultArray.push(callback(array[i]));
+    }
+    return resultArray;
 };
 const array = [1, 2, 3, 4, 5];
-// const squareCallback =  //todo: написати код функції
-// const result = applyCallbackToEachElement(array, squareCallback);
+const squareCallback = (num) => num * num;
+const result = applyCallbackToEachElement(array, squareCallback);
 console.log("result:", result); //! [1, 4, 9, 16, 25]
-// //! Код виконаного завдання
-
 console.log("--------------------------------------------------");
 
 
