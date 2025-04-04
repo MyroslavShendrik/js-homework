@@ -10,22 +10,21 @@ console.log(
 //? - з використанням анонімної стрілкової колбек-функції з неявним поверненням.
 //! Код виконаного завдання
 
-// console.log("--------------------------------------------------");
-// console.log()
-// const sayHello = () => {
-//     alert("Hello world!")
-// }
-// const mainfunction = (callback) =>{
-//     callback()
-//     return callback;
-// }
-// console.log(mainfunction(() => alert("Hello World!")))
-// console.log(mainfunction(sayHello));
-// //todo [2]
-// console.log(
-//     "%c [2] ",
-//     "color: yellow; background-color: #2274A5",
-// );
+console.log("--------------------------------------------------");
+console.log()
+const sayHello = () => {
+    console.log("Hello world!")
+}
+const mainfunction = (callback) =>{
+    callback()
+}
+mainfunction(() => console.log("Hello World!"))
+mainfunction(sayHello);
+//todo [2]
+console.log(
+    "%c [2] ",
+    "color: yellow; background-color: #2274A5",
+);
 //? Створи стрілкову колбек-функцію generatesRandomNumber з неявним поверненням, 
 //? яка генерує та повертає випадкове число від min = 1 до max = 10.
 //? Зроби функцію вищого порядку guessNumber, яка приймає чотири аргумента:
@@ -141,5 +140,6 @@ console.log(
 // const discountPrice = applyCallbackToEachElement(price, discount, showDiscountedPrice);
 // console.log(discountPrice); //! Discount price: 90
 //! Код виконаного завдання
-
+ const calculateDiscountedPrice = (price, discount, callback) => {
+ }
 console.log("--------------------------------------------------");
