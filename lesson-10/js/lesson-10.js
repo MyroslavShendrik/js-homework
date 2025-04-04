@@ -37,8 +37,11 @@ console.log(
 //? Якщо числа не дорівнюють одне одному,
 //? повертається повідомлення: "❌ Ви НЕ вгадали число"
 //! Код виконаного завдання
-const generatesRandomNumber = () => {
-    const random = Math.floor(Math.random() * 10) + 1;
+const peopleGuess = 7;
+const min = 1;
+const max = 10; 
+const generatesRandomNumber = (min, max) => {
+    const random = Math.floor(Math.random() * max) + min;
     return random;
 };
 
@@ -51,8 +54,9 @@ const guessNumber = (min, max, randomNumber, callback) => {
     }
 };
 
-const peopleGuess = 7;
-console.log(guessNumber(1, 10, peopleGuess, generatesRandomNumber));
+
+
+console.log(guessNumber(min, max, peopleGuess, generatesRandomNumber));
 console.log("--------------------------------------------------");
 
 
@@ -131,15 +135,14 @@ console.log(
 //? відсоток знижки, та колбек-функцію як аргументи. 
 //? В якості функції вищого порядку використайте стрілкову функцію, 
 //? останнім аргументом якої є стрілкова колбек-функція.
-// const price = 100;
-// const discount = 10;
-// const calculateDiscountedPrice = (price, discount, callback) => {
-//     //todo: написати тіло функції
-// };
-// // const showDiscountedPrice = ; //todo: написати код функції
-// const discountPrice = applyCallbackToEachElement(price, discount, showDiscountedPrice);
-// console.log(discountPrice); //! Discount price: 90
+const price = 600;
+const discount = 50;
+const calculateDiscountedPrice = (price, discount, callback) => {
+ return callback(price, discount);
+};
+const showDiscountedPrice = (price, discount) => price - (price * discount) / 100 ; 
+const discountPrice = calculateDiscountedPrice(price, discount, showDiscountedPrice);
+console.log(discountPrice); //! Discount price: 90
 //! Код виконаного завдання
- const calculateDiscountedPrice = (price, discount, callback) => {
- }
+
 console.log("--------------------------------------------------");
