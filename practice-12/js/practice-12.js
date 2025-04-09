@@ -32,7 +32,7 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . .");
 //? тільки використовуються фігурні дужки {} - літерал об'єкта,
 //? а не квадратні дужки.
 //todo: Приклад-2: створення об'єкта:
-let object = {0: 2, 1: 21, 2: 34, 3: 89, 4: 144};
+let object = { 0: 2, 1: 21, 2: 34, 3: 89, 4: 144 };
 
 // for (const key of object) {
 //     console.log(key); //! ❌ TypeError: object is not iterable
@@ -227,7 +227,7 @@ const book3 = {
 };
 
 delete book3.genres2
-console.log("book3:", book3); 
+console.log("book3:", book3);
 console.log("----------------------------------------------------------------------------------------------------------");
 
 //! Зміна значення властивості
@@ -269,7 +269,7 @@ const book5 = {
     isPublic: true,
     rating: 8.38
 };
-const bookTranslations = ["ua", "ru"]; 
+const bookTranslations = ["ua", "ru"];
 book5.pageCount = 836;
 book5.originalLanguage = "en";
 // book5.translations = ["ua", "ru"];
@@ -354,16 +354,16 @@ console.log("user4.name4:", user4.name4); //! 'Uma Thurman'
 console.log("user4.age4:", user4.age4); //! 54
 console.log("user4:", user4); //! {name4: 'Uma Thurman', age4: 54}
 console.log("----------------------------------------------------------------------------------------------------------");
-const dateOfBirtd = 2008; 
+const dateOfBirtd = 2008;
 const placeBorn = "Kyiv";
 const myHobby = ["football", "walking"];
 console.log(myHobby)
 const miroslav = {
-  name: "Miroslav",
-  dateOfBirtd,
+    name: "Miroslav",
+    dateOfBirtd,
 }
 console.log("miroslav:", miroslav);
-miroslav.age = 16; 
+miroslav.age = 16;
 console.log("miroslav:", miroslav);
 miroslav.placeBorn = placeBorn;
 console.log("miroslav:", miroslav);
@@ -372,23 +372,23 @@ console.log("miroslav:", miroslav);
 delete miroslav.placeBorn;
 console.log("miroslav:", miroslav);
 
-const makingCoffee = {
-    water:"чиста вода",
-    coffee:"кава в зернах",
-    makeHotWater (water) {
-        console.log("нагріємо воду");
-    },
+// const makingCoffee = {
+//     water:"чиста вода",
+//     coffee:"кава в зернах",
+//     makeHotWater (water) {
+//         console.log("нагріємо воду");
+//     },
 
-    groundCoffee (coffee){
-        console.log("мелемо каву")
-    },
+//     groundCoffee (coffee){
+//         console.log("мелемо каву")
+//     },
 
-    cupOfCoffee (){
-        return makeHotWater() + groundCoffee()
+//     cupOfCoffee (){
+//         return makeHotWater() + groundCoffee()
 
-    } ,
-};
-makingCoffee.cupOfCoffee()
+//     } ,
+// };
+// makingCoffee.cupOfCoffee()
 //! Методи об'єкта
 //? ✴️ Об'єкти можуть зберігати не тільки дані,
 //? але і функції для роботи з цими даними - методи.
@@ -455,7 +455,7 @@ const bookShelfNew = {
     books: ["The Last Kingdom"],
     getBooks() {
         console.log("🛑 books:", bookShelfNew.books); //todo: 🛑 var.1
-        
+
         console.log(this);
         console.log("✅ books:", this.books); //todo: ✅ var.2
     },
@@ -465,3 +465,103 @@ const bookShelfNew = {
 //todo: тому, викликаючи метод, this буде зберігати посилання на нього.
 bookShelfNew.getBooks(); //! {books: Array(1), getBooks: ƒ}
 console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
+
+console.warn(`Схема доступу до властивостей об'єкта в методах через this: \n ${((window.location.href).split('/')).slice(0, -2).join('/') + '/'}${"lesson-FE3_11/images/this-keyword.jpg"}`);
+//? ✴️ Для того, щоб отримати доступ 
+//? до властивостей об'єкта в методах, 
+//? ми звертаємось до нього через this і далі,
+//? стандартно - «через крапку» до властивостей:
+const bookShelf1 = {
+    books: ["The Last Kingdom"],
+    getBooks() {
+        return this.books;
+    },
+    addBook(bookName) {
+        this.books.push(bookName);
+    },
+    removeBook(bookName) {
+        const bookIndex = this.books.indexOf(bookName);
+        this.books.splice(bookIndex, 1);
+    },
+};
+
+console.log("books_before:", bookShelf1.getBooks()); //! ['The Last Kingdom']
+
+bookShelf1.addBook("The Mist");
+bookShelf1.addBook("Dream Guardian");
+console.log("books_add:", bookShelf1.getBooks()); //! ['The Last Kingdom', 'The Mist', 'Dream Guardian']
+
+bookShelf1.removeBook("The Mist");
+console.log("books_remove:", bookShelf1.getBooks()); //! ['The Last Kingdom', 'Dream Guardian']
+console.log("---------------------------------------------------------------------");
+
+
+
+
+//! ПРАКТИКА-11 (Урок-11_JS)
+//todo [1]
+console.log(
+    "%c [1] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Замінити весь код з використанням
+//? функцій "Приготування меленої кави"
+//? на об'ект {makingCoffee} "Приготування меленої кави" з
+//? використанням методів та ключовим словом this.
+console.warn("Функція \"Приготування кави\":");
+let groundCoffee;
+let hotWater;
+let coffee;
+
+//! 1 - функція "Приготування меленої кави"
+function makesGroundCoffee() {
+    groundCoffee = "30 грам";
+    console.log("1️⃣ Мелена кава є?", Boolean(groundCoffee));
+    return groundCoffee;
+};
+
+//! 2 - функція "Приготування окропу (гарячої води)".
+function makesHotWater() {
+    hotWater = "250 мілілітрів";
+    console.log("2️⃣ Окріп (гаряча вода) є?", Boolean(hotWater));
+    return hotWater;
+};
+
+//! 3 - функція "Приготування кави"
+function makingCoffee() {
+    if (!(makesGroundCoffee())) {
+        return "Потрібна мелена кава!";
+    };
+
+    if (!(makesHotWater())) {
+        return "Потрібна гаряча вода!";
+    };
+
+    coffee = groundCoffee + hotWater;
+    coffee = "✅ Кава готова!"
+    return coffee;
+};
+
+console.log(makingCoffee());
+console.log("--------------------------------------------");
+
+//! Код виконаного завдання
+console.warn("Об'ект \"Приготування кави\":");
+const makingCoffeeNew = {
+    makesGroundCoffee(groundCoffee) {
+        console.log("1️⃣ Мелена кава є?", Boolean(groundCoffee));
+        return groundCoffee;
+    },
+    makesHotWater(hotWater) {
+        console.log("2️⃣ Окріп (гаряча вода) є?", Boolean(hotWater));
+        return hotWater;
+    },
+    makingCoffee(groundCoffee, hotWater) {
+        const groundCoffee1 = this.makesGroundCoffee(groundCoffee);
+        const hotWater1 = this.makesHotWater(hotWater);
+        const coffee1 = groundCoffee1 + hotWater1
+        // coffee1 = "✅ Кава готова!"
+        return coffee1;
+    }
+};
+console.log(makingCoffeeNew.makingCoffee("30gram" , "250 mililiters"))
