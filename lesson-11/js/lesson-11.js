@@ -60,42 +60,42 @@ console.log(
 //? ✳️ За допомогою виклика методу "deposit" об'єкта "bankAccount" додай кошти на рахунок.
 //? ✳️ За допомогою виклика методу "withdraw" об'єкта "bankAccount" зніми кошти з рахуноку.
 //! Код виконаного завдання
-let bankAccount = {
-    ownerName: "Miroslav Shendryk",
-    accountNumber: "123456789",
-    balance: 5000,
+// let bankAccount = {
+//     ownerName: "Miroslav Shendryk",
+//     accountNumber: "123456789",
+//     balance: 5000,
   
-    deposit () {
-      let amount = parseFloat(prompt("Введіть суму для поповнення:"));
-      if (isNaN(amount) || amount <= 0) {
-        alert("⛔️ Некоректна сума!");
-        console.log("⛔️ Некоректна сума!");
-        return;
-      }
-      this.balance += amount;
-      alert(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
-      console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
-    },
+//     deposit () {
+//       let amount = parseFloat(prompt("Введіть суму для поповнення:"));
+//       if (isNaN(amount) || amount <= 0) {
+//         alert("⛔️ Некоректна сума!");
+//         console.log("⛔️ Некоректна сума!");
+//         return;
+//       }
+//       this.balance += amount;
+//       alert(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
+//       console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
+//     },
   
-    withdraw () {
-      let amount = parseFloat(prompt("Введіть суму для зняття:"));
-      if (isNaN(amount) || amount <= 0) {
-        alert("⛔️ Некоректна сума!");
-        console.log("⛔️ Некоректна сума!");
-        return;
-      }
-      if (this.balance >= amount) {
-        this.balance -= amount;
-        alert(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
-        console.log(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
-      } else {
-        alert("⛔️ Недостатньо коштів на вашому рахунку!");
-        console.log("⛔️ Недостатньо коштів на вашому рахунку!");
-      }
-    }
-  };
-  bankAccount.deposit();
-  bankAccount.withdraw();
+//     withdraw () {
+//       let amount = parseFloat(prompt("Введіть суму для зняття:"));
+//       if (isNaN(amount) || amount <= 0) {
+//         alert("⛔️ Некоректна сума!");
+//         console.log("⛔️ Некоректна сума!");
+//         return;
+//       }
+//       if (this.balance >= amount) {
+//         this.balance -= amount;
+//         alert(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
+//         console.log(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
+//       } else {
+//         alert("⛔️ Недостатньо коштів на вашому рахунку!");
+//         console.log("⛔️ Недостатньо коштів на вашому рахунку!");
+//       }
+//     }
+//   };
+//   bankAccount.deposit();
+//   bankAccount.withdraw();
 console.log("--------------------------------------------------");
 
 
@@ -110,7 +110,7 @@ console.log(
 //? та додайте їм будь-яких логічних значень значень.
 //? ✴️ За допомогою додавання властивостей
 //? додайте до об'єкту метод "login",
-//? який який буде перевіряти правильність
+//? який буде перевіряти правильність
 //? введеного name, email та password на такі умови:
 //?  - ім'я <name> містить не менше 3 символів,
 //?  - електронна пошта <email> містить символ @ та крапку після неї,
@@ -120,14 +120,23 @@ console.log(
 //? ✅ Якщо ВСІ введені дані пройшли перевірки,
 //? треба послідовно вивести в косоль значення ВСІХ цих даних.
 //! Код виконаного завдання
-let user ={
+let user = {
     name: "Miroslav",
     email:"miroslavShen23@gmail.com",
     password: "060408",
-    login (){
-        
-    }
+};
+user.login = function(){
+if (this.name.length < 3){
+  alert("❌ Ім'я повинно мати 3 символи")
+  console.log("❌ Ім'я повинно мати 3 символи")
+  return;
+};
+if (!this.email.includes("@")){
+ 
 }
+}
+console.log(user)
+
 console.log("--------------------------------------------------");
 
 
@@ -150,5 +159,19 @@ console.log(
 //? Якщо метод повернув "false",
 //? то колір тексту поля title в консолі повинен бути червоний.
 //! Код виконаного завдання
-
+const movie = {
+  title: "A Good Year",
+  director: "Ridley Scott",
+  year: 2006,
+  rating: 7.1,
+};
+movie.isRatingMoreThanEight = function(){
+return this.rating > 8;
+};
+let isRait = movie.isRatingMoreThanEight();
+if(isRait){
+  console.log("зелений")
+} else{
+  console.log("червоний")
+}
 console.log("--------------------------------------------------");
