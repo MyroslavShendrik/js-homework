@@ -65,7 +65,7 @@ let bankAccount = {
     accountNumber: "123456789",
     balance: 5000,
   
-    deposit: function () {
+    deposit () {
       let amount = parseFloat(prompt("Введіть суму для поповнення:"));
       if (isNaN(amount) || amount <= 0) {
         alert("⛔️ Некоректна сума!");
@@ -77,7 +77,7 @@ let bankAccount = {
       console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
     },
   
-    withdraw: function () {
+    withdraw () {
       let amount = parseFloat(prompt("Введіть суму для зняття:"));
       if (isNaN(amount) || amount <= 0) {
         alert("⛔️ Некоректна сума!");
@@ -124,7 +124,7 @@ let user ={
     name: "Miroslav",
     email:"miroslavShen23@gmail.com",
     password: "060408",
-    login: function(){
+    login (){
         
     }
 }
