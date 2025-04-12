@@ -1,7 +1,7 @@
 //todo [2]
 console.log(
-    "%c [2] ",
-    "color: yellow; background-color: #2274A5",
+  "%c [2] ",
+  "color: yellow; background-color: #2274A5",
 );
 
 
@@ -19,24 +19,41 @@ console.log(
 //? дублюючи ці повідомлення  в консоль.
 //! Код виконаного завдання
 const weather = {
-    temperature: -9,
-    humidity: "80%",
-    windSpeed: "2 м/с",
-
+  temperature: -9,
+  humidity: "80%",
+  windSpeed: "2 м/с",
 };
+
+weather.isTemperatureBelowZero = function () {
+  const input = prompt("Введіть температуру в градусах Цельсія:")?.trim;
+  const temperature = parseFloat(input);
+
+  if (isNaN(temperature)) {
+    alert("Будь ласка, введіть числове значення.");
+    return;
+  }
+
+  if (temperature < 0) {
+    alert("Температура нижче 0 градусів Цельсія");
+    console.log("Температура нижче 0 градусів Цельсія");
+    return true;
+  } else {
+    alert("Температура 0 градусів Цельсія або вище");
+    console.log("Температура 0 градусів Цельсія або вище");
+    return false;
+  }
+};
+
 console.log("weather:", weather);
-console.log("1️⃣ Temperature:", weather.temperature); //! -9
-weather.isTemperatureBelowZero = function (newtempereture){
-    console.log(newtempereture);
-}
-console.log("weather:", weather);
+console.log("1️⃣ Temperature:", weather.temperature);
+
 
 
 //? ❗️❗️❗️ Для виконання всіх завдань необхідно використати ключове слово this ❗️❗️❗️
 //todo [1]
 console.log(
-    "%c [1] ",
-    "color: yellow; background-color: #2274A5",
+  "%c [1] ",
+  "color: yellow; background-color: #2274A5",
 );
 //? ✴️ Створіть об'єкт "bankAccount" з трьома властивостями:
 //?  "ownerName", "accountNumber", "balance"
@@ -64,7 +81,7 @@ console.log(
 //     ownerName: "Miroslav Shendryk",
 //     accountNumber: "123456789",
 //     balance: 5000,
-  
+
 //     deposit () {
 //       let amount = parseFloat(prompt("Введіть суму для поповнення:"));
 //       if (isNaN(amount) || amount <= 0) {
@@ -76,7 +93,7 @@ console.log(
 //       alert(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
 //       console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
 //     },
-  
+
 //     withdraw () {
 //       let amount = parseFloat(prompt("Введіть суму для зняття:"));
 //       if (isNaN(amount) || amount <= 0) {
@@ -102,8 +119,8 @@ console.log("--------------------------------------------------");
 
 //todo [3]
 console.log(
-    "%c [3] ",
-    "color: yellow; background-color: #2274A5",
+  "%c [3] ",
+  "color: yellow; background-color: #2274A5",
 );
 //? Створіть об’єкт "user" з трьома властивостями:
 //? "name", "email", "password"
@@ -121,19 +138,19 @@ console.log(
 //? треба послідовно вивести в косоль значення ВСІХ цих даних.
 //! Код виконаного завдання
 let user = {
-    name: "Miroslav",
-    email:"miroslavShen23@gmail.com",
-    password: "060408",
+  name: "Miroslav",
+  email: "miroslavShen23@gmail.com",
+  password: "060408",
 };
-user.login = function(){
-if (this.name.length < 3){
-  alert("❌ Ім'я повинно мати 3 символи")
-  console.log("❌ Ім'я повинно мати 3 символи")
-  return;
-};
-if (!this.email.includes("@")){
- 
-}
+user.login = function () {
+  if (this.name.length < 3) {
+    alert("❌ Ім'я повинно мати 3 символи")
+    console.log("❌ Ім'я повинно мати 3 символи")
+    return;
+  };
+  if (!this.email.includes("@")) {
+
+  }
 }
 console.log(user)
 
@@ -142,8 +159,8 @@ console.log("--------------------------------------------------");
 
 //todo [4]
 console.log(
-    "%c [4] ",
-    "color: yellow; background-color: #2274A5",
+  "%c [4] ",
+  "color: yellow; background-color: #2274A5",
 );
 //? ✴️ Створіть об'єкт "movie" з чотирма властивостями:
 //? "title", "director", "year", "rating".
@@ -165,13 +182,22 @@ const movie = {
   year: 2006,
   rating: 7.1,
 };
-movie.isRatingMoreThanEight = function(){
-return this.rating > 8;
+
+
+movie.isRatingMoreThanEight = function () {
+  return this.rating > 8;
 };
-let isRait = movie.isRatingMoreThanEight();
-if(isRait){
-  console.log("зелений")
-} else{
-  console.log("червоний")
+
+let isHighRated = movie.isRatingMoreThanEight();
+
+console.log("Title:", movie.title);
+console.log("Director:", movie.director);
+console.log("Year:", movie.year);
+console.log("Rating:", movie.rating);
+if (isHighRated) {
+  console.log("%cTitle: " + movie.title, "color: green;");
+} else {
+  console.log("%cTitle: " + movie.title, "color: red;");
 }
+
 console.log("--------------------------------------------------");
