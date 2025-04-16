@@ -54,33 +54,43 @@ console.log(
 //? як властивості об'єкта в форматі "ім'я":"кількість задач".
 //! Код виконаного завдання
 const findBestEmployee = function (employees) {
-  //! твій код
+  let bestEmployee = '';
+  let maxTasks = 0;
+
+  for (const [name, tasks] of Object.entries(employees)) {
+    if (tasks > maxTasks) {
+      maxTasks = tasks;
+      bestEmployee = name;
+    }
+  }
+
+  return bestEmployee;
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
 console.log(
   findBestEmployee({
-      ann: 29,
-      david: 35,
-      helen: 1,
-      lorence: 99,
+    ann: 29,
+    david: 35,
+    helen: 1,
+    lorence: 99,
   }),
 ); //! lorence
 
 console.log(
   findBestEmployee({
-      poly: 12,
-      mango: 17,
-      ajax: 4,
+    poly: 12,
+    mango: 17,
+    ajax: 4,
   }),
 ); //! mango
 
 console.log(
   findBestEmployee({
-      lux: 147,
-      david: 21,
-      kiwi: 19,
-      chelsy: 38,
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38,
   }),
 ); //! lux
 console.log("--------------------------------------------------");
@@ -96,25 +106,32 @@ console.log(
 //? Кожне поле об'єкта, переданого в функцію, має вигляд "ім'я":"зарплата".
 //! Код виконаного завдання
 const countTotalSalary = function (employees) {
-  //! твій код
+  let total = 0;
+
+  for (let salary of Object.values(employees)) {
+    total += salary;
+  }
+
+  return total;
 };
+
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
 console.log(countTotalSalary({})); //! 0
 
 console.log(
   countTotalSalary({
-      mango: 100,
-      poly: 150,
-      alfred: 80,
+    mango: 100,
+    poly: 150,
+    alfred: 80,
   }),
 ); //! 330
 
 console.log(
   countTotalSalary({
-      kiwi: 200,
-      lux: 50,
-      chelsy: 150,
+    kiwi: 200,
+    lux: 50,
+    chelsy: 150,
   }),
 ); //! 400
 console.log("--------------------------------------------------");
