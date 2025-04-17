@@ -155,7 +155,13 @@ const products = [
 ];
 
 const getAllPropValues = function (arr, prop) {
-  //! твій код
+  const result = [];
+  for (const item of arr) {
+    if (item.hasOwnProperty(prop)) {
+      result.push(item[prop]);
+    }
+  }
+  return result;
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
@@ -177,7 +183,12 @@ console.log(
 //? Викличи функції для перевірки працездатності твоєї реалізації.
 //! Код виконаного завдання
 const calculateTotalPrice = function (allProdcuts, productName) {
-  //! твій код
+  for (const product of allProdcuts) {
+    if (product.name === productName) {
+      return product.price * product.quantity;
+    }
+  }
+  return 0;
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.

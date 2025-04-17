@@ -160,17 +160,35 @@ let user = {
   email: "miroslavShen23@gmail.com",
   password: "060408",
 };
-user.login = function () {
-  if (this.name.length < 3) {
-    alert("❌ Ім'я повинно мати 3 символи")
-    console.log("❌ Ім'я повинно мати 3 символи")
-    return;
-  };
-  if (!this.email.includes("@")) {
 
+user.login = function () {
+  let hasError = false;
+
+  if (this.name.length < 3) {
+    console.log("❌ Ім'я повинно містити щонайменше 3 символи");
+    hasError = true;
   }
-}
-console.log(user)
+
+  if (!this.email.includes("@") || this.email.indexOf(".") < this.email.indexOf("@")) {
+    console.log("❌ Електронна пошта повинна містити '@' та крапку після нього");
+    hasError = true;
+  }
+
+  if (this.password.length < 6) {
+    console.log("❌ Пароль повинен містити щонайменше 6 символів");
+    hasError = true;
+  }
+
+  if (!hasError) {
+    console.log("✅ Успішний вхід:");
+    console.log("Ім'я:", this.name);
+    console.log("Email:", this.email);
+    console.log("Пароль:", this.password);
+  }
+};
+
+user.login();
+
 
 console.log("--------------------------------------------------");
 
