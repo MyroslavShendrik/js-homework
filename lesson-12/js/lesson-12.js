@@ -56,13 +56,21 @@ console.log(
 const findBestEmployee = function (employees) {
   let bestEmployee = '';
   let maxTasks = 0;
+  const keys = Object.keys(employees);
 
-  for (const [name, tasks] of Object.entries(employees)) {
-    if (tasks > maxTasks) {
-      maxTasks = tasks;
-      bestEmployee = name;
+  for (const key of keys) {
+    if (employees[key] > maxTasks) {
+      maxTasks = employees[key];
+      bestEmployee = key;
     }
   }
+  
+  // for (const [name, tasks] of Object.entries(employees)) {
+  //   if (tasks > maxTasks) {
+  //     maxTasks = tasks;
+  //     bestEmployee = name;
+  //   }
+  // }
 
   return bestEmployee;
 };
@@ -157,7 +165,7 @@ const products = [
 const getAllPropValues = function (arr, prop) {
   const result = [];
   for (const item of arr) {
-    if (item.hasOwnProperty(prop)) {
+    if (item[prop]) {
       result.push(item[prop]);
     }
   }
@@ -165,7 +173,7 @@ const getAllPropValues = function (arr, prop) {
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
-console.log(getAllPropValues(products, 'name')); //! ['Радар', 'Сканер', 'Дроїд', 'Захоплення']
+console.log(getAllPropValues(products, 'name1')); //! ['Радар', 'Сканер', 'Дроїд', 'Захоплення']
 console.log(getAllPropValues(products, 'quantity')); //! [4, 3, 7, 2]
 console.log(getAllPropValues(products, 'category')); //! []
 console.log("--------------------------------------------------");

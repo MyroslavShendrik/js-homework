@@ -217,26 +217,26 @@ console.log("-------------------------------------------------------------------
 
 //! Масив масивів з ключами та значеннями їх властивостей -> Object.entries()
 console.warn("Object.entries() - масив зі значеннями властивостей:");
-//? ✴️ Метод Object.entries(obj) -
+//? ✴️ Метод Object.entrie-
 //? повертає масив записів, кожен елемент якого,
 //? буде ще один масив з 2-х елементів:
 //? імені властивості і значення цієї властивості з об'єкта obj.
-// book = {
-//     title: "The Last Kingdom",
-//     author: "Bernard Cornwell",
-//     rating: 8.38,
-// };
-// console.log("book:", book);
+book = {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+};
+console.log("book:", book);
 
-// keys = Object.keys(book);
-// console.log("Object.keys(book):", keys); //! ['title', 'author', 'genres', 'rating']
+keys = Object.keys(book);
+console.log("Object.keys(book):", keys); //! ['title', 'author', 'genres', 'rating']
 
-// values = Object.values(book);
-// console.log("Object.values(book):", values); //! ['The Last Kingdom', 'Bernard Cornwell', 8.38]
+values = Object.values(book);
+console.log("Object.values(book):", values); //! ['The Last Kingdom', 'Bernard Cornwell', 8.38]
 
-// const entries = Object.entries(book);
-// console.log("Object.entries(book):", entries); //! [["title", "The Last Kingdom"], ["author", "Bernard Cornwell"], ["rating", 8.38]]
-// console.log("------------------------------------------------------------------------------------------------");
+const entries = Object.entries(book);
+console.log("Object.entries(book):", entries); //! [["title", "The Last Kingdom"], ["author", "Bernard Cornwell"], ["rating", 8.38]]
+console.log("------------------------------------------------------------------------------------------------");
 
 
 //! Метод Object.create()
