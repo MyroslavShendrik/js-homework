@@ -104,14 +104,15 @@ const weather = {
 };
 
 weather.isTemperatureBelowZero = function () {
-  let input = prompt("Введіть температуру в градусах Цельсія:");
-  console.log(input)
-  input = Number(input)
-  console.log(input)
-  const newTemperature = parseFloat(input);
-  console.log(newTemperature)
+  let input = prompt("Введіть температуру в градусах Цельсія:").trim();
+  console.log("Введено:", input);
+
+  const newTemperature = Number(input);
+  console.log("Перетворене число:", newTemperature);
+
   if (isNaN(newTemperature)) {
-    alert("Будь ласка, введіть числове значення.");
+    alert("Будь ласка, введіть коректне числове значення.");
+    console.log("Некоректне значення:", input);
     return;
   }
 
@@ -128,7 +129,8 @@ weather.isTemperatureBelowZero = function () {
 
 console.log("weather:", weather);
 console.log("1️⃣ Temperature:", weather.temperature);
-console.log(weather.isTemperatureBelowZero())
+console.log(weather.isTemperatureBelowZero());
+
 
 
 
