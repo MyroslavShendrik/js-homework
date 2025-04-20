@@ -26,55 +26,45 @@ console.log(
 //? ✳️ За допомогою виклика методу "deposit" об'єкта "bankAccount" додай кошти на рахунок.
 //? ✳️ За допомогою виклика методу "withdraw" об'єкта "bankAccount" зніми кошти з рахуноку.
 //! Код виконаного завдання
-// let bankAccount = {
-//   ownerName: "Miroslav Shendryk",
-//   accountNumber: "123456789",
-//   balance: 5000,
+let bankAccount = {
+  ownerName: "Miroslav Shendryk",
+  accountNumber: "123456789",
+  balance: 5000,
 
-//   deposit() {
-//     let input = prompt("Введіть суму для поповнення:")?.trim(); 
-//     if (!input) {
-//       alert("⛔️ Ви нічого не ввели!");
-//       console.log("⛔️ Ви нічого не ввели!");
-//       return;
-//     }
-//     let amount = parseFloat(input);
-//     if (isNaN(amount) || amount <= 0) {
-//       alert("⛔️ Некоректна сума!");
-//       console.log("⛔️ Некоректна сума!");
-//       return;
-//     }
-//     this.balance += amount;
-//     alert(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
-//     console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
-//   },
+  deposit() {
+    let input = prompt("Введіть суму для поповнення:")?.trim();
+    let amount = Number(input);
+    if (!input || isNaN(amount) || amount <= 0) {
+      alert("⛔️ Введіть коректне позитивне число!");
+      console.log("⛔️ Некоректне значення для поповнення!");
+      return;
+    }
+    this.balance += amount;
+    alert(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
+    console.log(`✅ Кошти додано. Залишок на рахунку: ${this.balance} грн`);
+  },
 
-//   withdraw() {
-//     let input = prompt("Введіть суму для зняття:")?.trim();
-//     if (!input) {
-//       alert("⛔️ Ви нічого не ввели!");
-//       console.log("⛔️ Ви нічого не ввели!");
-//       return;
-//     }
-//     let amount = parseFloat(input);
-//     if (isNaN(amount) || amount <= 0) {
-//       alert("⛔️ Некоректна сума!");
-//       console.log("⛔️ Некоректна сума!");
-//       return;
-//     }
-//     if (this.balance >= amount) {
-//       this.balance -= amount;
-//       alert(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
-//       console.log(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
-//     } else {
-//       alert("⛔️ Недостатньо коштів на вашому рахунку!");
-//       console.log("⛔️ Недостатньо коштів на вашому рахунку!");
-//     }
-//   }
-// };
+  withdraw() {
+    let input = prompt("Введіть суму для зняття:")?.trim();
+    let amount = Number(input);
+    if (!input || isNaN(amount) || amount <= 0) {
+      alert("⛔️ Введіть коректне позитивне число!");
+      console.log("⛔️ Некоректне значення для зняття!");
+      return;
+    }
+    if (this.balance >= amount) {
+      this.balance -= amount;
+      alert(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
+      console.log(`✅ Кошти знято. Залишок на рахунку: ${this.balance} грн`);
+    } else {
+      alert("⛔️ Недостатньо коштів на рахунку!");
+      console.log("⛔️ Недостатньо коштів на рахунку!");
+    }
+  }
+};
 
-// bankAccount.deposit();
-// bankAccount.withdraw();
+bankAccount.deposit();
+bankAccount.withdraw();
 // console.log("--------------------------------------------------");
 
 //todo [2]
