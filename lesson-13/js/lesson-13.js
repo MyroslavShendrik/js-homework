@@ -76,7 +76,19 @@ const employeePerformance = {
   ],
 };
 //! Код виконаного завдання
+const {
+  count,
+  employeePerformanceLists: [
+    { ann, david: david1, helen, lorence },
+    { poly, mango, ajax },
+    { lux, david: david2, kiwi, chelsy }
+  ]
+} = employeePerformance;
 
+console.log(count);
+console.log(ann, david1, helen, lorence);
+console.log(poly, mango, ajax);
+console.log(lux, david2, kiwi, chelsy);
 console.log("-------------------------------------------------------------");
 
 
