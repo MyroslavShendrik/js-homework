@@ -55,18 +55,50 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 //? Якщо ім'я змінної та ім'я властивості збігаються, відбувається присвоювання, 
 //? в іншому випадку, їй буде присвоєно undefined. 
 //? Порядок оголошення змінних у фігурних дужках - неважливий.
-const { title, author, genres, isPublic, rating, coverImage } = book;
+// const { title, author, genres, isPublic, rating, coverImage } = book;
+// const {rating, coverImage,  author, genres, isPublic, title } = book;
+// const { genres } = book;
 
-console.log("title:", title);
-console.log("author:", author);
-console.log("genres:", genres);
-console.log("isPublic:", isPublic);  
-console.log("rating:", rating);
-console.log("coverImage:", coverImage); //! undefined
+// console.log("title:", title);
+// console.log("author:", author);
+// console.log("genres:", genres);
+// console.log("isPublic:", isPublic);  
+// console.log("rating:", rating);
+// console.log("coverImage:", coverImage); //! undefined
+// console.log("`  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `");
+
+// const accessType2 = isPublic ? "публічному" : "закритому";
+// const message2 = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться в ${accessType2} доступі.`;
+// console.log("message2:", message2);
+console.log("----------------------------------------------------------------------------------------------------------------------");
+
+//! Значення за замовчуванням
+console.warn("Значення за замовчуванням:");
+//? ✳️ Додамо зображення обкладинки, якщо воно відсутнє в об'єкті книги
+const book1 = {
+    title1: "The Last Kingdom",
+    author1: "Bernard Cornwell",
+    genres1: ["historical prose", "adventure"],
+    isPublic1: true,
+    rating1: 8.38,
+};
+console.log("book1:", book1);
 console.log("`  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `");
 
-const accessType2 = isPublic ? "публічному" : "закритому";
-const message2 = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться в ${accessType2} доступі.`;
-console.log("message2:", message2);
+const {
+    title1,
+    author1,
+    genres1,
+    isPublic1,
+    rating1,
+    coverImage1 = "https://via.placeholder.com/640/480",
+} = book1;
+
+console.log("title1:", title1);
+console.log("author1:", author1);
+console.log("genres1:", genres1);
+console.log("isPublic1:", isPublic1);
+console.log("rating1:", rating1);
+console.log("coverImage1:", coverImage1); //! "https://via.placeholder.com/640/480"
 console.log("----------------------------------------------------------------------------------------------------------------------");
 

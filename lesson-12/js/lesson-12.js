@@ -65,12 +65,21 @@ const findBestEmployee = function (employees) {
     }
   }
   
-  // for (const [name, tasks] of Object.entries(employees)) {
-  //   if (tasks > maxTasks) {
-  //     maxTasks = tasks;
-  //     bestEmployee = name;
-  //   }
-  // }
+  for (const element of Object.entries(employees)) {
+    console.log(element)
+    const [name, tasks] = element;
+    if (tasks > maxTasks) {
+      maxTasks = tasks;
+      bestEmployee = name;
+    }
+  }
+
+  for (const [name, tasks] of Object.entries(employees)) {
+    if (tasks > maxTasks) {
+      maxTasks = tasks;
+      bestEmployee = name;
+    }
+  }
 
   return bestEmployee;
 };
