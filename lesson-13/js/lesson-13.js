@@ -118,6 +118,22 @@ const employeeSalaries = {
   ],
 };
 //! Код виконаного завдання
+const {
+  count: count1,
+  employeeSalaryLists: [
+    { mango: mango1, poly: poly1, alfred },
+    { kiwi: kiwi1, lux: lux1, chelsy: chelsy1 }
+  ]
+} = employeeSalaries;
+
+console.log(count1);
+console.log(mango1);
+console.log(poly1);
+console.log(alfred);
+console.log(kiwi1);
+console.log(lux1);
+console.log(chelsy1);
+
 
 console.log("-------------------------------------------------------------");
 
