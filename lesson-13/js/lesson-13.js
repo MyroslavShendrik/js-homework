@@ -265,12 +265,27 @@ type,
 
     //todo:  Метод шукає і повертає об'єкт транзакції по id
     getTransactionDetails(id) {
-      
+      for (let i = 0; i < this.transactions.length; i++) {
+        const transaction = this.transactions[i];
+        if (transaction.id === id) {
+          return transaction;
+        }
+      }
+      return undefined;
      },
 
     //todo:  Метод повертає кількість коштів
     //todo:  певного типу транзакції з усієї історії транзакцій
-    getTransactionTotal(type) { },
+    getTransactionTotal(type) {
+      let total = 0;
+      for (let i = 0; i < this.transactions.length; i++) {
+        const transaction = this.transactions[i];
+        if (transaction.type === type) {
+          total += transaction.amount;
+        }
+      }
+      return total;
+     },
 };
 //! Код виконаного завдання
 // console.log(account.createTransaction(1000, Transaction.DEPOSIT));

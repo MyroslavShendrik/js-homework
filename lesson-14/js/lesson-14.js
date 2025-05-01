@@ -133,7 +133,7 @@ console.log(
 );
 //? Отримати масив імен користувачів за статтю (поле gender).
 const getUsersWithGender = (users, gender) => {
-  //! твій код
+  return users.filter(user => user.gender === gender).map(user => user.name);;
 };
 
 console.log(getUsersWithGender(users, 'male')); //! [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
@@ -147,7 +147,7 @@ console.log(
 );
 //? Отримати масив тільки неактивних користувачів (поле isActive).
 const getInactiveUsers = users => {
-  //! твій код
+  return users.filter(user => !user.isActive);
 };
 
 console.log(getInactiveUsers(users)); //! [об'єкт Moore Hensley, об'єкт Ross Vazquez, об'єкт Blackburn Dotson]
@@ -162,7 +162,7 @@ console.log(
 );
 //? Отримати користувача (не масив) по email (поле email, він унікальний).
 const getUserWithEmail = (users, email) => {
-  //! твій код
+  return users.find(user => user.email === email);
 };
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); //! {об'єкт користувача Sheree Anthony}
