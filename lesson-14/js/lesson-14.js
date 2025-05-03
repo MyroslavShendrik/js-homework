@@ -103,7 +103,12 @@ console.log(
 //? Отримай масив імен всіх користувачів (поле name).
 const getUserNames = users => {
   //! твій код
-  return users.map(user => user.name);
+  // return users.map(user => user.name);
+return  users.map(user => {
+    console.log(user);
+    return user.name;
+  });
+;
 };
 
 console.log(getUserNames(users)); //! [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
@@ -133,7 +138,13 @@ console.log(
 );
 //? Отримати масив імен користувачів за статтю (поле gender).
 const getUsersWithGender = (users, gender) => {
-  return users.filter(user => user.gender === gender).map(user => user.name);;
+  return users
+  .filter(user => user.gender === gender)
+  .map(user => user.name);
+//   const filterUser = users.filter(user => user.gender === gender);
+//   console.log(filterUser)
+//   const usersName = filterUser.map( user => user.name);
+//   return usersName;
 };
 
 console.log(getUsersWithGender(users, 'male')); //! [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]

@@ -260,6 +260,7 @@ type,
 
     //todo:  Метод повертає поточний баланс
     getBalance() {
+      console.log("Ваш баланс",this.balance);
       return this.balance;
      },
 
@@ -271,7 +272,8 @@ type,
           return transaction;
         }
       }
-      return undefined;
+      console.log("такої транкзакції немає!")
+      return null;
      },
 
     //todo:  Метод повертає кількість коштів
@@ -286,15 +288,21 @@ type,
       }
       return total;
      },
+     //! Зробити за допомогою методу reduce
 };
 //! Код виконаного завдання
 // console.log(account.createTransaction(1000, Transaction.DEPOSIT));
 // console.log(account.createTransaction(200, Transaction.WITHDRAW))
 account.deposit(1000)
-console.log(account.getBalance());
+account.withdraw(300)
 account.deposit(200)
 account.deposit(300)
-console.log(account.getBalance());
+account.withdraw(400)
+account.withdraw(300)
+console.log("транзакція №3 :",account.getTransactionDetails(3))
+console.log("транзакція №8 :",account.getTransactionDetails(8))
+console.log("сума транкзакцій додавання", account.getTransactionTotal(Transaction.DEPOSIT))
+console.log("сума транкзакцій віднімання", account.getTransactionTotal(Transaction.WITHDRAW))
 console.log("-------------------------------------------------------------");
 
 
