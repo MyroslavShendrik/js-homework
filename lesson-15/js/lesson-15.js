@@ -102,7 +102,7 @@ console.log(
 );
 //? Отримати загальну суму балансу (поле balance) всіх користувачів.
 const calculateTotalBalance = users => {
-  //! твій код
+  return users.reduce((total, user) => total + user.balance, 0);
 };
 
 console.log(calculateTotalBalance(users)); //! 20916
