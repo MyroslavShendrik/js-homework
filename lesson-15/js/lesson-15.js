@@ -117,7 +117,9 @@ console.log(
 );
 //? Отримати масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
 const getUsersWithFriend = (users, friendName) => {
-  //! твій код
+  return users
+    .filter(user => user.friends.includes(friendName))
+    .map(user => user.name);
 };
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); //! [ 'Sharlene Bush', 'Sheree Anthony' ]
@@ -134,7 +136,9 @@ console.log(
 //? Отримати масив імен (поле name) людей,
 //? відсортованих в залежності від кількості їх друзів (поле friends)
 const getNamesSortedByFriendsCount = users => {
-  //! твій код
+  return [...users]
+  .sort((a, b) => a.friends.length - b.friends.length)
+  .map(user => user.name);
 };
 
 
@@ -153,7 +157,10 @@ console.log(
 //? при цьому не має бути повторюваних умінь
 //? і вони повинні бути відсортовані в алфавітному порядку.
 const getSortedUniqueSkills = users => {
-    //! твій код
+  return users
+  .flatMap(user => user.skills)
+  .filter((skill, index, array) => array.indexOf(skill) === index)
+  .sort();
 };
 
 console.log(getSortedUniqueSkills(users));
