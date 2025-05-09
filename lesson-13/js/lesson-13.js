@@ -278,7 +278,7 @@ type,
 
     //todo:  Метод повертає кількість коштів
     //todo:  певного типу транзакції з усієї історії транзакцій
-    getTransactionTotal(type) {
+    getTransactionTotal_var1(type) {
       let total = 0;
       for (let i = 0; i < this.transactions.length; i++) {
         const transaction = this.transactions[i];
@@ -288,6 +288,9 @@ type,
       }
       return total;
      },
+getTransactionTotal(type){
+
+},
      //! Зробити за допомогою методу reduce
 };
 //! Код виконаного завдання
@@ -301,8 +304,11 @@ account.withdraw(400)
 account.withdraw(300)
 console.log("транзакція №3 :",account.getTransactionDetails(3))
 console.log("транзакція №8 :",account.getTransactionDetails(8))
+console.log("сума транкзакцій додавання var1", account.getTransactionTotal_var1(Transaction.DEPOSIT))
+console.log("сума транкзакцій віднімання var1", account.getTransactionTotal_var1(Transaction.WITHDRAW))
 console.log("сума транкзакцій додавання", account.getTransactionTotal(Transaction.DEPOSIT))
 console.log("сума транкзакцій віднімання", account.getTransactionTotal(Transaction.WITHDRAW))
+console.log()
 console.log("-------------------------------------------------------------");
 
 
