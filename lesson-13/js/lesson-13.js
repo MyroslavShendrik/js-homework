@@ -224,7 +224,6 @@ type,
  return objectTransaction; 
   },
 
-
   //todo:  Метод відповідає за додавання суми до балансу.
   //todo:  Приймає суму танзакції.
   //todo:  Викликає createTransaction для створення об'єкта транзакції
@@ -289,9 +288,16 @@ type,
       return total;
      },
 getTransactionTotal(type){
-
+return this.transactions
+.filter(transaction => transaction.type === type)
+.reduce((total, transaction) => total + transaction.amount, 0);
 },
-     //! Зробити за допомогою методу reduce
+getTransactionTotal_var2(type){
+return this.transactions
+.filter(transaction => transaction.type === type)
+.map(transaction => transaction.amount)
+.reduce((total,amount) => total + amount, 0);
+},
 };
 //! Код виконаного завдання
 // console.log(account.createTransaction(1000, Transaction.DEPOSIT));
@@ -308,7 +314,9 @@ console.log("сума транкзакцій додавання var1", account.g
 console.log("сума транкзакцій віднімання var1", account.getTransactionTotal_var1(Transaction.WITHDRAW))
 console.log("сума транкзакцій додавання", account.getTransactionTotal(Transaction.DEPOSIT))
 console.log("сума транкзакцій віднімання", account.getTransactionTotal(Transaction.WITHDRAW))
-console.log()
+console.log("сума транкзакцій додавання var2", account.getTransactionTotal_var2(Transaction.DEPOSIT))
+console.log("сума транкзакцій віднімання var2", account.getTransactionTotal_var2(Transaction.WITHDRAW))
+
 console.log("-------------------------------------------------------------");
 
 
