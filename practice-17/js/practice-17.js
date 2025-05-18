@@ -618,3 +618,47 @@ const mango2 = {
     email:"mango@mail.com",
 };
 console.log("mango2:", mango2); //! mango {name: 'Манго', email: 'mango@mail.com'}
+
+
+//! Об'єкт параметрів
+console.warn("Об'єкт параметрів:");
+//? ✴️ Клас може приймати велику кількість вхідних даних 
+//? для властивостей майбутнього об'єкта. 
+//? Тому, до них також можна застосувати патерн «Об'єкт параметрів», 
+//? передаючи один об'єкт з логічно іменованими властивостями, 
+//? замість непов'язаного набору аргументів.
+class User2 {
+    //todo: Синтаксис оголошення методу класу:
+    //todo: Деструктуризуємо об'єкт:
+    constructor({ name, email, phone }) {
+        //todo: Ініціалізація властивостей екземпляра:
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    };
+};
+console.log("User2:", User2); //!
+console.log("`  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `");
+
+const mango3 = new User2({
+    name: "Манго",
+    email: "mango@mail.com",
+    phone: "111-11-11",
+});
+console.log("mango2:", mango3); //! User2 {name: 'Манго', email: 'mango@mail.com', phone: '111-11-11'}
+
+const poly2 = new User2({
+    name: "Поли",
+    email: "poly@mail.com",
+    phone: "222-22-22",
+});
+console.log("poly2:", poly2); //! User2 {name: 'Поли', email: 'poly@mail.com', phone: '222-22-22'}
+console.log("---------------------------------------------------------------------------------");
+const object1 = {
+    name: "Поли",
+    email: "poly@mail.com",
+    phone: "222-22-22",
+};
+const name = "Поли";
+const email = "poly@mail.com";
+const phone = "222-22-22";
