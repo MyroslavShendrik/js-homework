@@ -589,3 +589,32 @@ console.log("autoFirst:", autoFirst); //! {}
 const autoSecond = new Auto();
 console.log("autoSecond:", autoSecond); //! {}
 console.log("--------------------------------------------------------------------------------------");
+
+
+//! Конструктор класу
+console.warn("Конструктор класу:");
+//? ✴️ Для ініціалізації екземпляра в класі є метод constructor. 
+//? Якщо він неоголошений, створюється конструктор за замовчуванням 
+//? - порожня функція, яка не змінює екземпляр.
+class User1 {
+    //todo:  Синтаксис оголошення методу класу:
+    constructor(n, e) {
+        //todo: Ініціалізація властивостей екземпляра:
+        this.name = n;
+        this.email = e;
+    };
+};
+console.log("User1:", User1); //!
+console.log("`  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `  `");
+
+const mango1 = new User1("Манго", "mango@mail.com");
+console.log("mango1:", mango1); //! User1 {name: 'Манго', email: 'mango@mail.com'}
+
+const poly1 = new User1("Поли", "poly@mail.com");
+console.log("poly1:", poly1); //! User1 {name: 'Поли', email: 'poly@mail.com'}
+console.log("---------------------------------------------------------------------------------");
+const mango2 = {
+    name:"Манго",
+    email:"mango@mail.com",
+};
+console.log("mango2:", mango2); //! mango {name: 'Манго', email: 'mango@mail.com'}
