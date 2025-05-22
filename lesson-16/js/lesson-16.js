@@ -8,7 +8,16 @@ console.log(
 //? який виводить в консоль значення полів
 //? login і email об'єкта який його викликав.
 //! Код виконаного завдання ⤵️
+class Account {
+    constructor({ login, email }) {
+        this.login = login;
+        this.email = email;
+    }
 
+    getInfo() {
+        console.log(`Login: ${this.login}, Email: ${this.email}`);
+    }
+}
 //! Код виконаного завдання ⤴️
 
 console.log(Account.prototype.getInfo); //! function
@@ -43,7 +52,17 @@ console.log(
 //? Додай метод getInfo(), який, виводить рядок:
 //? User ${ім'я} is ${вік} years old and has ${кількість фоловерів} followers
 //! Код виконаного завдання ⤵️
+class User {
+    constructor({ name, age, followers }) {
+        this.name = name;
+        this.age = age;
+        this.followers = followers;
+    }
 
+    getInfo() {
+        return `User ${this.name} is ${this.age} years old and has ${this.followers} followers`;
+    }
+}
 //! Код виконаного завдання ⤴️
 
 const mango2 = new User({
