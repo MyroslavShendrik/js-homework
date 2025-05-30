@@ -216,12 +216,12 @@ class Car {
      *  isOn - заведений автомобіль, значення true або false. Спочатку false
      *  distance - загальний кілометраж, спочатку 0
      */
-    constructor({ maxSpeed, price }) {
-        this.speed = 0;
+    constructor({ maxSpeed,speed = 0, isOn=false, distance = 0,  price }) {
+        this.speed = speed;
         this.maxSpeed = maxSpeed;
         this.price = price;
-        this.isOn = false;
-        this.distance = 0;
+        this.isOn = isOn;
+        this.distance = distance;
     }
 
 // * Додай геттер і сеттер для властивості price,
@@ -265,6 +265,9 @@ class Car {
     accelerate(value) {
         if (this.speed + value <= this.maxSpeed) {
             this.speed += value;
+        } else{
+            console.log("Speed exceeds maximum!")
+            this.speed += value
         }
     }
  /*
@@ -275,6 +278,8 @@ class Car {
     decelerate(value) {
         if (this.speed - value >= 0) {
             this.speed -= value;
+        } else{
+            this.speed = 0
         }
     }
 //  * Додає в поле distance кілометраж (hours * speed),
@@ -284,6 +289,9 @@ class Car {
     drive(hours) {
         if (this.isOn) {
             this.distance += hours * this.speed;
+        } else{
+            console.log("CAr is off")
+            return;
         }
     }
 }
