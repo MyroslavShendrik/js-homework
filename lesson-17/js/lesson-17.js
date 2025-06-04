@@ -11,8 +11,12 @@ console.log(
 // JavaScript
 const input = document.getElementById("myInput");
 const button = document.getElementById("myButton");
-
+console.log("button:", button);
+console.log("input:", input);
+// button.textContent = input.textContent;
 button.textContent = input.value;
+console.log("input.value:", input.value);
+
 
 console.log("--------------------------------------------------");
 
@@ -27,9 +31,11 @@ console.log(
 //? За допомогою JavaScript отримати доступ до зображення 
 //? та змінити значення атрибута "src" на шлях до іншого зображення.
 //! Код виконаного завдання
-// const image = document.getElementById("myImage");
-// image.src = "../images/image3.png";
+const image = document.getElementById("myImage");
 
+// image.src = "../images/image3.png"; //todo var1
+
+image.setAttribute("src", "../images/image3.png"); //todo var2
 console.log("--------------------------------------------------");
 
 
