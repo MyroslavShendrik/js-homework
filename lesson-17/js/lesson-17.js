@@ -51,6 +51,11 @@ console.log(
 //? Також отримати доступ до зображення 
 //? та додати новий атрибут "alt" з описом зображення.
 //! Код виконаного завдання
+const link = document.getElementById("myLink");
+link.href = "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1%D1%81%D0%B0%D0%B9%D1%82";
+
+const img = document.getElementById("imgWithAlt");
+img.setAttribute("alt", "Опис зображення");
 
 
 console.log("--------------------------------------------------");
@@ -67,5 +72,8 @@ console.log(
 //? до першого елемента списку 
 //? та змінити його вміст на новий текст. 
 //! Код виконаного завдання
+
+const list = document.getElementById("myList");
+list.children[0].textContent = "Новий 1";
 
 console.log("--------------------------------------------------");
