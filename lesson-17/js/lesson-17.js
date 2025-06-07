@@ -74,6 +74,7 @@ console.log(
 //! Код виконаного завдання
 
 const list = document.getElementById("myList");
-list.children[0].textContent = "Новий 1";
+list.children[0].textContent = "Новий 1"; //todo var1
+list.firstElementChild.textContent ="Новий 2" //todo var2
 
 console.log("--------------------------------------------------");
