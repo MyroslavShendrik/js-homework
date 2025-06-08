@@ -1,20 +1,20 @@
 const list = document.createElement("ul")
 list.classList.add("list")
-console.log("list:",list)
+console.log("list:", list)
 const body = document.querySelector("body");
 body.prepend(list);
 const elementFirst = document.createElement("li")
 const elementSecond = document.createElement("li")
 const elementThird = document.createElement("li")
 elementFirst.textContent = "HTML"
-elementSecond.textContent ="CSS"
+elementSecond.textContent = "CSS"
 elementThird.textContent = "JavaScript"
 list.append(elementFirst);
 list.append(elementSecond);
 list.append(elementThird);
 elementFirst.style.color = "red";
 elementSecond.style.color = "yellow";
-elementThird.style.color = "green"; 
+elementThird.style.color = "green";
 //! ------------------------------------------------- якщо елементів li більше 4, то елемент Node.js повинен бути 5. Інакше останнім.
 const elemetNext = document.createElement("li");
 elemetNext.textContent = "Node.js";
@@ -22,9 +22,9 @@ const items = list.querySelectorAll("li")
 console.log(items)
 const n = items.length;
 console.log(n)
-if(n > 4){
+if (n > 4) {
     //! Домашнє завдання знайти 4 елемент. та додати новий елемень ПІСЛЯ 4!
-} else{
+} else {
     list.append(elemetNext);
 }
 
@@ -169,9 +169,28 @@ console.log(
 );
 console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
 const title32 = document.querySelector(".article32 .title32");
-title32.innerHTML = '<span class="accent">Replacement</span>';
+const newMarkup = '<span class="accent">Replacement</span>'
+title32.innerHTML = newMarkup;
 
+const heading1 = document.createElement("h1");
+console.log("heading:", heading1); //! <h1></h1>
 
+heading1.textContent = "This is a heading";
+heading1.style.color = "green";
+console.log("heading1:", heading1);
+const heading2 = '<section>< h3 class="title33" > ШАБЛОНІЗАЦІЯ</h3 ><h4>Popular technologies</h4><ul class="list33"><li class="list-item">item</li></ul></section > '
+
+console.log("heading2:", heading2);
+const box1 = document.getElementById("box1")
+console.log("box1:", box1);
+console.log("box1.innerHTML:",box1.innerHTML);
+// box1.innerHTML = box1.innerHTML + heading2
+// box1.innerHTML =heading2 + box1.innerHTML;
+// box1.innerHTML = heading2;
+box1.innerHTML += heading2;
+const bodyBox = document.querySelector("body");
+console.log("bodyBox:",bodyBox);
+bodyBox.innerHTML = heading2 + bodyBox.innerHTML;
 //? ✴️ Якщо у властивість innerHTML записати порожній рядок,
 //? то вміст елемента буде очищено.
 //? Це простий і швидкий спосіб видалення всього вмісту.
@@ -214,3 +233,43 @@ console.log("markup:", markup);
 //todo: Додаємо всю розмітку за одну операцію.
 list33.innerHTML = markup;
 console.log("-----------------------------------------------------------------------------------------");
+
+
+//! Метод insertAdjacentHTML()
+//? ✴️ Метод insertAdjacentHTML() - це сучасний метод для додавання рядка 
+//? з HTML-тегами перед, після або всередину елемента. 
+//? Вирішує проблему innerHTML пов'язану зі збереженням 
+//? вмісту елемента під час додавання розмітки до вже існуючої.
+console.log(
+    `%c
+    elem.insertAdjacentHTML(position, string);
+
+        🔸 "beforebegin" - перед elem
+        🔸 "afterbegin" - всередині elem, перед усіма дітьми
+        🔸 "beforeend" - всередині elem, після усіх дітей
+        🔸 "afterend" - після elem
+    `,
+    'color: blue; font-size: 16px',
+);
+//? ✴️ Аргумент position - це рядок,
+//? позиція щодо елемента elem.
+//? Приймає одне з чотирьох значень:
+//? 🔸 "beforebegin" - перед elem
+//? 🔸 "afterbegin" - всередині elem, перед усіма дітьми
+//? 🔸 "beforeend" - всередині elem, після усіх дітей
+//? 🔸 "afterend" - після elem
+//? ✳️❗️❗️❗️ "beforebegin" і "afterend" працюють тільки тоді,
+//? коли elem вже знаходиться в DOM-дереві.
+console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
+const list4 = document.querySelector(".list4");
+
+const newTechnologies = ["React", "TypeScript", "Node.js"];
+const markup2 = newTechnologies
+    .map((technology) => `<li class="list-item new">${technology}</li>`)
+    .join("");
+
+list4.insertAdjacentHTML("beforebegin", "<h3>Popular technologies</h3>");
+list4.insertAdjacentHTML("afterbegin", '<li class="list-item new">C++</li>');
+list4.insertAdjacentHTML("beforeend", markup2);
+list4.insertAdjacentHTML("afterend", '<a class="link4" href="">Read more...</a>');
+console.log("----------------------------------------------------------------------------------");

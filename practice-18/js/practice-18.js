@@ -365,6 +365,7 @@ const heading = document.createElement("h1");
 console.log("heading:", heading); //! <h1></h1>
 
 heading.textContent = "This is a heading";
+heading.style.color = "green";
 console.log("heading:", heading); //! <h1>This is a heading</h1>
 
 const image2 = document.createElement("img");
