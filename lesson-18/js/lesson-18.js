@@ -53,11 +53,18 @@ console.log(
 //* Кількість елементів: 4
 //! Код виконаного завдання
 //todo: Крок-1
-
+const categoriesList = document.querySelectorAll('#categories .item');
+console.log(`У списку ${categoriesList.length} категорії.`);
 console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
 
 //todo: Крок-2
+categoriesList.forEach(category => {
+    const title = category.querySelector('h2').textContent;
+    const elementsCount = category.querySelectorAll('ul li').length;
 
+    console.log(`Категорія: ${title}`);
+    console.log(`Кількість елементів: ${elementsCount}`);
+});
 console.log("----------------------------------------------------------------");
 
 
@@ -87,7 +94,14 @@ const ingredients = [
 //? в список ul.ingredients.
 //? 🔸 Для створення DOM-вузлів використовуй document.createElement().
 //! Код виконаного завдання
+const ingredientsList = document.querySelector('#ingredients');
+const items = ingredients.map(ingredient => {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    return li;
+});
 
+ingredientsList.append(...items);
 console.log("----------------------------------------------------------------");
 
 
