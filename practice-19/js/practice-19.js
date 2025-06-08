@@ -6,12 +6,18 @@ body.prepend(list);
 const elementFirst = document.createElement("li")
 const elementSecond = document.createElement("li")
 const elementThird = document.createElement("li")
+const elementFour = document.createElement("li")
+const elementFive = document.createElement("li")
 elementFirst.textContent = "HTML"
 elementSecond.textContent = "CSS"
 elementThird.textContent = "JavaScript"
+elementFour.textContent = "React"
+elementFive.textContent = "idk"
 list.append(elementFirst);
 list.append(elementSecond);
 list.append(elementThird);
+list.append(elementFour);
+list.append(elementFive);
 elementFirst.style.color = "red";
 elementSecond.style.color = "yellow";
 elementThird.style.color = "green";
@@ -24,6 +30,8 @@ const n = items.length;
 console.log(n)
 if (n > 4) {
     //! Домашнє завдання знайти 4 елемент. та додати новий елемень ПІСЛЯ 4!
+     const fourthItem = items[3];
+    fourthItem.after(elemetNext);
 } else {
     list.append(elemetNext);
 }

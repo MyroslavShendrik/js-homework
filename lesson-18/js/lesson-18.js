@@ -142,7 +142,13 @@ const images = [
 //? 🔸 Додай мінімальне оформлення галереї флексбоксами
 //? або грід через css-класи.
 //! Код виконаного завдання
+const gallery = document.querySelector('#gallery');
 
+const markup = images
+  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+  .join('');
+
+gallery.insertAdjacentHTML('beforeend', markup);
 console.log("----------------------------------------------------------------");
 
 
