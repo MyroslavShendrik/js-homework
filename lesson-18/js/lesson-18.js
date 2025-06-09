@@ -96,12 +96,18 @@ const ingredients = [
 //! Код виконаного завдання
 const ingredientsList = document.querySelector('#ingredients');
 const items = ingredients.map(ingredient => {
-    const li = document.createElement('li');
-    li.textContent = ingredient;
+    // const li = document.createElement('li');
+    // li.textContent = ingredient;
+    const li = `<li>${ingredient}</li>`
+    console.log("li:", li);
+    // ingredientsList.append(li);
     return li;
 });
-
-ingredientsList.append(...items);
+console.log("items:", items);
+console.log("...items:", ...items);
+// ingredientsList.append(...items); //! Чому нема подвійного результату?
+//todo додавання за допомогою 3 варіанту
+ingredientsList.insertAdjacentHTML("afterbegin", items.join('')) //! Чи можна використати createElement та insertAdjacentHTML разом?
 console.log("----------------------------------------------------------------");
 
 
@@ -143,10 +149,35 @@ const images = [
 //? або грід через css-класи.
 //! Код виконаного завдання
 const gallery = document.querySelector('#gallery');
-
+const galleryTitle = document.querySelector(".gallery-title");
+const galleryImg = document.querySelectorAll("img");
+console.log("galleryImg:",typeof galleryImg);
 const markup = images
-  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
-  .join('');
+    .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+    .join('');
+//todo var1
+// galleryTitle.style.color = "teal"
+// galleryTitle.style.textAlign ="center" 
+// galleryTitle.style.marginBottom= "20px"
+//todo var2
+Object.assign(galleryTitle.style, {
+    color: 'teal',
+    textAlign: 'center',
+    marginBottom: '20px'
+});
+
+Object.assign(gallery.style, {
+    width: '80%',
+    margin: '0 auto',
+    display: 'flex',
+    height: 'maxСontent',
+    alignItems: 'stretch',
+    gap: '30px'
+});
+for (const element of galleryImg) {
+    element.style.width= '300px';
+    element.style.height = '100%';
+};
 
 gallery.insertAdjacentHTML('beforeend', markup);
 console.log("----------------------------------------------------------------");
