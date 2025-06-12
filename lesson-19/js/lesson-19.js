@@ -117,5 +117,13 @@ console.log(
 <input id="font-size-control" type="range" />
 */
 //! Код виконаного завдання
+const sizeControl = document.querySelector("#font-size-control");
+const text = document.querySelector("#text");
 
+
+text.style.fontSize = `${sizeControl.value}px`;
+
+sizeControl.addEventListener("input", () => {
+  text.style.fontSize = `${sizeControl.value}px`;
+})
 console.log("--------------------------------------------------");
