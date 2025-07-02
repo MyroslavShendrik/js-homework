@@ -50,15 +50,17 @@ renderBtn.addEventListener('click', () => {
   const amount = Number(input.value);
   createBoxes(amount);
 });
+
 destroyBtn.addEventListener('click', destroyBoxes);
 function createBoxes(amount) {
   destroyBoxes(); 
 
-  const boxes = [];
+  const boxes = []; 
   let size = 30;
 
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
+    console.log("box:",box)
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomColor();
@@ -66,6 +68,7 @@ function createBoxes(amount) {
     boxes.push(box);
     size += 10;
   }
+  console.log("boxes:",boxes);
   boxesContainer.append(...boxes);
 }
 function destroyBoxes() {
@@ -77,4 +80,8 @@ function getRandomColor() {
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 }
+
 console.log("--------------------------------------------------");
+input.addEventListener("input", ()=>{
+  console.log("action input:",typeof input.value);
+})
