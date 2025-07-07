@@ -9,17 +9,10 @@ console.log(
 
 
 //! Код виконаного завдання
-const images = [
-  "https://images.pexels.com/photos/13599326/pexels-photo-13599326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/11815778/pexels-photo-11815778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/6195166/pexels-photo-6195166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/6957926/pexels-photo-6957926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/15520825/pexels-photo-15520825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-];
-
 let currentIndex = 0;
 const imageElements = document.querySelectorAll('.image');
+console.log("imageElememts:", imageElements);
+console.log("imageElememts.length:", imageElements.length);
 
 function updateVisibleImage(index) {
   imageElements.forEach((img, i) => {
@@ -31,10 +24,10 @@ updateVisibleImage(currentIndex);
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') {
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex = (currentIndex + 1) % imageElements.length;
     updateVisibleImage(currentIndex);
   } else if (event.key === 'ArrowLeft') {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex = (currentIndex - 1 + imageElements.length) % imageElements.length;
     updateVisibleImage(currentIndex);
   }
 });
