@@ -116,3 +116,20 @@ const clsBtn = document.querySelector('[data-action="close-lightbox"]');
 const ov = document.querySelector('.lightbox__overlay');
 
 let index = -1;
+
+gal.innerHTML = galleryItems
+  .map(
+    (el, i) =>
+      `<li class="gallery__item">
+      <a class="gallery__link" href="${el.original}">
+        <img
+          class="gallery__image"
+          src="${el.preview}"
+          data-source="${el.original}"
+          data-idx="${i}"
+          alt="${el.description}"
+        />
+      </a>
+    </li>`
+  )
+  .join('');
