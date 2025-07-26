@@ -157,3 +157,40 @@ button.accent {
 .box1 {
     text-align: center;
 }
+.box-in-box{
+    height: 2000px;
+}
+.box-in-box p{
+    margin-bottom: 600px;
+} 
+/*? Throttle */
+/*? Debounce */
+/*? Режими методу Debounce​ */
+.box2-in-box,
+.box3-in-box,
+.box4-in-box {
+    min-width: 160px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 12px;
+    border: 1px solid #03a9f4;
+    border-radius: 4px;
+}
+
+.event-counter p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.event-counter span {
+    font-size: 48px;
+    font-family: monospace;
+}
+
+.part_4 .box {
+    width: auto;
+}
