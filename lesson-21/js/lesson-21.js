@@ -133,3 +133,48 @@ gal.innerHTML = galleryItems
     </li>`
   )
   .join('');
+  
+  gal.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') return;
+  const t = e.target;
+  img.src = t.dataset.source;
+  img.alt = t.alt;
+  box.classList.add('is-open');
+  idx = Number(t.dataset.idx);
+});
+
+function close() {
+  box.classList.remove('is-open');
+  img.src = '';
+  img.alt = '';
+  idx = -1;
+}
+
+clsBtn.addEventListener('click', close);
+ov.addEventListener('click', close);
+
+window.addEventListener('keydown', function (e) {
+  if (idx === -1) return;
+
+  if (e.key === 'Escape') {
+    close();
+  }
+
+  if (e.key === 'ArrowRight') {
+    idx++;
+    if (idx >= galleryItems.length) idx = 0;
+    changeImg();
+  }
+
+  if (e.key === 'ArrowLeft') {
+    idx--;
+    if (idx < 0) idx = galleryItems.length - 1;
+    changeImg();
+  }
+});
+
+function changeImg() {
+  img.src = galleryItems[idx].original;
+  img.alt = galleryItems[idx].description;
+}
