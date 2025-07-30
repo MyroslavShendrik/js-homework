@@ -1,4 +1,5 @@
 import { galleryItems } from './app.js';
+import { openModal, closeModal } from './modal.js';
 console.log("galleryItems:", galleryItems);
 //? Створи галерею з можливістю кліка по її елементах
 //? і перегляду повнорозмірного зображення в модальному вікні.
@@ -45,54 +46,53 @@ console.log("galleryItems:", galleryItems);
 //? 🔸•  Закриття модального вікна після натискання клавіші ESC.
 //? 🔸•  Перегортування зображень галереї у відкритому модальному вікні клавішами "вліво" і "вправо".
 //! Код виконаного завдання:
-const sum = _.add(25, 4)
-console.log("sum:",sum)
+
+
 const gal = document.querySelector('.js-gallery');
 const box = document.querySelector('.js-lightbox');
 const img = document.querySelector('.lightbox__image');
 const clsBtn = document.querySelector('[data-action="close-lightbox"]');
 const ov = document.querySelector('.lightbox__overlay');
 
-let index = -1;
+let idx = -1;
 
 gal.innerHTML = galleryItems
   .map(
     (el, i) =>
       `<li class="gallery__item">
-      <a class="gallery__link" href="${el.original}">
-        <img
-          class="gallery__image"
-          src="${el.preview}"
-          data-source="${el.original}"
-          data-idx="${i}"
-          alt="${el.description}"
-        />
-      </a>
-    </li>`
+        <a class="gallery__link" href="${el.original}">
+          <img
+            class="gallery__image"
+            src="${el.preview}"
+            data-source="${el.original}"
+            data-idx="${i}"
+            alt="${el.description}"
+          />
+        </a>
+      </li>`
   )
   .join('');
-  
-  gal.addEventListener('click', function (e) {
+
+gal.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') return;
+
   const t = e.target;
   img.src = t.dataset.source;
   img.alt = t.alt;
-  box.classList.add('is-open');
   idx = Number(t.dataset.idx);
+  openModal(box);
 });
 
 function close() {
-  box.classList.remove('is-open');
-  img.src = '';
-  img.alt = '';
+  closeModal(box, img);
   idx = -1;
 }
 
 clsBtn.addEventListener('click', close);
 ov.addEventListener('click', close);
 
-window.addEventListener('keydown', function (e) {
+window.addEventListener('keydown', (e) => {
   if (idx === -1) return;
 
   if (e.key === 'Escape') {
