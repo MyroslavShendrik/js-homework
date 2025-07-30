@@ -158,3 +158,16 @@ document.addEventListener(
     }, 300)
 );
 console.log("-----------------------------------------------------------");
+
+//! Input (with debounce)
+console.warn("Input (with debounce)​:");
+const input = document.querySelector(".input");
+console.log("input:", input); //!
+//todo: Відправка запиту без debounce
+// input.addEventListener("input", () => {
+//     console.log("Відправка запиту без debounce:", input.value);
+// });
+//todo: Відправка запиту з debounce
+input.addEventListener("input", _.debounce(() => {
+    console.log("Відправка запиту з debounce:", input.value);
+}, 500));
