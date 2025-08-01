@@ -47,7 +47,7 @@ console.log("galleryItems:", galleryItems);
 //? 🔸•  Перегортування зображень галереї у відкритому модальному вікні клавішами "вліво" і "вправо".
 //! Код виконаного завдання:
 
-
+const galCloseBtn = document.querySelector('[data-action="close-gallery"]');
 const gal = document.querySelector('.js-gallery');
 const box = document.querySelector('.js-lightbox');
 const img = document.querySelector('.lightbox__image');
@@ -116,8 +116,6 @@ function changeImg() {
   img.src = galleryItems[idx].original;
   img.alt = galleryItems[idx].description;
 }
-//! не працює esc та право ліво 
-//! треба перенести логіку модального вікна перенести в окремий файл
-//! кнопки нема та не працює!
+galCloseBtn.addEventListener('click', close);
 //! додати інформаційні поля скріншот з телеграму 
 //! як модальне вікно працювало без js в початковому стані?
