@@ -14,7 +14,7 @@ const slider = document.querySelector('.slider__input');
 
   const moveBox = _.debounce((x, y) => {
     box.style.transform = `translate(${x}px, ${y}px)`;
-  }, 0); 
+  }, 100); 
 
   window.addEventListener('mousemove', (e) => {
     moveBox(e.clientX, e.clientY);
