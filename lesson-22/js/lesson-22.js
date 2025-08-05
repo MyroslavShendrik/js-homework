@@ -28,13 +28,14 @@ slider.addEventListener('input', (e) => {
 //? Встановіть час затримки в мілісекундах, наприклад 100мс, і передайте функцію,
 //? яка буде виконуватися при переміщенні мишкою.
 //! код:
+const area = document.querySelector('.move-area');
 const box = document.getElementById('box');
 
-const moveBox = _.debounce((x, y) => {
-  box.style.transform = `translate(${x}px, ${y}px)`;
-}, 300);
+area.addEventListener('mousemove', _.debounce((e) => {
+  const x = e.offsetX;
+  const y = e.offsetY;
 
-window.addEventListener('mousemove', (e) => {
-  moveBox(e.clientX, e.clientY);
-});
+  box.style.left = (x - 25) + 'px'; 
+  box.style.top = (y - 25) + 'px'; 
+}, 100));
 //! зробити окремий область для цього квадрату, де тільки там він може рухатися 
