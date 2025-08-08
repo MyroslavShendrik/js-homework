@@ -1,16 +1,22 @@
+const images = document.querySelectorAll('.lazy-img');
 
-const lazyImages = document.querySelectorAll('.lazyload');
-
-lazyImages.forEach((img, index) => {
-  img.addEventListener('lazybeforeunveil', () => {
-    console.log(` Зображення ${index + 1} стало видимим і буде завантажене`);
-  });
-
+function loadImage(img) {
+  img.src = img.dataset.src; 
   img.addEventListener('load', () => {
-    console.log(` Зображення ${index + 1} завантажене`);
+    img.classList.add('loaded'); 
+    console.log(`Зображення "${img.alt}" завантажене`);
   });
+}
 
-  img.addEventListener('lazyloaded', () => {
-    console.log(` Зображення ${index + 1} повністю готове і з'явилося`);
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadImage(entry.target);
+      obs.unobserve(entry.target); 
+    }
   });
-});
+}, { threshold: 0.1 });
+
+
+images.forEach(img => observer.observe(img));
