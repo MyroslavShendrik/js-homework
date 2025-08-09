@@ -9,7 +9,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 1000px;
+  gap: 1000px; 
 }
 
 img {

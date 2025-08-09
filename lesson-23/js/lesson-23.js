@@ -1,9 +1,9 @@
 const images = document.querySelectorAll('.lazyload');
 
 function loadImage(img) {
-  img.src = img.dataset.src; 
+  img.src = img.dataset.src;
   img.addEventListener('load', () => {
-    img.classList.add('loaded'); 
+    img.classList.add('lazyloaded'); 
     console.log(`Зображення "${img.alt}" завантажене`);
   });
 }
@@ -18,10 +18,12 @@ const observer = new IntersectionObserver((entries, obs) => {
   });
 }, { threshold: 0.1 });
 
-
 images.forEach(img => observer.observe(img));
-//! розмітка це список а не div 
-//! не відповідність розмірів placeholder та відображення 
-//! зоображення потрібно завантажити з інтернету 
-//! зробити кнопку, коли натискаєм на неї вони починають завантажуватися
-//! 9.  Перевірте результати за допомогою інструментів розробника браузера, таких як "Network" або "Performance", щоб переконатися, що зображення завантажуються тільки тоді, коли вони стають видимими на сторінці.
+
+
+document.getElementById('loadImagesBtn').addEventListener('click', () => {
+  images.forEach(img => {
+    loadImage(img);
+    observer.unobserve(img);
+  });
+});
