@@ -117,5 +117,6 @@ function changeImg() {
   img.alt = galleryItems[idx].description;
 }
 galCloseBtn.addEventListener('click', close);
+
 //! додати інформаційні поля скріншот з телеграму 
-//! як модальне вікно працювало без js в початковому стані?
+//! як модальне вікно працювало без js в початковому стані? за допомогою HTML CSS 
