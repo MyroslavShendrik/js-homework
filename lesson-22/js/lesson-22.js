@@ -32,11 +32,19 @@ const area = document.querySelector('.move-area');
 const box = document.getElementById('box');
 
 area.addEventListener('mousemove', _.debounce((e) => {
-  const x = e.offsetX;
-  const y = e.offsetY;
+  const boxHalf = box.offsetWidth / 2;
+  const maxX = area.clientWidth - box.offsetWidth;
+  const maxY = area.clientHeight - box.offsetHeight;
 
-  box.style.left = (x - 25) + 'px'; 
-  box.style.top = (y - 25) + 'px'; 
+  let x = e.offsetX - boxHalf;
+  let y = e.offsetY - boxHalf;
+
+
+  x = Math.max(0, Math.min(x, maxX));
+  y = Math.max(0, Math.min(y, maxY));
+
+  box.style.left = x + 'px';
+  box.style.top = y + 'px';
 }, 100));
 //! квадрат вилазить за межі зони 
 //! картинка знову вилазить на інші елементи 
