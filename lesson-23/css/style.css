@@ -5,11 +5,14 @@ body {
 }
 
 .images {
+  overflow-y:scroll ;
   max-width: 600px;
+  height: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 1000px; 
+  gap: 50px; 
+  outline: 1px solid red;
 }
 
 img {
@@ -17,10 +20,5 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
-.lazyloaded {
-  opacity: 1;
-}
