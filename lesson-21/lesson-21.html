@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--!  заголовок сторінки -->
     <title>Lesson-21 JS</title>
-    <!--! завантаження зображення до заголовку сторінки -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link
@@ -15,22 +13,17 @@
     />
   </head>
   <body>
-    <!-- В этот список добавляй элементы галереи -->
-     <button class="gallery__close-btn" data-action="close-gallery">✕</button>
-    <ul class="gallery js-gallery">
-    </ul> 
+    <button class="gallery__close-btn" data-action="close-gallery">✕</button>
 
-<!--     
-      Модальное окно для полноразмерного изображения
-      Для того чтобы открыть, необходимо добавить на div.lightbox CSS-класс is-open
-    -->
-     <div class="lightbox js-lightbox">
+    <ul class="gallery js-gallery"></ul>
+
+    <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
-
       <div class="lightbox__content">
+        <div class="lightbox__counter"></div> 
         <img class="lightbox__image" src="" alt="" />
+        <div class="lightbox__caption"></div> 
       </div>
-
       <button
         type="button"
         class="lightbox__button"
@@ -38,12 +31,7 @@
       ></button>
     </div>
 
-
-
-    <!--! Підключення скриптів -->
-    
-    <!-- <script src="./js/modal.js" type="module" defer></script> -->
-      <script
+    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
       integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
       crossorigin="anonymous"

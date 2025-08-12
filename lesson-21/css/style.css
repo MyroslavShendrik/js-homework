@@ -148,3 +148,27 @@ body {
   cursor: pointer;
   color: #333;
 }
+.lightbox__counter {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.lightbox__caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  max-width: 80%;
+  text-align: center;
+}

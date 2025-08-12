@@ -53,6 +53,8 @@ const box = document.querySelector('.js-lightbox');
 const img = document.querySelector('.lightbox__image');
 const clsBtn = document.querySelector('[data-action="close-lightbox"]');
 const ov = document.querySelector('.lightbox__overlay');
+const counter = document.querySelector('.lightbox__counter');
+const caption = document.querySelector('.lightbox__caption');
 
 let idx = -1;
 
@@ -77,10 +79,8 @@ gal.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') return;
 
-  const t = e.target;
-  img.src = t.dataset.source;
-  img.alt = t.alt;
-  idx = Number(t.dataset.idx);
+  idx = Number(e.target.dataset.idx);
+  changeImg();
   openModal(box);
 });
 
@@ -91,6 +91,7 @@ function close() {
 
 clsBtn.addEventListener('click', close);
 ov.addEventListener('click', close);
+galCloseBtn.addEventListener('click', close);
 
 window.addEventListener('keydown', (e) => {
   if (idx === -1) return;
@@ -115,9 +116,7 @@ window.addEventListener('keydown', (e) => {
 function changeImg() {
   img.src = galleryItems[idx].original;
   img.alt = galleryItems[idx].description;
-}
-galCloseBtn.addEventListener('click', close);
 
-//! додати інформаційні поля скріншот з телеграму 
-//! як модальне вікно працювало без js в початковому стані? за допомогою HTML CSS
-//!доробити кнопку 
+  counter.textContent = `${idx + 1} / ${galleryItems.length}`;
+  caption.textContent = galleryItems[idx].description;
+}
