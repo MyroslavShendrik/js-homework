@@ -120,3 +120,4 @@ function changeImg() {
   counter.textContent = `${idx + 1} / ${galleryItems.length}`;
   caption.textContent = galleryItems[idx].description;
 }
+//! КНОПКА!!!!!!!!
