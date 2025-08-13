@@ -30,3 +30,7 @@ console.log(
     'color: blue; font-size: 18px',
 );
 console.log("--------------------------------------------------------------------------------------------------------");
+//!+- Використання бібліотеки Lodash - var.1 (метод рахує суму двох чисел)
+// const lodash = require('lodash'); //? CommonJS ("type": "commonjs")
+// const sum = lodash.add(10, 5);
+// console.log("sum:", sum);
