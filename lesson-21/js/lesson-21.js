@@ -47,7 +47,7 @@ console.log("galleryItems:", galleryItems);
 //? 🔸•  Перегортування зображень галереї у відкритому модальному вікні клавішами "вліво" і "вправо".
 //! Код виконаного завдання:
 
-const galCloseBtn = document.querySelector('[data-action="close-gallery"]');
+const galCloseBtn = document.querySelector('.lightbox__close-btn');
 const gal = document.querySelector('.js-gallery');
 const box = document.querySelector('.js-lightbox');
 const img = document.querySelector('.lightbox__image');
@@ -57,7 +57,7 @@ const counter = document.querySelector('.lightbox__counter');
 const caption = document.querySelector('.lightbox__caption');
 
 let idx = -1;
-
+galCloseBtn.addEventListener('click', close);
 gal.innerHTML = galleryItems
   .map(
     (el, i) =>

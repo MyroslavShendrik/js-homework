@@ -94,6 +94,7 @@ body {
 }
 
 .lightbox__content {
+  position: relative;
   transform: scale(0.95);
   transition: transform var(--animation-duration) var(--timing-function);
 }
@@ -138,22 +139,47 @@ body {
 .lightbox__button:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.gallery__close-btn {
+
+/* Нова гарна кнопка закриття в модалі */
+.lightbox__close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  font-size: 24px;
+  border-radius: 50%;
   cursor: pointer;
-  color: #333;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.8);
 }
+
+.lightbox.is-open .lightbox__close-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lightbox__close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.lightbox__close-btn:active {
+  transform: scale(0.95);
+}
+
 .lightbox__counter {
   position: absolute;
   top: 10px;
   left: 15px;
   color: white;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -165,10 +191,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 5px 15px;
   border-radius: 5px;
   font-size: 14px;
   max-width: 80%;
   text-align: center;
 }
+
