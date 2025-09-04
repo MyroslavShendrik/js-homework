@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@pnotify/core": "^5.2.0",
+    "@pnotify/mobile": "^5.2.0",
     "lodash": "^4.17.21",
     "nanoid": "^5.1.5",
     "pnotify": "^5.2.0"
