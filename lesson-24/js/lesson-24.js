@@ -1,6 +1,6 @@
-import { success, error, info } from "@pnotify/core";
-import "@pnotify/core/dist/PNotify.css";
-import "@pnotify/core/dist/BrightTheme.css";
+// import { success, error, info } from "@pnotify/core";
+// import "@pnotify/core/dist/PNotify.css";
+// import "@pnotify/core/dist/BrightTheme.css";
 
 const keys = ['a','s','d','f','g','h','j','k','l','z'];
 let currentKeyIndex = 0;
@@ -16,16 +16,18 @@ function setNewKey() {
 // Обробник keydown
 document.addEventListener('keydown', (event) => {
   if (event.key === keys[currentKeyIndex]) {
-    success({
-      text: `✅ Правильно! Натиснута "${event.key}"`,
-      delay: 1500
-    });
+    // success({
+    //   text: `✅ Правильно! Натиснута "${event.key}"`,
+    //   delay: 1500
+    // });
+    console.log(`✅ Правильно! Натиснута "${event.key}"`)
     setNewKey();
   } else {
-    error({
-      text: `❌ Помилка! Потрібно натиснути "${keys[currentKeyIndex]}"`,
-      delay: 1500
-    });
+    // error({
+      // text: `❌ Помилка! Потрібно натиснути "${keys[currentKeyIndex]}"`,
+      // delay: 1500   
+    // });
+    console.log(`❌ Помилка! Потрібно натиснути "${keys[currentKeyIndex]}"`)
   }
 });
 
@@ -37,10 +39,11 @@ document.addEventListener('keypress', (event) => {
 // Нова гра
 newGameBtn.addEventListener('click', () => {
   setNewKey();
-  info({
-    text: '🎮 Нова гра почалася! Натискай правильні клавіші.',
-    delay: 2000
-  });
+  // info({
+  //   text: '🎮 Нова гра почалася! Натискай правильні клавіші.',
+  //   delay: 2000
+  // });
+  console.log('🎮 Нова гра почалася! Натискай правильні клавіші.')
 });
 
 // Початкова установка
